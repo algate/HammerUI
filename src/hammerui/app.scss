@@ -1,0 +1,83 @@
+/*app.wxss*/
+page {
+    background: #fafafa;
+    font-size: 32rpx;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.phcolor {
+    color: #ccc;
+    font-size: 32rpx;
+}
+
+button::after {
+    border: none;
+}
+
+.opcity {
+    opacity: 0.5;
+}
+
+.hover {
+    background: #f7f7f9 !important;
+}
+
+.ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/*列表统一样式 */
+
+.list-item {
+    position: relative;
+}
+
+.list-item::after {
+    content: '';
+    position: absolute;
+    border-bottom: 1upx solid #eaeef1;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    bottom: 0;
+    right: 0;
+    left: 30rpx;
+}
+
+.last::after {
+    border-bottom: 0 !important;
+}
+
+@keyframes show {
+    0% {
+        transform: translateY(-50px);
+    }
+
+    60% {
+        transform: translateY(40upx);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@-webkit-keyframes show {
+    0% {
+        transform: translateY(-50px);
+    }
+
+    60% {
+        transform: translateY(40upx);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
