@@ -1,0 +1,326 @@
+/* ==================
+       基础配置
+ ==================== */
+body {
+    background: #fff;
+    font-size: 24rpx;
+    color: #444;
+    font-family: Helvetica Neue, Helvetica, sans-serif;
+}
+view,
+scroll-view,
+swiper,
+button,
+input,
+textarea,
+label,
+navigator,
+image {
+    box-sizing: border-box;
+}
+/* ==================
+     common - 边距
+ ==================== */
+.h-padding-left-right {
+    padding: $hammer-left-right-padding;
+}
+.h-margin-top {
+    margin-top: $hammer-margin-top
+}
+/* ==================
+   容器 - 边距 - 间隔
+ ==================== */
+.hammer-box {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    padding: $hammer-left-right-padding;
+}
+
+.hammer-box .title {
+    display: flex;
+    align-items: center;
+    min-height: 80rpx;
+    justify-content: center;
+    max-width: 100%;
+}
+.hammer-box .sub-title {
+    display: flex;
+    align-items: center;
+    min-height: 60rpx;
+    justify-content: center;
+    max-width: 100%;
+}
+
+/* ==================
+         背景色
+ ==================== */
+.bg-black {
+    background-color: #eee;
+    color: #fff;
+}
+
+.bg-white {
+    background-color: #fff;
+    color: #888;
+}
+
+.bg-red {
+    background-color: #e54d42;
+    color: #ffffff;
+}
+
+.bg-orange {
+    background-color: #f37b1d;
+    color: #ffffff;
+}
+
+.bg-yellow {
+    background-color: #fbbd08;
+    color: #333333;
+}
+
+.bg-olive {
+    background-color: #8dc63f;
+    color: #ffffff;
+}
+
+.bg-green {
+    background-color: #39b54a;
+    color: #ffffff;
+}
+
+.bg-cyan {
+    background-color: #1cbbb4;
+    color: #ffffff;
+}
+
+.bg-blue {
+    background-color: #0081ff;
+    color: #ffffff;
+}
+
+.bg-purple {
+    background-color: #6739b6;
+    color: #ffffff;
+}
+
+.bg-mauve {
+    background-color: #9c26b0;
+    color: #ffffff;
+}
+
+.bg-pink {
+    background-color: #e03997;
+    color: #ffffff;
+}
+
+.bg-brown {
+    background-color: #a5673f;
+    color: #ffffff;
+}
+
+.bg-grey {
+    background-color: #8799a3;
+    color: #ffffff;
+}
+
+.bg-gray {
+    background-color: #f0f0f0;
+    color: #333333;
+}
+
+.bg-red.light {
+    color: #e54d42;
+    background-color: #fadbd9;
+}
+
+.bg-orange.light {
+    color: #f37b1d;
+    background-color: #fde6d2;
+}
+
+.bg-yellow.light {
+    color: #fbbd08;
+    background-color: #fef2ced2;
+}
+
+.bg-olive.light {
+    color: #8dc63f;
+    background-color: #e8f4d9;
+}
+
+.bg-green.light {
+    color: #39b54a;
+    background-color: #d7f0dbff;
+}
+
+.bg-cyan.light {
+    color: #1cbbb4;
+    background-color: #d2f1f0;
+}
+
+.bg-blue.light {
+    color: #0081ff;
+    background-color: #cce6ff;
+}
+
+.bg-purple.light {
+    color: #6739b6;
+    background-color: #e1d7f0;
+}
+
+.bg-mauve.light {
+    color: #9c26b0;
+    background-color: #ebd4ef;
+}
+
+.bg-pink.light {
+    color: #e03997;
+    background-color: #f9d7ea;
+}
+
+.bg-brown.light {
+    color: #a5673f;
+    background-color: #ede1d9;
+}
+
+.bg-grey.light {
+    color: #8799a3;
+    background-color: #e7ebed;
+}
+/* ==================
+    basic-home导航
+ ==================== */
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.nav-li {
+    padding: 30rpx;
+    border-radius: 12rpx;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    // margin-top: 20rpx;
+    margin-bottom: 40rpx;
+    box-shadow: 0 0 8rpx rgba(0, 0, 0, 0.5);
+    // animation: bounceInDown 1s 1;
+}
+.nav-li:first-child {
+    margin-top: 20rpx;
+}
+.nav-li:before,
+.nav-li:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 20rpx;
+    bottom: 30rpx;
+    left: 20rpx;
+    width: 60%;
+    box-shadow: 0 30rpx 30rpx rgba(0, 0, 0, 0.5);
+    transform: rotate(-3deg);
+}
+.nav-li:after {
+    right: 20rpx;
+    left: auto;
+    transform: rotate(3deg);
+}
+
+.nav-title {
+    font-size: 32rpx;
+    font-weight: 400;
+    animation: bounceInDown 2s infinite;
+}
+
+.nav-title::first-letter {
+    font-size: 50rpx;
+    margin-right: 4rpx;
+}
+
+.nav-name {
+    font-size: 28rpx;
+    text-transform: Capitalize;
+    margin-top: 20rpx;
+    position: relative;
+    animation: slideInLeft 2s infinite;
+}
+
+.nav-name::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 60rpx;
+    height: 6rpx;
+    background: #fff;
+    bottom: 0;
+    right: 0;
+    opacity: 0.8;
+    animation: bounce 2s infinite;
+}
+
+.nav-name::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50%;
+    height: 1px;
+    background: #fff;
+    bottom: 0;
+    right: 0;
+    opacity: 0.5;
+}
+
+.nav-name::first-letter {
+    font-weight: 800;
+    font-size: 36rpx;
+    margin-right: 1px;
+}
+
+.nav-li text {
+    position: absolute;
+    right: 50rpx;
+    top: 30rpx;
+    font-size: 50rpx;
+    width: 60rpx;
+    height: 60rpx;
+    text-align: center;
+    line-height: 60rpx;
+    animation: rollIn 2s infinite;
+}
+/* ==================
+        搜索框
+ ==================== */
+.hammer-search {
+    background-color: #eee;
+    line-height: 64rpx;
+    height: 64rpx;
+    font-size: 24rpx;
+    color: #888;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 20rpx;
+    uni-input: {
+        flex: 1;
+    }
+}
+/* ==================
+        表单
+ ==================== */
+switch[checked] .wx-switch-input.wx-switch-input-checked,
+checkbox[checked] .wx-checkbox-input,
+radio[checked] .wx-radio-input,
+switch.checked .uni-switch-input.uni-switch-input-checked,
+checkbox.checked .uni-checkbox-input,
+radio.checked .uni-radio-input {
+    background-color: $hammer-color !important;
+    border-color: $hammer-color !important;
+    color: #ffffff !important;
+}
+

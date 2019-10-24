@@ -1,16 +1,77 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/index/index",
+			"path": "pages/main/main",
 			"style": {
-				"navigationBarTitleText": "ChuiziUI"
+				"navigationBarTitleText": "ChuiziUI🔨",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "black"
+			}
+		},
+		{
+			"path": "pages/hammer-basic/home",
+			"style": {
+				"navigationBarTitleText": "基础组件🔨",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-basic/basic-icon",
+			"style": {
+				"navigationBarTitleText": "图标-🐭",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-basic/basic-swiper",
+			"style": {
+				"navigationBarTitleText": "轮播-🐉",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-basic/basic-tabs-swiper",
+			"style": {
+				"navigationBarTitleText": "选项卡+Swiper-🐰",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-user/mine",
+			"style": {
+				"navigationBarTitleText": "用户🔨",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
 			}
 		}
 	],
+	"tabBar": {
+		"color": "#888",
+		"selectedColor": "#00ab98",
+		"backgroundColor": "#fff",
+		"borderStyle": "black",
+		"height": "100rpx",
+		"list": [{
+			"pagePath": "pages/hammer-basic/home",
+			"iconPath": "static/images/tabBar/icon-index-default.png",
+			"selectedIconPath": "static/images/tabBar/icon-index.png",
+			"text": "Basic"
+		},{
+			"pagePath": "pages/hammer-user/mine",
+			// "iconPath": "static/images/tabBar/hammer-mine-default.png",
+			"iconPath": "static/images/tabBar/hammer-default.svg",
+			"selectedIconPath": "static/images/tabBar/hammer.svg",
+			"text": "🔨Hammer🔨"
+		}]
+	},
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
+		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "ChuiziUI",
-		"navigationBarBackgroundColor": "#F8F8F8",
+		"navigationBarBackgroundColor": "#5677FC",
 		"backgroundColor": "#F8F8F8"
 	}
 }

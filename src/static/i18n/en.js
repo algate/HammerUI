@@ -1,0 +1,37 @@
+export const message = {
+    //global 全局
+    global: {
+        test: `{test} english`,
+        confirm: "confirm",
+        cancel: "cancel",
+        modify: "modify",
+        carry_out: "carry_out",
+        submit: "submit",
+        confirm_choose: "confirm choose",
+        query_failed: "query failed",
+        query_exception: "query exception",
+        close: "close",
+        prefix: "¥",
+        check_all: "check all",
+        loading: "loading...",
+        modify_in_progress: "modify in progress...",
+        modify_success: 'modify success',
+        modify_fail: 'modify fail',
+        checked: "checked",
+        warning: "warning",
+        no_location_info: "no location info",
+        no_data: "no data",
+        no_more: "no more",
+        no_eligible_data: "no eligible data",
+        non_existent: "non existent",
+        prompt: "prompt",
+        got_it: "got it",
+        save_successful: "save successful",
+        save_failed: "save failed",
+        vending_machine: "vending machine",
+        container: "container",
+        phone_number: "phone",
+        email: "email",
+        please_choose: "please choose"
+    }
+}
