@@ -1,5 +1,5 @@
 <template>
-    <view class="container">
+    <view>
         <scroll-view scroll-x scroll-with-animation class="tab-view" :scroll-left="scrollLeft">
             <view v-for="(item,index) in tabbar" :key="index" class="tab-bar-item" :class="[currentTab==index ? 'active' : '']"
              :data-current="index" @tap.stop="swichNav">
@@ -147,9 +147,9 @@
         data() {
             return {
                 tabbar: ["热门", "娱乐", "体育", "国内", "财经", "科技", "教育", "汽车"],
-                winHeight: "", //窗口高度
-                currentTab: 0, //预设当前项的值
-                scrollLeft: 0 //tab标题的滚动条位置
+                winHeight: "", // 窗口高度
+                currentTab: 0, // 预设当前项的值
+                scrollLeft: 0 // tab标题的滚动位置
             }
         },
         onLoad: function() {

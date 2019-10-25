@@ -4,16 +4,24 @@ import App from './App'
 import { i18n } from './i18n';
 import store from './store';
 
+// #ifdef H5
+let jweixin = require('@/libs/jweixin.js');
+// #endif
+import * as loadAMap from '@/libs/loadAMap.js';
+import * as loadBMap from '@/libs/loadBMap.js';
+import * as constant from '@/libs/constant.js';
+
+
 // 定义全局组件
 import hammerIcon from "@/components/icon/icon"
 Vue.component('hammer-icon', hammerIcon);
 
 //初始化store
 Vue.prototype.$store = store;
-// #ifdef H5
-let jweixin = require('@/common/jweixin.js');
-// #endif
 Vue.prototype.$hammer = {
+    $constant: constant.constant,
+    $loadAMap: loadAMap,
+    $loadBMap: loadBMap,
     // #ifdef H5
     $weixin: jweixin
     // #endif

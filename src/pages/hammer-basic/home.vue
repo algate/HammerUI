@@ -2,7 +2,7 @@
     <view>
         <scroll-view scroll-y>
             <view class="nav-list">
-                <navigator hover-class="none" :url="'/pages/hammer-basic/' + item.name" class="nav-li" open-type="navigate" :class="item.bgColor" v-for="(item,index) in elements" :key="index">
+                <navigator hover-class="none" :url="'/pages/hammer-basic/' + item.name" class="nav-li" open-type="navigate" :class="item.bgColor" v-for="(item,index) in elements" :key="index" :style="{animation: 'bounceInDown ' + ((index+1)*0.2+1) + 's ' + ((index)*0.4) + 's 1 both'}">
                     <view class="nav-title">{{item.title}}</view>
                     <view class="nav-name">{{item.name}}</view>
                     <text class="iconfont" :class="'icon-' + item.hammerIcon" :style="'color:#fff;font-size:'+item.size"></text>
@@ -37,6 +37,14 @@
                         hammerIcon: 'SwipeRight',
                         size: '80rpx',
                         bgColor: 'bg-yellow'
+                    },
+                    {
+                        title: '自定义表单',
+                        name: 'basic-custom-forms',
+                        hammerIcon: 'app',
+                        size: '80rpx',
+                        bgColor : 'bg-olive'
+
                     }
                 ],
             };

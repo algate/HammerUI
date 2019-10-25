@@ -206,15 +206,23 @@ image {
     background-size: cover;
     background-position: center;
     position: relative;
-    // margin-top: 20rpx;
     margin-bottom: 40rpx;
-    box-shadow: 0 0 8rpx rgba(0, 0, 0, 0.5);
     // animation: bounceInDown 1s 1;
 }
 .nav-li:first-child {
     margin-top: 20rpx;
 }
 .nav-li:before,
+.nav-li:after {
+    content: "";
+    position: absolute;
+    top: 20rpx;
+    height: 50%;
+    left: 20rpx;
+    width: 40%;
+    box-shadow: -20rpx 20rpx 30rpx rgba(0, 0, 0, 0.1);
+}
+/* .nav-li:before,
 .nav-li:after {
     content: "";
     position: absolute;
@@ -230,12 +238,12 @@ image {
     right: 20rpx;
     left: auto;
     transform: rotate(3deg);
-}
+} */
 
 .nav-title {
     font-size: 32rpx;
     font-weight: 400;
-    animation: bounceInDown 2s infinite;
+    animation: bounceInDown 2s 1;
 }
 
 .nav-title::first-letter {
@@ -323,4 +331,9 @@ radio.checked .uni-radio-input {
     border-color: $hammer-color !important;
     color: #ffffff !important;
 }
-
+/* ==================
+        动画
+ ==================== */
+.animation-start-none {
+    animation-fill-mode: both;
+}

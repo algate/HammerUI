@@ -11,7 +11,7 @@
 		{
 			"path": "pages/hammer-basic/home",
 			"style": {
-				"navigationBarTitleText": "基础组件🔨",
+				"navigationBarTitleText": "基础组件🦏",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -19,7 +19,7 @@
 		{
 			"path": "pages/hammer-basic/basic-icon",
 			"style": {
-				"navigationBarTitleText": "图标-🐭",
+				"navigationBarTitleText": "图标-🐓",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -27,7 +27,7 @@
 		{
 			"path": "pages/hammer-basic/basic-swiper",
 			"style": {
-				"navigationBarTitleText": "轮播-🐉",
+				"navigationBarTitleText": "轮播-🦖",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -35,7 +35,15 @@
 		{
 			"path": "pages/hammer-basic/basic-tabs-swiper",
 			"style": {
-				"navigationBarTitleText": "选项卡+Swiper-🐰",
+				"navigationBarTitleText": "选项卡+Swiper-🐇",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-basic/basic-custom-forms",
+			"style": {
+				"navigationBarTitleText": "自定义表单-🐐",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
