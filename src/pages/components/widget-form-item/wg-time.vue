@@ -1,6 +1,6 @@
 <template>
-    <view class="cu-form-group" v-if="element.type == 'time'">
-        <view class="title">{{element.name}}</view>
+    <view class="hammer-box bg-white h-margin-top" v-if="element.type == 'time'">
+        <view class="sub-title">{{element.name}}</view>
         <picker mode="time" :value="time" @change="TimeChange">
             <view class="picker">
                 {{time?time:element.options.placeholder}}

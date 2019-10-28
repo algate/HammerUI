@@ -1,9 +1,9 @@
 <template>
     <view v-if="element.type == 'scanCode'">
-        <view class="cu-bar bg-white solid-bottom">
-            <view class="action">{{element.name}}</view>
-            <view class="action">
-                <text class="cuIcon-scan" @tap="scanCode"></text>
+        <view class="hammer-box bg-white h-margin-top">
+            <view class="sub-title">{{element.name}}</view>
+            <view>
+                <hammer-icon from="tui" name="sweep" :size="28"  @tap="scanCode"></hammer-icon>
             </view>
         </view>
     </view>
@@ -19,14 +19,16 @@ export default {
     methods: {
         scanCode() {
             console.log('要扫码了');
+            // #ifdef MP-WEIXIN
             uni.scanCode({
                 success: function (res) {
                     console.log('条码类型：' + res.scanType);
                     console.log('条码内容：' + res.result);
                 }
             });
+            // #endif
             // JS-SDK 调用 npm install jweixin-module --save
-            /*this.$snbc.$wx.ready(res => {
+            /*this.$hammer.$wx.ready(res => {
                 console.log(this, res);
             })*/
         }

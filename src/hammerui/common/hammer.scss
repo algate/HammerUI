@@ -39,18 +39,31 @@ image {
 }
 
 .hammer-box .title {
+    font-weight: 600;
     display: flex;
-    align-items: center;
     min-height: 80rpx;
-    justify-content: center;
-    max-width: 100%;
+    align-items: center;/*垂直居中*/
+    justify-content: center;/*水平居中*/
+    text-align: justify;
 }
 .hammer-box .sub-title {
+    font-weight: 600;
     display: flex;
-    align-items: center;
     min-height: 60rpx;
-    justify-content: center;
-    max-width: 100%;
+    align-items: center;/*垂直居中*/
+    justify-content: center;/*水平居中*/
+    text-align: justify;
+    line-height: 100%;
+    margin-right: 20rpx;
+}
+.hammer-box input,
+.hammer-box textarea {
+    flex: 1;
+    line-height: 60rpx;
+}
+
+.align-start {
+    align-items: flex-start;
 }
 
 /* ==================
@@ -153,7 +166,7 @@ image {
 
 .bg-green.light {
     color: #39b54a;
-    background-color: #d7f0dbff;
+    background-color: #d7f0db;
 }
 
 .bg-cyan.light {
@@ -332,8 +345,234 @@ radio.checked .uni-radio-input {
     color: #ffffff !important;
 }
 /* ==================
-        动画
+        布局
  ==================== */
-.animation-start-none {
-    animation-fill-mode: both;
+/* flex start*/
+.hammer-flex {
+    display: flex;
+}
+.h-flex-1 {
+    flex: 1;
+}
+.h-flex-2 {
+    flex: 2;
+}
+.h-flex-3 {
+    flex: 3;
+}
+.flex-item {
+    text-align: center;
+    padding: 20rpx;
+    margin-bottom: 20rpx;
+}
+.flex-item-mini {
+    text-align: center;
+    padding: 10rpx;
+    margin-bottom: 20rpx;
+}
+/* flex end*/
+.h-col-12 {
+    width: 100%;
+}
+
+.h-col-11 {
+    width: 91.66666667%;
+}
+
+.h-col-10 {
+    width: 83.33333333%;
+}
+
+.h-col-9 {
+    width: 75%;
+}
+
+.h-col-8 {
+    width: 66.66666667%;
+}
+
+.h-col-7 {
+    width: 58.33333333%;
+}
+
+.h-col-6 {
+    width: 50%;
+}
+
+.h-col-5 {
+    width: 41.66666667%;
+}
+
+.h-col-4 {
+    width: 33.33333333%;
+}
+
+.h-col-3 {
+    width: 25%;
+}
+
+.h-col-2 {
+    width: 16.66666667%;
+}
+
+.h-col-1 {
+    width: 8.33333333%;
+}
+
+.flex-one {
+    flex: 1;
+}
+
+.flex-two {
+    flex: 2;
+}
+
+.flex-three {
+    flex: 3;
+}
+
+.flex-direction {
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-stretch {
+    align-items: stretch;
+}
+
+.self-start {
+    align-self: flex-start;
+}
+
+.self-center {
+    align-self: flex-center;
+}
+
+.self-end {
+    align-self: flex-end;
+}
+
+.self-stretch {
+    align-self: stretch;
+}
+
+.align-stretch {
+    align-items: stretch;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+.align-start {
+    align-items: flex-start;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-stretch {
+    align-items: stretch;
+}
+.bg-img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+/* grid布局 */
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20rpx;
+}
+/* flex-flow 属性是 flex-direction 和 flex-wrap 的简写。 */
+/*
+    flex-direction: row | row-reverse | column | column-reverse;
+    flex-wrap: nowrap | wrap | wrap-reverse;
+*/
+/* flex-grow 决定拉伸 flex-shrink 决定收缩
+    flex-grow: 1;
+    flex-shrink: 1;
+ */
+.flex-grow>view{
+    flex-grow: 1;
+}
+.grid-item>view {
+    margin-right: 20rpx;
+    margin-bottom: 20rpx;
+    border-radius: 6rpx;
+    position: relative;
+}
+.grid-col-1>view {
+    width: 100%;
+}
+.grid-col-2>view {
+    padding-bottom: calc((100% - 20rpx)/2);
+    height: 0;
+    width: calc((100% - 20rpx)/2);
+    flex-flow: row nowrap;
+}
+
+.grid-col-3>view {
+    padding-bottom: calc((100% - 40rpx)/3);
+    height: 0;
+    width: calc((100% - 40rpx)/3);
+    flex-flow: row nowrap;
+}
+
+.grid-col-4>view {
+    padding-bottom: calc((100% - 60rpx)/4);
+    height: 0;
+    width: calc((100% - 60rpx)/4);
+    flex-flow: row nowrap;
+}
+.grid-col-5>view {
+    padding-bottom: calc((100% - 80rpx)/5);
+    height: 0;
+    width: calc((100% - 80rpx)/5);
+    flex-flow: row nowrap;
+}
+.grid-col-2>view:nth-child(2n),
+.grid-col-3>view:nth-child(3n),
+.grid-col-4>view:nth-child(4n),
+.grid-col-5>view:nth-child(5n) {
+    margin-right: 0;
 }

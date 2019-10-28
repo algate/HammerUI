@@ -1,7 +1,9 @@
 <template>
-    <view class="cu-form-group align-start" v-if="element.type == 'textarea'">
-        <view class="title">{{element.name}}</view>
-        <textarea v-model="textareaValue" :style="{width: element.options.width}" @input="textareaInput" :placeholder="element.options.placeholder" :disabled="element.options.disabled"></textarea>
+    <view v-if="element.type == 'textarea'">
+        <view class="hammer-box bg-white h-margin-top align-start">
+            <view class="sub-title">{{element.name}}</view>
+            <textarea v-model="textareaValue" :style="{width: element.options.width}" @input="textareaInput" :placeholder="element.options.placeholder" :disabled="element.options.disabled"></textarea>
+        </view>
     </view>
 </template>
 <script>

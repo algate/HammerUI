@@ -1,15 +1,6 @@
 /* ==================
          轮播
  ==================== */
-/* swiper .a-swiper-dot {
-    display: inline-block;
-    width: 16rpx;
-    height: 16rpx;
-    background: rgba(0, 0, 0, .3);
-    border-radius: 50%;
-    vertical-align: middle;
-} */
-
 swiper[class*="-dot"] .wx-swiper-dots,
 swiper[class*="-dot"] .a-swiper-dots,
 swiper[class*="-dot"] .uni-swiper-dots {
@@ -68,6 +59,7 @@ swiper.round-dot .uni-swiper-dot.uni-swiper-dot-active {
     width: 18rpx;
     height: 18rpx;
 }
+
 .screen-swiper {
     min-height: 375rpx;
 }
@@ -89,10 +81,12 @@ swiper.round-dot .uni-swiper-dot.uni-swiper-dot-active {
     height: 80rpx;
     flex: 1;
 }
+
 .hammer-swiper-item {
     display: flex;
     align-items: center;
 }
+
 .hammer-news-item {
     line-height: 28rpx;
     white-space: nowrap;
@@ -157,3 +151,7 @@ swiper.round-dot .uni-swiper-dot.uni-swiper-dot-active {
     border-radius: 6rpx;
     overflow: hidden;
 }
+/* ==================
+         flex
+ ==================== */
+

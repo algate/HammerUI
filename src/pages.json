@@ -17,6 +17,14 @@
 			}
 		},
 		{
+			"path": "pages/hammer-basic/basic-layout",
+			"style": {
+				"navigationBarTitleText": "布局-🐌",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
 			"path": "pages/hammer-basic/basic-icon",
 			"style": {
 				"navigationBarTitleText": "图标-🐓",
@@ -44,6 +52,14 @@
 			"path": "pages/hammer-basic/basic-custom-forms",
 			"style": {
 				"navigationBarTitleText": "自定义表单-🐐",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-basic/basic-tags",
+			"style": {
+				"navigationBarTitleText": "标签-😇",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}

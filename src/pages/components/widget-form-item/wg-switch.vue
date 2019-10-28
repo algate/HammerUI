@@ -1,7 +1,9 @@
 <template>
-    <view class="cu-form-group" v-if="element.type == 'switch'">
-        <view class="title">{{element.name}}</view>
-        <switch @change="switchChange" :class="switchValue?'checked':''" :checked="switchValue?true:false"></switch>
+    <view v-if="element.type == 'switch'">
+        <view class="hammer-box bg-white h-margin-top">
+            <view class="title">{{element.name}}</view>
+            <switch @change="switchChange" :class="switchValue?'checked':''" :checked="switchValue?true:false"></switch>
+        </view>
     </view>
 </template>
 <script>

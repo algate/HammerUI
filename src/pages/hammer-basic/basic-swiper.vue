@@ -33,7 +33,7 @@
         <view class="hammer-box bg-white h-margin-top">
             <view class="sub-title">全屏限高轮播</view>
         </view>
-        <swiper class="screen-swiper" :class="dotStyle?'square-dot':'round-dot'" :indicator-dots="true" :circular="true" :autoplay="true" interval="5000" duration="500" indicator-color="#888" indicator-active-color="#fff">
+        <swiper class="screen-swiper" :class="dotStyle?'square-dot':'round-dot'" :indicator-dots="true" :circular="true" :autoplay="true" interval="5000" duration="500" indicator-color="#888" indicator-active-color="#00ab98">
             <swiper-item v-for="(item,index) in swiperList" :key="index">
                 <image :src="item.url" mode="aspectFill" v-if="item.type=='image'"></image>
                 <video :src="item.url" autoplay loop muted :show-play-btn="false" :controls="false" objectFit="cover" v-if="item.type=='video'"></video>
@@ -90,6 +90,10 @@ export default {
                 id: 4,
                 type: 'image',
                 url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg'
+            }, {
+                id: 5,
+                type: 'image',
+                url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg'
             }],
             dotStyle: true,
             towerStart: 0,
@@ -186,7 +190,7 @@ export default {
     }
     .tower-swiper .tower-item {
         transform: scale(calc(0.5 + var(--index) / 10));
-        margin-left: calc(var(--left) * 100upx - 150upx);
+        margin-left: calc(var(--left) * 100rpx - 150rpx);
         z-index: var(--index);
     }
 </style>

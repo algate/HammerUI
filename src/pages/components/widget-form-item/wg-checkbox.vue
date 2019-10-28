@@ -3,9 +3,9 @@
         <view class="hammer-box bg-white h-margin-top">
             <view class="sub-title">{{element.name}}</view>
         </view>
-        <checkbox-group class="block" @change="CheckboxChange">
-            <label class="cu-form-group" v-for="(item, index) in element.options.options" :key="item.value + index">
-                <view class="title">{{item.value}}</view>
+        <checkbox-group @change="CheckboxChange">
+            <label class="hammer-box bg-white" v-for="(item, index) in element.options.options" :key="item.value + index">
+                <view class="sub-title">{{item.value}}</view>
                 <checkbox class="checkbox" :class="item.checked?'checked':''" :checked="item.checked?true:false" :value="item.value"></checkbox>
             </label>
         </checkbox-group>

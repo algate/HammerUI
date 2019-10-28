@@ -11,9 +11,8 @@
             "required": false,
             "dataType": "string",
             "pattern": "",
-            "placeholder": "请输入对应提示信息",
-            "disabled": false,
-            "remoteFunc": "func_1571127387000_29922"
+            "placeholder": "请输入当行文本",
+            "disabled": false
         },
         "key": "1571127387000_29922",
         "model": "input_1571127387000_29922",
@@ -144,7 +143,7 @@
         {
             "defaultValue": [],
             "width": "",
-            "placeholder": "",
+            "placeholder": "多级选择器",
             "disabled": false,
             "clearable": false,
             "remote": true,
@@ -301,7 +300,7 @@
             "multiple": false,
             "disabled": false,
             "clearable": false,
-            "placeholder": "请选择",
+            "placeholder": "下拉请选择",
             "required": false,
             "showLabel": false,
             "width": "",
@@ -475,7 +474,7 @@
             "disabled": false,
             "editable": true,
             "clearable": true,
-            "placeholder": "",
+            "placeholder": "选择时间",
             "startPlaceholder": "",
             "endPlaceholder": "",
             "isRange": false,
@@ -508,7 +507,7 @@
         "name": "手机号码",
         "options": {
             "placeholder": "请输入手机号码",
-            "verificationCode": false
+            "verificationCode": true
         }
     },
     {

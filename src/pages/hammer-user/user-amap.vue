@@ -37,13 +37,13 @@
                         <view class="addr-opera ">
                             <view class="opera-box " hover-class="opcity " :hover-stay-time="150 " @tap="call " :data-id="item.id" v-if="item.tel">
                                 <!-- <image src="../../static/images/my/call.png " class="mini-img"></image> -->
-                                <hammer-icon :from="iconfont" :name="voipphone" :size="14" ></hammer-icon>
+                                <hammer-icon :from="'iconfont'" :name="'voipphone'" :size="14" ></hammer-icon>
                                 <view class=""></view>
                                 <view class="text">打电话</view>
                             </view>
                             <view class="opera-box " hover-class="opcity" :hover-stay-time="150" @tap="go" :data-id="item.id">
                                 <!-- <image src="../../static/images/my/go.png" class="mini-img"></image> -->
-                                <hammer-icon :from="tui" :name="position-fill" :size="14" ></hammer-icon>
+                                <hammer-icon :from="'tui'" :name="'position-fill'" :size="14" ></hammer-icon>
                                 <view class="text">到这里</view>
                             </view>
                         </view>

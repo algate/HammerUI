@@ -1,6 +1,6 @@
 <template>
     <view v-if="element.type == 'input'">
-        <view class="hammer-box bg-white h-margin-top">
+        <view class="hammer-box bg-white">
             <view class="sub-title">{{element.name}}</view>
             <input v-model="value" :style="{width: element.options.width}" :placeholder="element.options.placeholder" :disabled="element.options.disabled"></input>
         </view>

@@ -1,6 +1,6 @@
 <template>
-    <view class="cu-form-group" v-if="element.type == 'select'">
-        <view class="title">{{element.name}}</view>
+    <view class="hammer-box bg-white h-margin-top" v-if="element.type == 'select'">
+        <view class="sub-title">{{element.name}}</view>
         <picker @change="PickerChange" :value="defaultValue" :range="options">
             <view class="picker">
                 {{defaultValue?options[defaultValue]:element.options.placeholder}}

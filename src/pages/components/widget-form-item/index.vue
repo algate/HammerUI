@@ -89,7 +89,7 @@ export default {
         WgScanCode
     },
     methods: {
-        generateData() {
+        /*generateData() {
             let data = {};
             for (let key in this.$refs) {
                 this.$refs[key].forEach(comp =>  {
@@ -101,7 +101,7 @@ export default {
                 });
             }
             return data;
-        }
+        }*/
     }
 };
 </script>

@@ -1,7 +1,9 @@
 <template>
-    <view class="cu-form-group" v-if="element.type == 'number'">
-        <view class="title">{{element.name}}</view>
-        <input class="uni-input uni-input-number" v-model="value" :type="element.type" :style="{width: element.options.width}" :placeholder="element.options.placeholder" :disabled="element.options.disabled"></input>
+    <view v-if="element.type == 'number'">
+        <view class="hammer-box bg-white">
+            <view class="sub-title">{{element.name}}</view>
+            <input v-model="value" :type="element.type" :style="{width: element.options.width}" :placeholder="element.options.placeholder" :disabled="element.options.disabled"></input>
+        </view>
     </view>
 </template>
 

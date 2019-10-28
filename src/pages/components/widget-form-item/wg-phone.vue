@@ -1,21 +1,13 @@
 <template>
     <view v-if="element.type == 'phone'">
-        <view class="cu-form-group">
-            <view class="title">{{element.name}}</view>
+        <view class="hammer-box bg-white h-margin-top">
+            <view class="sub-title">{{element.name}}</view>
             <input :placeholder="element.options.placeholder" v-model="phoneNumber" name="input"></input>
-            <view class="cu-capsule radius">
-                <view class="cu-tag bg-blue">
-                    +86
-                </view>
-                <view class="cu-tag line-blue">
-                    中国大陆
-                </view>
-            </view>
         </view>
-        <view class="cu-form-group" v-if="element.options.verificationCode">
-            <view class="title">验证码</view>
+        <view class="hammer-box bg-white" v-if="element.options.verificationCode">
+            <view class="sub-title">验证码</view>
             <input placeholder="输入框带个按钮" v-model="verificationCode" name="input"></input>
-            <button class="cu-btn bg-green shadow" @tap="sendVerificationCode" :disabled="canRun">{{canRun?`${countDown}S倒计时`:"验证码"}}</button>
+            <button size="mini" class="bg-green" @tap="sendVerificationCode" :disabled="canRun">{{canRun?`${countDown}S倒计时`:"验证码"}}</button>
         </view>
     </view>
 </template>

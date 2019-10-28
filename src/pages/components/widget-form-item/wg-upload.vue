@@ -1,17 +1,17 @@
 <template>
     <view v-if="element.type == 'imgupload'">
-        <view class="cu-bar bg-white margin-top">
-            <view class="action">
+        <view class="hammer-box bg-white h-margin-top">
+            <view class="sub-title">
                 图片上传
             </view>
-            <view class="action">
+            <view class="sub-title">
                 {{imgList.length}}/4
             </view>
         </view>
-        <view class="cu-form-group">
-            <view class="grid col-4 grid-square flex-sub">
+        <view class="hammer-box bg-white">
+            <view class="tui-grid tui-grid-4">
                 <view class="bg-img" v-for="(item,index) in imgList" :key="index" @tap="ViewImage" :data-url="imgList[index]">
-                 <image :src="imgList[index]" mode="aspectFill"></image>
+                    <image :src="imgList[index]" mode="aspectFill"></image>
                     <view class="cu-tag bg-red" @tap.stop="DelImg" :data-index="index">
                         <text class='cuIcon-close'></text>
                     </view>
@@ -30,7 +30,7 @@ export default {
             type: Object
         }
     },
-    data () {
+    data() {
         return {
             imgList: []
         }
