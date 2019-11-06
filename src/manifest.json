@@ -77,7 +77,7 @@
         "domain" : "https://algate.github.io/",
         "router":{
             "mode": "hash",
-            "base": "/hammer/"
+            "base": "/HammerUI/"
         },
         "devServer":{
             "port": 9698
