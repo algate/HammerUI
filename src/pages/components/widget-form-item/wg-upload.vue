@@ -8,16 +8,16 @@
                 {{imgList.length}}/4
             </view>
         </view>
-        <view class="hammer-box bg-white">
-            <view class="tui-grid tui-grid-4">
-                <view class="bg-img" v-for="(item,index) in imgList" :key="index" @tap="ViewImage" :data-url="imgList[index]">
+        <view class="bg-white">
+            <view class="grid grid-col-4">
+                <view class="bg-img-eq grid-item" v-for="(item,index) in imgList" :key="index" @tap="ViewImage" :data-url="imgList[index]">
                     <image :src="imgList[index]" mode="aspectFill"></image>
-                    <view class="cu-tag bg-red" @tap.stop="DelImg" :data-index="index">
-                        <text class='cuIcon-close'></text>
+                    <view class="hammer-close" @tap.stop="DelImg" :data-index="index">
+                        <hammer-icon from="iconfont" name="close" :size="30"></hammer-icon>
                     </view>
                 </view>
-                <view class="solids" @tap="ChooseImage" v-if="imgList.length<4">
-                    <text class='cuIcon-cameraadd'></text>
+                <view class="bg-img-eq line-color location-icon" @tap="ChooseImage" v-if="imgList.length<4">
+                    <hammer-icon name="camera-add" :size="40"></hammer-icon>
                 </view>
             </view>
         </view>
@@ -44,9 +44,9 @@ export default {
         },
         DelImg(e) {
             uni.showModal({
-                title: '召唤师',
-                content: '确定要删除这段回忆吗？',
-                cancelText: '再看看',
+                title: '王者荣耀',
+                content: '确定要删除战绩么？',
+                cancelText: '考录一下',
                 confirmText: '再见',
                 success: res => {
                     if (res.confirm) {

@@ -1,9 +1,13 @@
 <template>
     <view>
+        <view class="hammer-header bg-white">
+            <view class="title">Icon</view>
+            <view class="sub-title">字体图标：应用于字体图标、减少图片的使用，方便颜色和大小控制，还不失真</view>
+        </view>
         <view class="hammer-box bg-black">
             <view class="hammer-search">
                 <view class="tui-icon tui-icon-search" style="size:20rpx;"></view>
-                <input type="text" placeholder="搜索hammerIcon" confirm-type="search" @input="searchIcon"></input>
+                <input type="text" placeholder="请输入字体名称" confirm-type="search" @input="searchIcon"></input>
             </view>
         </view>
         <view>

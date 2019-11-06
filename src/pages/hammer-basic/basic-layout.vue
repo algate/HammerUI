@@ -1,6 +1,10 @@
 <template>
     <view class="bg-black">
-        <view class="hammer-box bg-white">
+        <view class="hammer-header bg-white">
+            <view class="title">Layout</view>
+            <view class="sub-title">布局：可设置百分比、Flex、Grid布局等</view>
+        </view>
+        <view class="hammer-box bg-white h-margin-top">
             <view class="title">Flex</view>
         </view>
         <view class="hammer-box h-margin-top bg-brown light">
@@ -106,26 +110,32 @@
         <view class="hammer-box bg-brown light">
             <view class="sub-title">5等分 - 未拉伸</view>
         </view>
-        <view class="grid grid-item grid-col-5 bg-white">
-            <view class="bg-img" v-for="(item,index) in avatar" :key="index" :style="[{ backgroundImage:'url(' + avatar[index] + ')' }]"></view>
+        <view class="grid grid-col-5 bg-white">
+            <view class="bg-img grid-item" v-for="(item,index) in avatar" :key="index" :style="[{ backgroundImage:'url(' + avatar[index] + ')' }]"></view>
         </view>
         <view class="hammer-box bg-brown light">
             <view class="sub-title">5等分 - 拉伸</view>
         </view>
-        <view class="grid grid-item grid-col-5 bg-white flex-grow">
-            <view class="bg-img" v-for="(item,index) in avatar" :key="index" :style="[{ backgroundImage:'url(' + avatar[index] + ')' }]"></view>
+        <view class="grid grid-col-5 bg-white">
+            <view class="bg-img grid-item grid-margin-right-none flex-grow" v-for="(item,index) in avatar" v-if="index < 4" :key="index" :style="[{ backgroundImage:'url(' + avatar[index] + ')' }]"></view>
+        </view>
+        <view class="hammer-box bg-brown light">
+            <view class="sub-title">5等分 - 等宽等高</view>
+        </view>
+        <view class="grid grid-col-5 bg-white">
+            <view class="bg-img-eq grid-item" v-for="(item,index) in avatar" :key="index" :style="[{ backgroundImage:'url(' + avatar[index] + ')' }]"></view>
         </view>
         <view class="hammer-box bg-brown light">
             <view class="sub-title">4等分</view>
         </view>
-        <view class="grid grid-item grid-col-4">
-            <view class="bg-img" v-for="(item,index) in avatar" :key="index" :style="[{ backgroundImage:'url(' + avatar[index] + ')' }]"></view>
+        <view class="grid grid-col-4">
+            <view class="bg-img grid-item" v-for="(item,index) in avatar" :key="index" :style="[{ backgroundImage:'url(' + avatar[index] + ')' }]"></view>
         </view>
-        <view class="grid grid-item grid-col-3">
-            <view class="bg-img" v-for="(item,index) in avatar" :key="index" :style="[{ backgroundImage:'url(' + avatar[index] + ')' }]"></view>
+        <view class="grid grid-col-3">
+            <view class="bg-img grid-item" v-for="(item,index) in avatar" :key="index" :style="[{ backgroundImage:'url(' + avatar[index] + ')' }]"></view>
         </view>
-        <view class="grid grid-item grid-col-2">
-            <view class="bg-img" v-for="(item,index) in avatar" :key="index" :style="[{ backgroundImage:'url(' + avatar[index] + ')' }]"></view>
+        <view class="grid grid-col-2">
+            <view class="bg-img grid-item" v-for="(item,index) in avatar" :key="index" :style="[{ backgroundImage:'url(' + avatar[index] + ')' }]"></view>
         </view>
     </view>
 </template>
@@ -134,7 +144,13 @@
     export default {
         data() {
             return {
-                avatar:['https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg','https://ossweb-img.qq.com/images/lol/web201310/skin/big81005.jpg','https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg','https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg']
+                avatar:[
+                    'http://shp.qpic.cn/ishow/2735092409/1569290387_84828260_13119_sProdImgNo_2.jpg/0',
+                    'http://shp.qpic.cn/ishow/2735062811/1561692452_-695593207_23925_sProdImgNo_2.jpg/0',
+                    'http://shp.qpic.cn/ishow/2735070910/1562640168_1186005513_17698_sProdImgNo_2.jpg/0',
+                    'http://shp.qpic.cn/ishow/2735061310/1560394439_-695593207_21939_sProdImgNo_3.jpg/0',
+                    'http://shp.qpic.cn/ishow/2735011517/1547545098_-888937974_18837_sProdImgNo_3.jpg/0'
+                ]
             }
         },
         methods: {

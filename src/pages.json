@@ -41,9 +41,9 @@
 			}
 		},
 		{
-			"path": "pages/hammer-basic/basic-tabs-swiper",
+			"path": "pages/hammer-basic/basic-lists",
 			"style": {
-				"navigationBarTitleText": "选项卡+Swiper-🐇",
+				"navigationBarTitleText": "各种列表-🐘",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -65,9 +65,106 @@
 			}
 		},
 		{
+			"path": "pages/hammer-basic/basic-division",
+			"style": {
+				"navigationBarTitleText": "分隔线-✍",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/home",
+			"style": {
+				"navigationBarTitleText": "功能组件-📖",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/function-toast",
+			"style": {
+				"navigationBarTitleText": "信息提示-🚓",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/function-dateTime",
+			"style": {
+				"navigationBarTitleText": "日期时间-🗓",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/function-linkage",
+			"style": {
+				"navigationBarTitleText": "N级联动-🚲",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/function-popup",
+			"style": {
+				"navigationBarTitleText": "下拉选择底部弹层-🚀",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/function-tabs",
+			"style": {
+				"navigationBarTitleText": "导航+索引-💡",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/function-tabs-indexes-ceiling",
+			"style": {
+				"navigationBarTitleText": "索引选中+吸顶-🍐",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/function-tabs-lists",
+			"style": {
+				"navigationBarTitleText": "垂直选项卡-🍎",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/function-tabs-indexes",
+			"style": {
+				"navigationBarTitleText": "垂直选项卡+索引选中-🍌",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-basic/basic-tabs-swiper",
+			"style": {
+				"navigationBarTitleText": "选项卡+Swiper-🐇",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
 			"path": "pages/hammer-user/mine",
 			"style": {
-				"navigationBarTitleText": "用户🔨",
+				"navigationBarTitleText": "用户-🔨",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-user/user-amap",
+			"style": {
+				"navigationBarTitleText": "地图-🌏",
+				"disableScroll": true,
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -83,13 +180,16 @@
 			"pagePath": "pages/hammer-basic/home",
 			"iconPath": "static/images/tabBar/icon-index-default.png",
 			"selectedIconPath": "static/images/tabBar/icon-index.png",
-			"text": "Basic"
+			"text": "基础"
+		},{
+			"pagePath": "pages/hammer-function/home",
+			"iconPath": "static/images/tabBar/icon-train-default.png",
+			"selectedIconPath": "static/images/tabBar/icon-train.png",
+			"text": "功能"
 		},{
 			"pagePath": "pages/hammer-user/mine",
-			// "iconPath": "static/images/tabBar/hammer-mine-default.png",
 			"iconPath": "static/images/tabBar/hammer-default.svg",
-			"selectedIconPath": "static/images/tabBar/hammer.svg",
-			"text": "🔨Hammer🔨"
+			"selectedIconPath": "static/images/tabBar/hammer.svg"
 		}]
 	},
 	"globalStyle": {

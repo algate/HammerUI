@@ -39,13 +39,13 @@
 </script>
 
 <style lang="scss">
-    .mapPage {
+.mapPage {
+    width: 100%;
+    height: 400rpx;
+
+    #allBMap {
         width: 100%;
         height: 400rpx;
-
-        #allBMap {
-            width: 100%;
-            height: 400rpx;
-        }
     }
+}
 </style>

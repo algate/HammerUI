@@ -366,31 +366,6 @@
         "rules": []
     },
     {
-        "type": "date",
-        "name": "日期选择器",
-        "icon": "icon-date",
-        "options":
-        {
-            "defaultValue": "",
-            "readonly": false,
-            "disabled": false,
-            "editable": true,
-            "clearable": true,
-            "placeholder": "选择日期",
-            "startPlaceholder": "",
-            "endPlaceholder": "",
-            "type": "date",
-            "format": "yyyy-MM-dd",
-            "timestamp": false,
-            "required": false,
-            "width": "",
-            "remoteFunc": "func_1571127403000_58853"
-        },
-        "key": "1571127403000_58853",
-        "model": "date_1571127403000_58853",
-        "rules": []
-    },
-    {
         "type": "radio",
         "name": "单选框组",
         "icon": "icon-radio-active",
@@ -464,6 +439,31 @@
         "rules": []
     },
     {
+        "type": "date",
+        "name": "日期选择器",
+        "icon": "icon-date",
+        "options":
+        {
+            "defaultValue": "",
+            "readonly": false,
+            "disabled": false,
+            "editable": true,
+            "clearable": true,
+            "placeholder": "选择日期",
+            "startPlaceholder": "",
+            "endPlaceholder": "",
+            "type": "date",
+            "format": "yyyy-MM-dd",
+            "timestamp": false,
+            "required": false,
+            "width": "",
+            "remoteFunc": "func_1571127403000_58853"
+        },
+        "key": "1571127403000_58853",
+        "model": "date_1571127403000_58853",
+        "rules": []
+    },
+    {
         "type": "time",
         "name": "时间选择器",
         "icon": "icon-time",
@@ -493,12 +493,11 @@
         "name": "图片展示",
         "options": {
             "options": [
-                "https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
-                "https://ossweb-img.qq.com/images/lol/web201310/skin/big81005.jpg",
-                "https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg",
-                "https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg",
-                "https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg",
-                "https://ossweb-img.qq.com/images/lol/web201310/skin/big81005.jpg"
+                    "http://shp.qpic.cn/ishow/2735092409/1569290387_84828260_13119_sProdImgNo_2.jpg/0",
+                    "http://shp.qpic.cn/ishow/2735062811/1561692452_-695593207_23925_sProdImgNo_2.jpg/0",
+                    "http://shp.qpic.cn/ishow/2735070910/1562640168_1186005513_17698_sProdImgNo_2.jpg/0",
+                    "http://shp.qpic.cn/ishow/2735061310/1560394439_-695593207_21939_sProdImgNo_3.jpg/0",
+                    "http://shp.qpic.cn/ishow/2735011517/1547545098_-888937974_18837_sProdImgNo_3.jpg/0"
             ]
         }
     },

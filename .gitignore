@@ -24,3 +24,6 @@ yarn-error.log*
 
 # lock
 *.lock
+
+#video
+src/static/video/

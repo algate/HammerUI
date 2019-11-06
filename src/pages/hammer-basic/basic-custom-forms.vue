@@ -1,10 +1,21 @@
 <template>
     <view class="bg-black">
-        <form @submit="formSubmit" @reset="formReset">
-            <view>
-                <widget-form :formCustom="customFormsData.list"></widget-form>
+        <view class="hammer-header bg-white">
+            <view class="title">Form of custom</view>
+            <view class="sub-title">
+                自定义表单：通过JSON数据来生成表单 <br/>
+                文字、描述、数字输入，腾讯、百度、高德地图<br/>
+                图片上传，图片展示、radio、checkbox<br/>
+                下拉选择、时间、日期等选择
             </view>
-        </form>
+        </view>
+        <view class="h-margin-top">
+            <form @submit="formSubmit" @reset="formReset">
+                <view>
+                    <widget-form :formCustom="customFormsData.list"></widget-form>
+                </view>
+            </form>
+        </view>
     </view>
 </template>
 <script>

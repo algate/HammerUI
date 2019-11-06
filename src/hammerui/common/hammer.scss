@@ -18,6 +18,24 @@ navigator,
 image {
     box-sizing: border-box;
 }
+
+.hammer-header {
+    padding: 80rpx 90rpx 40rpx 90rpx;
+    box-sizing: border-box;
+    .title {
+        font-size: 34rpx;
+        color: #333;
+        font-weight: 500;
+    }
+
+    .sub-title {
+        font-size: 24rpx;
+        color: #7a7a7a;
+        padding-top: 18rpx;
+        line-height: 40rpx;
+    }
+}
+
 /* ==================
      common - 边距
  ==================== */
@@ -26,6 +44,51 @@ image {
 }
 .h-margin-top {
     margin-top: $hammer-margin-top
+}
+/* ==================
+        元素
+ ==================== */
+// icon居中显示
+.location-icon > view {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 6px solid;
+    border-radius: 12px;
+}
+// 关闭按钮
+.hammer-close {
+    border-radius: 200rpx;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20rpx;
+    height: 28rpx;
+    line-height: 28rpx;
+    color: #ffffff;
+}
+// 图片效果展示
+.bg-img-eq,
+.bg-img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+// 图片元素占满元素
+.bg-img-eq image,
+.bg-img image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
 }
 /* ==================
    容器 - 边距 - 间隔
@@ -39,27 +102,34 @@ image {
 }
 
 .hammer-box .title {
-    font-weight: 600;
+    display: flex;
+    min-height: 100rpx;
+    align-items: center;/*垂直居中*/
+    justify-content: center;/*水平居中*/
+    text-align: justify;
+    font-size: 20px;
+}
+.hammer-box .sub-title {
     display: flex;
     min-height: 80rpx;
     align-items: center;/*垂直居中*/
     justify-content: center;/*水平居中*/
     text-align: justify;
-}
-.hammer-box .sub-title {
-    font-weight: 600;
-    display: flex;
-    min-height: 60rpx;
-    align-items: center;/*垂直居中*/
-    justify-content: center;/*水平居中*/
-    text-align: justify;
     line-height: 100%;
     margin-right: 20rpx;
+    font-size: 18px;
 }
 .hammer-box input,
 .hammer-box textarea {
     flex: 1;
-    line-height: 60rpx;
+}
+.hammer-box textarea {
+    padding: 20rpx;
+    line-height: 40rpx;
+}
+.line-color:after,
+.lines-color:after{
+    border-color: $hammer-color;
 }
 
 .align-start {
@@ -69,6 +139,10 @@ image {
 /* ==================
          背景色
  ==================== */
+.bg-color {
+    background-color: $hammer-color;
+    color: #fff;
+}
 .bg-black {
     background-color: #eee;
     color: #fff;
@@ -235,23 +309,6 @@ image {
     width: 40%;
     box-shadow: -20rpx 20rpx 30rpx rgba(0, 0, 0, 0.1);
 }
-/* .nav-li:before,
-.nav-li:after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 20rpx;
-    bottom: 30rpx;
-    left: 20rpx;
-    width: 60%;
-    box-shadow: 0 30rpx 30rpx rgba(0, 0, 0, 0.5);
-    transform: rotate(-3deg);
-}
-.nav-li:after {
-    right: 20rpx;
-    left: auto;
-    transform: rotate(3deg);
-} */
 
 .nav-title {
     font-size: 32rpx;
@@ -344,33 +401,43 @@ radio.checked .uni-radio-input {
     border-color: $hammer-color !important;
     color: #ffffff !important;
 }
+// picker选择器 - 箭头指示
+.hammer-form picker {
+    flex: 1;
+    padding-right: 40rpx;
+    overflow: hidden;
+    position: relative;
+}
+
+.hammer-form picker .picker {
+    line-height: 100rpx;
+    font-size: 28rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-align: right;
+}
+
+.hammer-form picker::after {
+    font-family: iconfont;
+    display: block;
+    content: "\e6a3";
+    position: absolute;
+    font-size: 34rpx;
+    color: #8799a3;
+    line-height: 100rpx;
+    width: 60rpx;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    right: -20rpx;
+    margin: auto;
+}
 /* ==================
         布局
  ==================== */
-/* flex start*/
-.hammer-flex {
-    display: flex;
-}
-.h-flex-1 {
-    flex: 1;
-}
-.h-flex-2 {
-    flex: 2;
-}
-.h-flex-3 {
-    flex: 3;
-}
-.flex-item {
-    text-align: center;
-    padding: 20rpx;
-    margin-bottom: 20rpx;
-}
-.flex-item-mini {
-    text-align: center;
-    padding: 10rpx;
-    margin-bottom: 20rpx;
-}
-/* flex end*/
+ // 百分比布局
 .h-col-12 {
     width: 100%;
 }
@@ -418,17 +485,37 @@ radio.checked .uni-radio-input {
 .h-col-1 {
     width: 8.33333333%;
 }
-
-.flex-one {
+/* flex-flow 属性是 flex-direction 和 flex-wrap 的简写。 */
+/*
+    flex-direction: row | row-reverse | column | column-reverse;
+    flex-wrap: nowrap | wrap | wrap-reverse;
+*/
+/* flex-grow 决定拉伸 flex-shrink 决定收缩
+    flex-grow: 1;
+    flex-shrink: 1;
+ */
+/* flex start*/
+.hammer-flex {
+    display: flex;
+}
+.h-flex-1 {
     flex: 1;
 }
-
-.flex-two {
+.h-flex-2 {
     flex: 2;
 }
-
-.flex-three {
+.h-flex-3 {
     flex: 3;
+}
+.flex-item {
+    text-align: center;
+    padding: 20rpx;
+    margin-bottom: 20rpx;
+}
+.flex-item-mini {
+    text-align: center;
+    padding: 10rpx;
+    margin-bottom: 20rpx;
 }
 
 .flex-direction {
@@ -509,33 +596,17 @@ radio.checked .uni-radio-input {
 .align-stretch {
     align-items: stretch;
 }
-.bg-img {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-}
+/* flex end*/
 /* grid布局 */
-
 .grid {
     display: flex;
     flex-wrap: wrap;
     padding: 20rpx;
 }
-/* flex-flow 属性是 flex-direction 和 flex-wrap 的简写。 */
-/*
-    flex-direction: row | row-reverse | column | column-reverse;
-    flex-wrap: nowrap | wrap | wrap-reverse;
-*/
-/* flex-grow 决定拉伸 flex-shrink 决定收缩
-    flex-grow: 1;
-    flex-shrink: 1;
- */
-.flex-grow>view{
+.flex-grow {
     flex-grow: 1;
 }
-.grid-item>view {
+.grid-item {
     margin-right: 20rpx;
     margin-bottom: 20rpx;
     border-radius: 6rpx;
@@ -545,34 +616,267 @@ radio.checked .uni-radio-input {
     width: 100%;
 }
 .grid-col-2>view {
-    padding-bottom: calc((100% - 20rpx)/2);
-    height: 0;
+    // height: 0;
     width: calc((100% - 20rpx)/2);
     flex-flow: row nowrap;
 }
-
+.grid-col-2 .bg-img {
+    padding-bottom: calc((100% - 20rpx)/2);
+}
+.grid-col-2 .bg-img-eq {
+    padding-bottom: calc((100% - 20rpx)/2);
+}
 .grid-col-3>view {
-    padding-bottom: calc((100% - 40rpx)/3);
-    height: 0;
+    // height: 0;
     width: calc((100% - 40rpx)/3);
     flex-flow: row nowrap;
 }
-
+.grid-col-3 .bg-img {
+    padding-bottom: calc((100% - 40rpx)/2);
+}
+.grid-col-3 .bg-img-eq {
+    padding-bottom: calc((100% - 40rpx)/3);
+}
 .grid-col-4>view {
-    padding-bottom: calc((100% - 60rpx)/4);
-    height: 0;
+    // height: 0;
     width: calc((100% - 60rpx)/4);
     flex-flow: row nowrap;
 }
+.grid-col-4 .bg-img {
+    padding-bottom: calc((100% - 60rpx)/2);
+}
+.grid-col-4 .bg-img-eq {
+    padding-bottom: calc((100% - 60rpx)/4);
+}
 .grid-col-5>view {
-    padding-bottom: calc((100% - 80rpx)/5);
-    height: 0;
+    // height: 0;
     width: calc((100% - 80rpx)/5);
     flex-flow: row nowrap;
+}
+.grid-col-5 .bg-img {
+    padding-bottom: calc((100% - 80rpx)/2);
+}
+.grid-col-5 .bg-img-eq {
+    padding-bottom: calc((100% - 80rpx)/5);
 }
 .grid-col-2>view:nth-child(2n),
 .grid-col-3>view:nth-child(3n),
 .grid-col-4>view:nth-child(4n),
 .grid-col-5>view:nth-child(5n) {
     margin-right: 0;
+}
+// flex布局最后一个元素的margin-right去掉
+.grid-margin-right-none:last-child {
+    margin-right: 0;
+}
+/* ==================
+         Tags+Badge
+ ==================== */
+.hammer-tag {
+    font-size: 24rpx;
+    vertical-align: middle;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0rpx 16rpx;
+    height: 48rpx;
+    font-family: Helvetica Neue, Helvetica, sans-serif;
+    white-space: nowrap;
+}
+.hammer-tag[class*="line-"]::after {
+    content: " ";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1rpx solid currentColor;
+    transform: scale(0.5);
+    transform-origin: 0 0;
+    box-sizing: border-box;
+    border-radius: inherit;
+    z-index: 1;
+    pointer-events: none;
+}
+.hammer-badge {
+    border-radius: 200rpx;
+    position: absolute;
+    top: -10rpx;
+    right: -10rpx;
+    font-size: 20rpx;
+    padding: 0rpx 10rpx;
+    height: 28rpx;
+    line-height: 28rpx;
+}
+
+// 线条颜色+字体颜色+边框颜色
+.line-red::after,
+.lines-red::after {
+    border-color: #e54d42;
+}
+
+.line-orange::after,
+.lines-orange::after {
+    border-color: #f37b1d;
+}
+
+.line-yellow::after,
+.lines-yellow::after {
+    border-color: #fbbd08;
+}
+
+.line-olive::after,
+.lines-olive::after {
+    border-color: #8dc63f;
+}
+
+.line-green::after,
+.lines-green::after {
+    border-color: #39b54a;
+}
+
+.line-cyan::after,
+.lines-cyan::after {
+    border-color: #1cbbb4;
+}
+
+.line-blue::after,
+.lines-blue::after {
+    border-color: #0081ff;
+}
+
+.line-purple::after,
+.lines-purple::after {
+    border-color: #6739b6;
+}
+
+.line-mauve::after,
+.lines-mauve::after {
+    border-color: #9c26b0;
+}
+
+.line-pink::after,
+.lines-pink::after {
+    border-color: #e03997;
+}
+
+.line-brown::after,
+.lines-brown::after {
+    border-color: #a5673f;
+}
+
+.line-grey::after,
+.lines-grey::after {
+    border-color: #8799a3;
+}
+
+.line-gray::after,
+.lines-gray::after {
+    border-color: #aaaaaa;
+}
+
+.line-black::after,
+.lines-black::after {
+    border-color: #333333;
+}
+
+.line-white::after,
+.lines-white::after {
+    border-color: #ffffff;
+}
+.text-color,
+.line-color,
+.lines-color {
+    color: $hammer-color;
+}
+.text-red,
+.line-red,
+.lines-red {
+    color: #e54d42;
+}
+
+.text-orange,
+.line-orange,
+.lines-orange {
+    color: #f37b1d;
+}
+
+.text-yellow,
+.line-yellow,
+.lines-yellow {
+    color: #fbbd08;
+}
+
+.text-olive,
+.line-olive,
+.lines-olive {
+    color: #8dc63f;
+}
+
+.text-green,
+.line-green,
+.lines-green {
+    color: #39b54a;
+}
+
+.text-cyan,
+.line-cyan,
+.lines-cyan {
+    color: #1cbbb4;
+}
+
+.text-blue,
+.line-blue,
+.lines-blue {
+    color: #0081ff;
+}
+
+.text-purple,
+.line-purple,
+.lines-purple {
+    color: #6739b6;
+}
+
+.text-mauve,
+.line-mauve,
+.lines-mauve {
+    color: #9c26b0;
+}
+
+.text-pink,
+.line-pink,
+.lines-pink {
+    color: #e03997;
+}
+
+.text-brown,
+.line-brown,
+.lines-brown {
+    color: #a5673f;
+}
+
+.text-grey,
+.line-grey,
+.lines-grey {
+    color: #8799a3;
+}
+
+.text-gray,
+.line-gray,
+.lines-gray {
+    color: #aaaaaa;
+}
+
+.text-black,
+.line-black,
+.lines-black {
+    color: #333333;
+}
+
+.text-white,
+.line-white,
+.lines-white {
+    color: #ffffff;
 }

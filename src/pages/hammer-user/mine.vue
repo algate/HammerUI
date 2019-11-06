@@ -1,75 +1,74 @@
 <template>
-    <!--pages/mine/mine.wxml-->
-    <view class='container'>
-        <view class='top-container'>
+    <view>
+        <view class="top-container">
             <view class="bg-img"></view>
-            <view @tap='logout' class='logout' hover-class="opcity" :hover-stay-time="150">
-                <text class='logout-txt' v-show='isLogin'>退出</text>
-            </view>
-            <view v-show="!isLogin" class='user-wrapper'>
-                <navigator url='../main/main' hover-class="opcity" :hover-stay-time="150" class='user'>
-                    <image class='avatar-img' src='../../static/images/my/mine_def_touxiang.png'></image>
-                    <text class='user-info-mobile'>请登录</text>
+            <view v-show="!isLogin" class="user-wrapper">
+                <navigator url="../main/main" hover-class="opcity" :hover-stay-time="150" class="user">
+                    <image class="avatar-img" src="../../static/images/mine/user-default.png"></image>
+                    <text class="user-info-mobile">请登录</text>
                 </navigator>
             </view>
-            <view v-show='isLogin' class='user'>
-                <image class='avatar-img' :src='userInfo.avatarUrl?userInfo.avatarUrl:"/static/images/my/mine_def_touxiang.png"'></image>
-                <view class='user-info-mobile'>
+            <view v-show="isLogin" class="user">
+                <image class="avatar-img" :src="userInfo.avatarUrl?userInfo.avatarUrl:'/static/images/my/mine_def_touxiang.png'"></image>
+                <view class="user-info-mobile">
                     <text>{{userInfo.nickName}}</text>
-                    <view class='edit-img' hover-class="opcity" :hover-stay-time="150" @tap="edit">
-                        <image src='../../static/images/my/mine_icon_bianji.png'></image>
+                    <view class="edit-img" hover-class="opcity" :hover-stay-time="150" @tap="edit">
+                        <hammer-icon from="iconfont" name="edit" :size="24"></hammer-icon>
                     </view>
                 </view>
             </view>
         </view>
-        <view class='middle-container'>
-            <view data-url='../myWashTicket/myWashTicket' @tap='tapEvent' data-index="1" class='middle-item' hover-class="opcity" :hover-stay-time="150">
-                <image class='ticket-img' src='../../static/images/my/thorui.png'></image>
-                <text class='middle-tag'>Hammer UI</text>
+        <view class="middle-container justify-around">
+            <view data-url="../myWashTicket/myWashTicket" @tap="tapEvent" data-index="1" class="middle-item" hover-class="opcity" :hover-stay-time="150">
+                <image class="ticket-img" src="/static/images/logo.svg"></image>
+                <text class="middle-tag">锤子 UI</text>
             </view>
             <!-- #ifdef MP-WEIXIN -->
-            <view @tap='github(1)' class='middle-item' hover-class="opcity" :hover-stay-time="150">
-                <image class='car-img' src='../../static/images/my/github.png'></image>
-                <text class='middle-tag'>GitHub</text>
+            <view @tap="github(1)" class="middle-item" hover-class="opcity" :hover-stay-time="150">
+                <hammer-icon class="github" from="iconfont" color="#008381" name="github" :size="64"></hammer-icon>
+                <text class="middle-tag">GitHub</text>
             </view>
             <!-- #endif -->
             <!-- #ifdef H5 -->
-            <view @tap='github(2)' class='middle-item' hover-class="opcity" :hover-stay-time="150">
-                <image class='car-img' src='../../static/images/my/github.png'></image>
-                <text class='middle-tag'>GitHub</text>
+            <view @tap="github(2)" class="middle-item" hover-class="opcity" :hover-stay-time="150">
+                <hammer-icon class="github" from="iconfont" color="#008381" name="github" :size="64"></hammer-icon>
+                <text class="middle-tag">GitHub</text>
             </view>
             <!-- #endif -->
         </view>
-        <view class='bottom-container'>
-            <view class='ul-item'>
-                <view @tap='tapEvent' data-index="2" data-key='加油站' class='item' hover-class="opcity" :hover-stay-time="150">
-                    <image class='item-img' src='../../static/images/my/mine_icon_jiayouzhan.png'></image>
-                    <text class='item-name'>加油站</text>
+        <view class="bottom-container">
+            <view class="ul-item">
+                <view @tap="tapEvent" data-index="2" data-key="加油站" class="item" hover-class="opcity" :hover-stay-time="150">
+                    <hammer-icon class="github" from="iconfont" name="Gas" :size="36"></hammer-icon>
+                    <text class="item-name">加油站</text>
                 </view>
-                <view @tap='tapEvent' data-index="2" data-key='停车场' class='item' hover-class="opcity" :hover-stay-time="150">
-                    <image class='item-img' src='../../static/images/my/mine_icon_tingche.png'></image>
-                    <text class='item-name'>停车场</text>
+                <view @tap="tapEvent" data-index="2" data-key="停车场" class="item" hover-class="opcity" :hover-stay-time="150">
+                    <hammer-icon class="github" from="iconfont" name="park" :size="36"></hammer-icon>
+                    <text class="item-name">停车场</text>
                 </view>
-                <view @tap='tapEvent' data-index="2" data-key='充电桩' class='item' hover-class="opcity" :hover-stay-time="150">
-                    <image class='item-img' src='../../static/images/my/mine_icon_chongdian.png'></image>
-                    <text class='item-name'>充电桩</text>
-                </view>
-            </view>
-            <view class='ul-item'>
-                <view @tap='previewReward' class='item' hover-class="opcity" :hover-stay-time="150">
-                    <image class='item-img' src='../../static/images/my/reward.png'></image>
-                    <text class='item-name'>赞赏</text>
-                </view>
-                <view class='item' hover-class="opcity" :hover-stay-time="150">
-                    <button open-type="feedback" class="btn-feedback"> </button>
-                    <image class='item-img' src='../../static/images/my/feedback.png'></image>
-                    <text class='item-name'>反馈</text>
-                </view>
-                <view @tap='tapEvent' data-index="3" class='item' hover-class="opcity" :hover-stay-time="150">
-                    <image class='item-img' src='../../static/images/my/log.png'></image>
-                    <text class='item-name'>日志</text>
+                <view @tap="tapEvent" data-index="2" data-key="充电桩" class="item" hover-class="opcity" :hover-stay-time="150">
+                    <hammer-icon class="github" from="iconfont" name="charging-station" :size="36"></hammer-icon>
+                    <text class="item-name">充电桩</text>
                 </view>
             </view>
+            <view class="ul-item">
+                <view @tap="previewReward" class="item" hover-class="opcity" :hover-stay-time="150">
+                    <hammer-icon class="github" from="iconfont" name="sponsorfill" :size="36"></hammer-icon>
+                    <text class="item-name">赞赏</text>
+                </view>
+                <view class="item" hover-class="opcity" :hover-stay-time="150">
+                    <button open-type="feedback" class="btn-feedback"></button>
+                    <hammer-icon class="github" from="iconfont" name="edit" :size="36"></hammer-icon>
+                    <text class="item-name">反馈</text>
+                </view>
+                <view @tap="tapEvent" data-index="3" class="item" hover-class="opcity" :hover-stay-time="150">
+                    <hammer-icon class="github" from="iconfont" name="time" :size="36"></hammer-icon>
+                    <text class="item-name">日志</text>
+                </view>
+            </view>
+        </view>
+        <view @tap="logout" class="logout h-margin-top" :hover-stay-time="150">
+            <button class="bg-color" v-show="isLogin">退出</button>
         </view>
     </view>
 </template>
@@ -77,44 +76,46 @@
 import {
     mapState,
     mapMutations
-} from 'vuex'
+} from "vuex"
 export default {
     computed: {
-        ...mapState(['isLogin','userInfo'])
+        ...mapState(["isLogin","userInfo"])
     },
     data() {
         return {}
     },
     onShow: function() {},
     methods: {
-        ...mapMutations(['logoff']),
+        ...mapMutations(["logoff"]),
         logout: function() {
             uni.showModal({
-                title: '提示',
-                content: '确定退出登录？',
-                confirmColor: '#5677FC',
+                title: "提示",
+                content: "确定退出登录？",
+                confirmColor: "#5677FC",
                 success: (res) => {
                     if (res.confirm) {
                         uni.reLaunch({
-                            url: '/pages/main/main'
+                            url: "/pages/main/main"
                         })
                     }
                 }
             });
         },
         edit() {
-            this.tui.toast("功能开发中~")
+            uni.showToast({
+                title: 'Tips: 别点了😊'
+            })
         },
         tapEvent: function(e) {
             let index = e.currentTarget.dataset.index;
             let url = "";
             if (index == 1) {
-                url = '../about/about'
+                url = "../about/about"
             } else if (index == 2) {
                 let key = e.currentTarget.dataset.key;
-                url = '../maps/maps?key=' + key
+                url = "../hammer-user/user-amap?key=" + key
             } else {
-                url = '../log/log'
+                url = "../log/log"
             }
             uni.navigateTo({
                 url: url
@@ -124,18 +125,20 @@ export default {
             if (type == 1) {
                 const that = this
                 uni.setClipboardData({
-                    data: 'https://github.com/algate/HammerUI',
+                    data: "https://github.com/algate/HammerUI",
                     success(res) {
                         uni.getClipboardData({
                             success(res) {
-                                that.tui.toast("链接已复制", 2000, true)
+                                that.showToast({
+                                    title: "链接已复制"
+                                })
                             }
                         })
                     }
                 })
             } else {
                 // #ifdef H5
-                location.href = "https://github.com/algate/HammerUI"
+                window.open("https://github.com/algate/HammerUI");
                 // #endif
             }
         },
@@ -168,20 +171,9 @@ export default {
 }
 
 .logout {
-    width: 110rpx;
-    height: 36rpx;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 42rpx 0 24rpx 32rpx;
     position: relative;
     z-index: 2;
-}
-
-.logout-txt {
-    font-size: 28rpx;
-    color: #FEFEFE;
-    line-height: 28rpx;
+    margin: 40rpx 60rpx;
 }
 
 .user-wrapper {
@@ -197,6 +189,7 @@ export default {
     justify-content: center;
     position: relative;
     z-index: 2;
+    margin-top: 100rpx;
 }
 
 .avatar-img {
@@ -225,16 +218,8 @@ export default {
 
 .edit-img {
     position: absolute;
-    width: 42rpx;
-    height: 42rpx;
     right: 0;
     bottom: -4rpx;
-}
-
-.edit-img>image {
-    width: 42rpx;
-    height: 42rpx;
-    padding-left: 25rpx;
 }
 
 .middle-container {
@@ -245,7 +230,7 @@ export default {
     border-radius: 10rpx;
     background-color: #FFFFFF;
     margin: -30rpx 30rpx 26rpx 30rpx;
-    box-shadow: 0 15rpx 10rpx -15rpx #efefef;
+    box-shadow: 0 10rpx 20rpx 4rpx #efefef;
     position: relative;
     z-index: 2;
 
@@ -261,7 +246,6 @@ export default {
 .ticket-img {
     width: 80rpx;
     height: 80rpx;
-    margin-left: 65rpx;
 }
 
 .middle-tag {
@@ -279,22 +263,22 @@ export default {
 }
 
 .bottom-container {
-    height: 334rpx;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 40rpx 74rpx 40rpx 95rpx;
+    padding: 40rpx 80rpx 40rpx 80rpx;
     margin: 0 30rpx;
     background-color: #FFFFFF;
     border-radius: 10rpx;
     box-sizing: border-box;
-    box-shadow: 0 0 10rpx #efefef
+    box-shadow: 0 0 10rpx #e9e9e9;
 }
 
 .ul-item {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 30rpx;
 }
 
 .item {
@@ -310,7 +294,6 @@ export default {
 }
 
 .item-name {
-    padding-top: 13rpx;
     font-size: 24rpx;
     color: #666666;
     min-width: 80rpx;
@@ -324,5 +307,8 @@ export default {
     width: 100%;
     left: 0;
     top: 0;
+}
+.btn-feedback:after {
+    border: 0;
 }
 </style>

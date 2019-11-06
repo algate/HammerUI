@@ -8,6 +8,9 @@
                 </view>
             </picker>
         </view>
+        <view class="hammer-box bg-white">
+            <view class="sub-title text-blue"><navigator hover-class="none" url="/pages/hammer-function/function-dateTime" open-type="navigate">…更多日期选择器</navigator></view>
+        </view>
     </view>
 </template>
 <script>

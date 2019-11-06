@@ -1,6 +1,10 @@
 <template>
     <view class="bg-black">
-        <view class="hammer-box bg-white">
+        <view class="hammer-header bg-white">
+            <view class="title">Swiper</view>
+            <view class="sub-title">轮播：图片轮播、顶部信息滚动等</view>
+        </view>
+        <view class="hammer-box bg-white h-margin-top">
             <view class="iconfont icon-notification" style="size:20rpx;color:#f54f46;"></view>
             <view class="hammer-scorll-view">
                 <view class="hammer-animation">🔨欢迎小程序搜索-chuizi; 不要跟我谈理想，我的理想就是不上班; 欢迎关注公众号-前端洋葱</view>
@@ -36,7 +40,7 @@
         <swiper class="screen-swiper" :class="dotStyle?'square-dot':'round-dot'" :indicator-dots="true" :circular="true" :autoplay="true" interval="5000" duration="500" indicator-color="#888" indicator-active-color="#00ab98">
             <swiper-item v-for="(item,index) in swiperList" :key="index">
                 <image :src="item.url" mode="aspectFill" v-if="item.type=='image'"></image>
-                <video :src="item.url" autoplay loop muted :show-play-btn="false" :controls="false" objectFit="cover" v-if="item.type=='video'"></video>
+                <video :src="item.url" autoplay loop muted :show-play-btn="false" :show-center-play-btn="true" :controls="false" objectFit="cover" v-if="item.type=='video'"></video>
             </swiper-item>
         </swiper>
         <!-- #ifndef MP-ALIPAY -->
@@ -70,30 +74,36 @@ export default {
     data() {
         return {
             cardCur: 0,
-            swiperList: [{
+            swiperList: [
+            /*{
                 id: 0,
-                type: 'image',
-                url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg'
-            }, {
+                type: 'video',
+                url: 'https://algate.github.io/video/HonorOfKings_360P.mp4'
+            },*/
+            {
                 id: 1,
                 type: 'image',
-                url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big37006.jpg',
+                url: 'http://shp.qpic.cn/ishow/2735022611/1551150494_-695593207_2194_sProdImgNo_3.jpg/0',
             }, {
                 id: 2,
                 type: 'image',
-                url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg'
+                url: 'http://shp.qpic.cn/ishow/2735021211/1549941945_704174346_16208_sProdImgNo_3.jpg/0'
             }, {
                 id: 3,
                 type: 'image',
-                url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg'
+                url: 'http://shp.qpic.cn/ishow/2735012117/1548064556_587358052_24401_sProdImgNo_3.jpg/0'
             }, {
                 id: 4,
                 type: 'image',
-                url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg'
+                url: 'http://shp.qpic.cn/ishow/2735012115/1548056809_1186005513_19120_sProdImgNo_3.jpg/0'
             }, {
                 id: 5,
                 type: 'image',
-                url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg'
+                url: 'http://shp.qpic.cn/ishow/2735011517/1547545098_-888937974_18837_sProdImgNo_3.jpg/0'
+            }, {
+                id: 5,
+                type: 'image',
+                url: 'http://shp.qpic.cn/ishow/2735092409/1569290387_84828260_13119_sProdImgNo_2.jpg/0'
             }],
             dotStyle: true,
             towerStart: 0,
@@ -173,6 +183,8 @@ export default {
         white-space: nowrap;
         overflow: hidden;
         color: #f54f46;
+        height: 60rpx;
+        line-height: 60rpx;
     }
 
     .hammer-animation {

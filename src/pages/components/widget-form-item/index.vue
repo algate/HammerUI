@@ -1,7 +1,7 @@
 <template>
     <form>
         <template v-for="(item, index) in formCustom">
-            <view :key="item.key">
+            <view class="hammer-form" :key="item.key">
 
                 <!-- 单行输入框 -->
                 <WgInput :ref="`comp_${index}`" :element="item"/>

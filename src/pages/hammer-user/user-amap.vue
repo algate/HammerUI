@@ -4,19 +4,19 @@
             <view class="search-bar-form">
                 <view class="search-bar-box">
                     <!-- #ifdef APP-PLUS || MP -->
-                    <icon class="icon-search-in-box" type="search" size="16"></icon>
+                    <hammer-icon name="search" :size="16"></hammer-icon>
                     <!-- #endif -->
                     <input confirm-type="search" class="search-bar-input" placeholder="请输入您的目的地" :value="inputVal" :focus="inputShowed"
                      @confirm="bindInput" @input="inputTyping" />
                     <view class="icon-clear" v-if="inputVal" @tap="clearInput">
                         <!-- #ifdef APP-PLUS || MP -->
-                        <icon type="clear" size="14"></icon>
+                        <hammer-icon from="iconfont" name="delete" :size="14"></hammer-icon>
                         <!-- #endif -->
                     </view>
                 </view>
                 <label class="search-bar-label" v-show="!inputShowed" @tap="showInput">
                     <!-- #ifdef APP-PLUS || MP -->
-                    <icon class="icon-search" type="search" size="16"></icon>
+                    <hammer-icon name="search" :size="16"></hammer-icon>
                     <!-- #endif -->
                     <view class="search-bar-text">请输入您的目的地</view>
                 </label>
@@ -24,7 +24,7 @@
             <view class="cancel-btn" @tap="hideInput" v-show="inputShowed">取消</view>
         </view>
         <map :latitude="lat" :longitude="lng" :markers="covers" @markertap="marker" :scale="12"></map>
-        <scroll-view scroll-y class="scrollView" :style="{height:scrollH +'px'}">
+        <scroll-view scroll-y class="scrollView">
             <view class="tui-list">
                 <view class="tui-list-cell" :class="[index==address.length-1?'tui-cell-last':'']" v-for="(item,index) in address"
                  :key="index">
@@ -36,13 +36,11 @@
                         </view>
                         <view class="addr-opera ">
                             <view class="opera-box " hover-class="opcity " :hover-stay-time="150 " @tap="call " :data-id="item.id" v-if="item.tel">
-                                <!-- <image src="../../static/images/my/call.png " class="mini-img"></image> -->
                                 <hammer-icon :from="'iconfont'" :name="'voipphone'" :size="14" ></hammer-icon>
                                 <view class=""></view>
                                 <view class="text">打电话</view>
                             </view>
                             <view class="opera-box " hover-class="opcity" :hover-stay-time="150" @tap="go" :data-id="item.id">
-                                <!-- <image src="../../static/images/my/go.png" class="mini-img"></image> -->
                                 <hammer-icon :from="'tui'" :name="'position-fill'" :size="14" ></hammer-icon>
                                 <view class="text">到这里</view>
                             </view>
@@ -57,17 +55,14 @@
 <script>
     const amap = require('@/libs/amap-wx.js')
     export default {
-        components: {
-            Icon
-        },
         data() {
             return {
                 inputShowed: false,
                 inputVal: "",
                 amapPlugin: null,
                 key: this.$hammer.$constant.amapWxKey,
-                lat: 22.63137,
-                lng: 114.010857,
+                lat: 39.9776,
+                lng: 116.35231,
                 covers: [],
                 address: [],
                 scrollH: 256
@@ -78,13 +73,13 @@
                 key: this.key
             });
             const that = this;
-            setTimeout(() => {
+            /*setTimeout(() => {
                 let winHeight = uni.getSystemInfoSync().windowHeight;
-                this.scrollH = winHeight - 44 - uni.upx2px(600);
+                this.scrollH = winHeight - 44 - uni.rpx2px(600);
                 this.getLocation(() => {
                     this.getPoiAround(options.key || "加油站")
                 });
-            }, 300)
+            }, 300)*/
         },
         methods: {
             trim: function(value) {
@@ -174,7 +169,6 @@
                 const that = this
                 const item = that.address[e.markerId || 0];
                 const menu = item.tel ? ["打电话", "到这里"] : ["到这里"];
-
                 uni.showActionSheet({
                     itemList: menu,
                     success(res) {
@@ -252,12 +246,12 @@
     .tui-list-cell::after {
         content: '';
         position: absolute;
-        border-bottom: 1upx solid #eaeef1;
+        border-bottom: 1rpx solid #eaeef1;
         -webkit-transform: scaleY(0.5);
         transform: scaleY(0.5);
         bottom: 0;
         right: 0;
-        left: 30upx;
+        left: 30rpx;
     }
 
     .tui-cell-last::after {
@@ -271,7 +265,7 @@
 
     map {
         width: 100%;
-        height: 600upx;
+        height: 600rpx;
     }
 
     .opcity {
@@ -280,8 +274,8 @@
 
     .scrollView {
         width: 100%;
-        padding-bottom: 100upx;
         background: #fff;
+        height: calc(100vh - 46px - 600rpx);
     }
 
     .search-bar {
@@ -370,16 +364,16 @@
 
     .tui-list-cell {
         display: initial;
-        padding: 30upx;
+        padding: 30rpx;
     }
 
     .addr-title {
-        font-size: 30upx;
-        line-height: 40upx;
+        font-size: 30rpx;
+        line-height: 40rpx;
         color: #000;
         font-weight: bold;
         width: 100%;
-        padding-bottom: 20upx;
+        padding-bottom: 20rpx;
     }
 
     .addr-box {
@@ -389,20 +383,20 @@
     }
 
     .addr-detail {
-        width: 450upx;
+        width: 450rpx;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 2;
         /*! autoprefixer: ignore next */
         -webkit-box-orient: vertical;
-        font-size: 24upx;
+        font-size: 24rpx;
         color: #999;
     }
 
     .distance {
         color: #5982fd;
-        padding-right: 6upx;
+        padding-right: 6rpx;
     }
 
     .addr-opera {
@@ -413,17 +407,17 @@
 
     .opera-box {
         text-align: center;
-        margin-left: 26upx;
+        margin-left: 26rpx;
     }
 
     .mini-img {
-        width: 44upx;
-        height: 44upx;
+        width: 44rpx;
+        height: 44rpx;
     }
 
     .text {
         color: #333;
-        font-size: 24upx;
-        line-height: 30upx;
+        font-size: 24rpx;
+        line-height: 30rpx;
     }
 </style>
