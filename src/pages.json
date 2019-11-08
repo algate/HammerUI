@@ -107,7 +107,23 @@
 		{
 			"path": "pages/hammer-function/function-popup",
 			"style": {
-				"navigationBarTitleText": "下拉选择底部弹层-🚀",
+				"navigationBarTitleText": "下拉选择底部弹层-🐊",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/apposition/index",
+			"style": {
+				"navigationBarTitleText": "条件筛选并列菜单-🐒",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/independence/index",
+			"style": {
+				"navigationBarTitleText": "条件筛选独立菜单-🎣",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -153,6 +169,110 @@
 			}
 		},
 		{
+			"path": "pages/hammer-function/function-collapse",
+			"style": {
+				"navigationBarTitleText": "折叠面板-🐼",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/function-mescroll",
+			"style": {
+				"navigationBarTitleText": "下拉刷新上拉加载-🐘",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/mescroll/base/list-news",
+			"style": {
+				"navigationBarTitleText": "mescroll",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/mescroll/base/list-products",
+			"style": {
+				"navigationBarTitleText": "mescroll",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/mescroll/base/mescroll-options",
+			"style": {
+				"navigationBarTitleText": "mescroll",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/mescroll/base/list-mescroll-one",
+			"style": {
+				"navigationBarTitleText": "mescroll",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/mescroll/base/list-mescroll-more",
+			"style": {
+				"navigationBarTitleText": "mescroll",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/mescroll/base/list-search",
+			"style": {
+				"navigationBarTitleText": "mescroll",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/mescroll/base/sticky",
+			"style": {
+				"navigationBarTitleText": "mescroll",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/mescroll/base/sticky-data",
+			"style": {
+				"navigationBarTitleText": "mescroll",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/mescroll/intermediate/mescroll-swiper",
+			"style": {
+				"navigationBarTitleText": "mescroll",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/mescroll/intermediate/beibei",
+			"style": {
+				"navigationBarTitleText": "mescroll",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/mescroll/intermediate/xinlang",
+			"style": {
+				"navigationBarTitleText": "mescroll",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
 			"path": "pages/hammer-user/mine",
 			"style": {
 				"navigationBarTitleText": "用户-🔨",
@@ -178,13 +298,13 @@
 		"height": "100rpx",
 		"list": [{
 			"pagePath": "pages/hammer-basic/home",
-			"iconPath": "static/images/tabBar/icon-index-default.png",
-			"selectedIconPath": "static/images/tabBar/icon-index.png",
+			"iconPath": "static/images/tabBar/basic-default.svg",
+			"selectedIconPath": "static/images/tabBar/basic.svg",
 			"text": "基础"
 		},{
 			"pagePath": "pages/hammer-function/home",
-			"iconPath": "static/images/tabBar/icon-train-default.png",
-			"selectedIconPath": "static/images/tabBar/icon-train.png",
+			"iconPath": "static/images/tabBar/function-default.svg",
+			"selectedIconPath": "static/images/tabBar/function.svg",
 			"text": "功能"
 		},{
 			"pagePath": "pages/hammer-user/mine",

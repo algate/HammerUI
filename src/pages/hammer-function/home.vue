@@ -57,21 +57,22 @@
                         size: 50,
                         bgColor : 'bg-green'
 
-                    }/*,
+                    },
                     {
-                        title: '标签Tag+Badge',
-                        name: 'basic-tags',
-                        hammerIcon: 'label',
+                        title: '折叠面板',
+                        name: 'function-collapse',
+                        hammerIcon: 'strategy',
                         size: 50,
                         bgColor : 'bg-cyan'
                     },
                     {
-                        title: '分割线',
-                        name: 'basic-division',
-                        hammerIcon: 'gengefu1',
+                        title: '下拉刷新上啦加载',
+                        name: 'function-mescroll',
+                        from: 'iconfont',
+                        hammerIcon: 'fengefu',
                         size: 50,
                         bgColor : 'bg-blue'
-                    }*/
+                    }
                 ],
             };
         },

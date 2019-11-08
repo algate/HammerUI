@@ -1,10 +1,33 @@
 <template>
     <view>
+        <view>
+            <view class="hammer-box">
+                <view class="title">顶部下拉条件筛选菜单</view>
+            </view>
+            <view class="demo-content">
+                <view class="demo-cell">
+                    <view class="demo-cell-t" @tap="toApposition()">
+                        <text>并列菜单</text>
+                    </view>
+                    <view class="demo-cell-b">
+                        <text>并列菜单：筛选菜单各个子菜单选择完毕点击确定后回传所有结果</text>
+                    </view>
+                </view>
+                <view class="demo-cell">
+                    <view class="demo-cell-t" @tap="toIndependence()">
+                        <text>独立菜单</text>
+                    </view>
+                    <view class="demo-cell-b">
+                        <text>独立菜单：设置插件属性 :independence="true"。筛选菜单每个子菜单选择完毕点击确定回传当前菜单结果</text>
+                    </view>
+                </view>
+            </view>
+        </view>
        <!--下拉选择框 dropdownlist-->
         <view class="tui-drop-input-box">
             <tui-dropdown-list :show="dropdownShow" :top="94" :height="400">
                 <template v-slot:selectionbox>
-                    <button class="h-margin-top" shape="circle" @click="dropDownList(-1)">下拉选择框
+                    <button class="h-margin-top" shape="circle" @tap="dropDownList(-1)">下拉选择框
                         <view class="tui-animation" :class="[dropdownShow?'tui-animation-show':'']">
                             <hammer-icon name="turningdown" :size="20"></hammer-icon>
                         </view>
@@ -14,7 +37,7 @@
                     <view class="tui-selected-list">
                         <scroll-view scroll-y class="tui-dropdown-scroll">
                             <block v-for="(item,index) in dropdownlistData" :key="index">
-                                <tui-list-cell @click="dropDownList(item)" bgcolor="#ddd" :last="dropdownlistData.length-1==index">
+                                <tui-list-cell @tap="dropDownList(item)" bgcolor="#ddd" :last="dropdownlistData.length-1==index">
                                     <hammer-icon :name="item.icon" :size="item.size" :color="item.color"></hammer-icon>
                                     <text class="tui-ml-20">{{item.name}}</text>
                                 </tui-list-cell>
@@ -177,6 +200,16 @@
             }
         },
         methods: {
+            toApposition() {
+                uni.navigateTo({
+                    url: './apposition/index'
+                })
+            },
+            toIndependence() {
+                uni.navigateTo({
+                    url: './independence/index'
+                })
+            },
             dropDownList(e) {
                 if (e !== -1) {
                     let params = {};
@@ -192,6 +225,30 @@
     }
 </script>
 <style lang="scss">
+    .demo-content {
+        margin: 50rpx 15rpx;
+    }
+    .demo-cell {
+        padding-top: 50rpx;
+    }
+    .demo-cell-t {
+        padding: 10rpx;
+        border-radius: 5rpx;
+        border: #EEEEEE 1px solid;
+        display: flex;
+        justify-content: center;
+    }
+    .demo-cell-t text {
+        font-size: 16px;
+        color: #333333;
+    }
+    .demo-cell-b {
+        margin-top: 10rpx;
+    }
+    .demo-cell-b text {
+        font-size: 14px;
+        color: #999999;
+    }
     .tui-drop-input-box {
         box-sizing: border-box;
     }
