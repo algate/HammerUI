@@ -123,7 +123,7 @@
 		{
 			"path": "pages/hammer-function/independence/index",
 			"style": {
-				"navigationBarTitleText": "条件筛选独立菜单-🎣",
+				"navigationBarTitleText": "条件筛选独立菜单-🦉",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -131,7 +131,7 @@
 		{
 			"path": "pages/hammer-function/function-tabs",
 			"style": {
-				"navigationBarTitleText": "导航+索引-💡",
+				"navigationBarTitleText": "导航+索引-🐝",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -139,7 +139,15 @@
 		{
 			"path": "pages/hammer-function/function-tabs-indexes-ceiling",
 			"style": {
-				"navigationBarTitleText": "索引选中+吸顶-🍐",
+				"navigationBarTitleText": "索引选中+吸顶-🦀",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/function-tabs-indexes-ceiling2",
+			"style": {
+				"navigationBarTitleText": "索引选中+吸顶2-🦑",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -147,7 +155,7 @@
 		{
 			"path": "pages/hammer-function/function-tabs-lists",
 			"style": {
-				"navigationBarTitleText": "垂直选项卡-🍎",
+				"navigationBarTitleText": "垂直选项卡-🐢",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -179,7 +187,7 @@
 		{
 			"path": "pages/hammer-function/function-mescroll",
 			"style": {
-				"navigationBarTitleText": "下拉刷新上拉加载-🐘",
+				"navigationBarTitleText": "下拉刷新上拉加载-🎣",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -187,7 +195,7 @@
 		{
 			"path": "pages/hammer-function/mescroll/base/list-news",
 			"style": {
-				"navigationBarTitleText": "mescroll",
+				"navigationBarTitleText": "EG:下拉刷新添加数据到列表顶部-🐖",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -195,7 +203,7 @@
 		{
 			"path": "pages/hammer-function/mescroll/base/list-products",
 			"style": {
-				"navigationBarTitleText": "mescroll",
+				"navigationBarTitleText": "EG:下拉刷新添加数据到列表顶部-🐬",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -203,7 +211,7 @@
 		{
 			"path": "pages/hammer-function/mescroll/base/mescroll-options",
 			"style": {
-				"navigationBarTitleText": "mescroll",
+				"navigationBarTitleText": "EG:快速熟悉mescroll-🦅",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -211,7 +219,7 @@
 		{
 			"path": "pages/hammer-function/mescroll/base/list-mescroll-one",
 			"style": {
-				"navigationBarTitleText": "mescroll",
+				"navigationBarTitleText": "EG:切换菜单,及时刷新数据-🦋",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -219,7 +227,7 @@
 		{
 			"path": "pages/hammer-function/mescroll/base/list-mescroll-more",
 			"style": {
-				"navigationBarTitleText": "mescroll",
+				"navigationBarTitleText": "EG:列表仅初始化一次,缓存数据-🐛",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -227,7 +235,7 @@
 		{
 			"path": "pages/hammer-function/mescroll/base/list-search",
 			"style": {
-				"navigationBarTitleText": "mescroll",
+				"navigationBarTitleText": "EG:mescroll.resetUpscroll()的使用-🐚",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -235,7 +243,7 @@
 		{
 			"path": "pages/hammer-function/mescroll/base/sticky",
 			"style": {
-				"navigationBarTitleText": "mescroll",
+				"navigationBarTitleText": "EG:吸顶悬浮 (切换菜单,刷新列表)-🦈",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -243,7 +251,7 @@
 		{
 			"path": "pages/hammer-function/mescroll/base/sticky-data",
 			"style": {
-				"navigationBarTitleText": "mescroll",
+				"navigationBarTitleText": "EG:吸顶悬浮 (切换菜单,刷新列表)-🐙",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -251,7 +259,7 @@
 		{
 			"path": "pages/hammer-function/mescroll/intermediate/mescroll-swiper",
 			"style": {
-				"navigationBarTitleText": "mescroll",
+				"navigationBarTitleText": "EG:轮播菜单导航-🐠",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -259,7 +267,7 @@
 		{
 			"path": "pages/hammer-function/mescroll/intermediate/beibei",
 			"style": {
-				"navigationBarTitleText": "mescroll",
+				"navigationBarTitleText": "EG:自定义mescroll组件-🐳",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -267,7 +275,7 @@
 		{
 			"path": "pages/hammer-function/mescroll/intermediate/xinlang",
 			"style": {
-				"navigationBarTitleText": "mescroll",
+				"navigationBarTitleText": "EG:自定义mescroll组件-🐋",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -284,6 +292,15 @@
 			"path": "pages/hammer-user/user-amap",
 			"style": {
 				"navigationBarTitleText": "地图-🌏",
+				"disableScroll": true,
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-user/user-weather",
+			"style": {
+				"navigationBarTitleText": "天气-☀",
 				"disableScroll": true,
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"

@@ -46,9 +46,9 @@
                     <hammer-icon class="github" from="iconfont" name="park" :size="36"></hammer-icon>
                     <text class="item-name">停车场</text>
                 </view>
-                <view @tap="tapEvent" data-index="2" data-key="充电桩" class="item" hover-class="opcity" :hover-stay-time="150">
-                    <hammer-icon class="github" from="iconfont" name="charging-station" :size="36"></hammer-icon>
-                    <text class="item-name">充电桩</text>
+                <view @tap="tapEvent" data-index="4" data-key="天气" class="item" hover-class="opcity" :hover-stay-time="150">
+                    <hammer-icon class="github" name="weather" :size="36"></hammer-icon>
+                    <text class="item-name">天气</text>
                 </view>
             </view>
             <view class="ul-item">
@@ -91,7 +91,7 @@ export default {
             uni.showModal({
                 title: "提示",
                 content: "确定退出登录？",
-                confirmColor: "#5677FC",
+                confirmColor: "#00AB98",
                 success: (res) => {
                     if (res.confirm) {
                         uni.reLaunch({
@@ -111,6 +111,9 @@ export default {
             let url = "";
             if (index == 1) {
                 url = "../about/about"
+            } else if (index == 4) {
+                let key = e.currentTarget.dataset.key;
+                url = "../hammer-user/user-weather?key=" + key
             } else if (index == 2) {
                 let key = e.currentTarget.dataset.key;
                 url = "../hammer-user/user-amap?key=" + key

@@ -23,8 +23,11 @@
             </view>
             <view class="cancel-btn" @tap="hideInput" v-show="inputShowed">取消</view>
         </view>
-        <map :latitude="lat" :longitude="lng" :markers="covers" @markertap="marker" :scale="12"></map>
-        <scroll-view scroll-y class="scrollView">
+        <map :latitude="lat" :longitude="lng" :markers="covers" :scale="12"></map>
+        <view>
+
+        </view>
+        <!-- <scroll-view scroll-y class="scrollView">
             <view class="tui-list">
                 <view class="tui-list-cell" :class="[index==address.length-1?'tui-cell-last':'']" v-for="(item,index) in address"
                  :key="index">
@@ -48,7 +51,7 @@
                     </view>
                 </view>
             </view>
-        </scroll-view>
+        </scroll-view> -->
     </view>
 </template>
 
@@ -77,7 +80,8 @@
                 let winHeight = uni.getSystemInfoSync().windowHeight;
                 this.scrollH = winHeight - 44 - uni.upx2px(600);
                 this.getLocation(() => {
-                    this.getPoiAround(options.key || "加油站")
+                    // this.getPoiAround(options.key || "加油站")
+                    this.getWeather()
                 });
             }, 300)
         },
@@ -111,6 +115,40 @@
                         callback();
                     }
                 })
+            },
+            getWeather(keywords) {
+                uni.showLoading({
+                    title: '加载中...'
+                })
+                const that = this;
+                setTimeout(() => {
+                    that.amapPlugin.getWeather({
+                        location: '', //location： 经纬度坐标。 为空时， 基于当前位置进行地址解析。 格式： '经度,纬度'
+                        success: (data) => {
+                            console.log(data);
+                            uni.showModal({
+                                title: "信息",
+                                content: data,
+                                showCancel: false,
+                                confirmColor: "#00AB98",
+                                success: (res) => {
+                                    if (res.confirm) {
+                                        // 点击确定执行方法
+                                    }/* else if (res.cancel) {
+                                        console.log('用户点击取消');
+                                    }*/
+                                }
+                            });
+                            uni.hideLoading()
+                        },
+                        fail: (info) => {
+                            uni.showToast({
+                                title: '获取位置信息失败，请检查是否打开位置权限'
+                            })
+                            uni.hideLoading()
+                        }
+                    })
+                }, 0);
             },
             getPoiAround(keywords) {
                 //检索周边的POI
@@ -165,7 +203,7 @@
                 const keywords = e.detail.value;
                 this.getPoiAround(keywords);
             },
-            marker: function(e) {
+            /*marker: function(e) {
                 const that = this
                 const item = that.address[e.markerId || 0];
                 const menu = item.tel ? ["打电话", "到这里"] : ["到这里"];
@@ -193,7 +231,7 @@
                     }
                 })
 
-            },
+            },*/
             call(event) {
                 const index = Number(event.currentTarget.dataset.id);
                 const tel = this.address[index].tel;

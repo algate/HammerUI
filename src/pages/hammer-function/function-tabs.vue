@@ -8,6 +8,9 @@
             <navigator open-type="navigate" url="/pages/hammer-function/function-tabs-indexes-ceiling">
                 <button type="white">索引选中+吸顶</button>
             </navigator>
+            <navigator class="h-margin-top" open-type="navigate" url="/pages/hammer-function/function-tabs-indexes-ceiling2">
+                <button type="white">索引选中+吸顶2</button>
+            </navigator>
             <navigator class="h-margin-top" open-type="navigate" url="/pages/hammer-function/function-tabs-lists">
                 <button type="white">垂直选项卡</button>
             </navigator>

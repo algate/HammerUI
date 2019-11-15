@@ -41,7 +41,7 @@
 				</tui-collapse>
 			</block>
 		</view>
-		<view class="tui-title">手风琴效果，固定内容高度</view>
+		<view class="tui-title">手风琴效果(有一个一直开着)</view>
 		<view>
 			<block v-for="(item,index) in dataList3" :key="index">
 				<tui-collapse :index="index" :current="current2" height="120rpx" bdBgColor="#fff" translateY="0" @click="change4">
