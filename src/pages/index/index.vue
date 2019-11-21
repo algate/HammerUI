@@ -1,11 +1,7 @@
 <template>
     <view>
-        <!-- #ifdef H5 -->
         <button type="default" @tap="h5onGotUserInfo">进入🔨主页</button>
-        <!-- #endif -->
-        <!-- #ifdef MP-WEIXIN -->
-        <button open-type="getUserInfo" type="primary" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取🔨用户信息</button>
-        <!-- #endif -->
+		<button v-if="canIUse" class="login-btn" open-type="getUserInfo" type="hidden" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">微信登录</button>
     </view>
 </template>
 <script>
@@ -19,10 +15,12 @@ export default {
     },
     data() {
         return {
-            userInfo: {}
+            userInfo: {},
+			canIUse: wx.canIUse('button.open-type.getUserInfo')
         };
     },
     onLoad() {
+		let that = this;
         uni.showLoading({
             title: '加载中...'
         });
@@ -32,7 +30,7 @@ export default {
             // 状态管理中存放地址栏参数
             this.userInfo = {
                 nickName: 'hammer',
-                avatarUrl: '/static/images/logo.png',
+                avatarUrl: '/static/images/logo.svg',
                 gender: 0, //性别 0：未知、1：男、2：女
                 province: '北京市',
                 city: '北京',
@@ -41,36 +39,51 @@ export default {
             this.login(this.userInfo);
         }
         // #endif
+		// 查看是否授权
+        // #ifdef MP-WEIXIN
+		wx.getSetting({
+		  success (res){
+			if (res.authSetting['scope.userInfo']) {
+			  // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+			  wx.getUserInfo({
+				success: function(res) {
+				  that.login(res.userInfo);
+				}
+			  })
+			}
+		  }
+		});
+        // #endif
         this.init()
     },
     methods: {
-        ...mapMutations(['login']),
+		...mapMutations(["login"]),
         init() {
             uni.hideLoading()
         },
-        // #ifdef MP-WEIXIN
-        onGotUserInfo: function(e) {
-            console.log(e.detail.errMsg)
-            console.log(e.detail.userInfo)
-            console.log(e.detail.rawData)
-            console.log(e.detail.signature)
-            console.log(e.detail.encryptedData)
-            console.log(e.detail.iv)
-            console.log(e.detail.cloudID)
-            this.login(e.detail.userInfo);
+        h5onGotUserInfo: function() {
+			/* uni.login({
+				provider: 'weixin',
+				success: function (loginRes) {
+					console.log(loginRes.authResult);
+				}
+			}); */
             uni.reLaunch({
                 url: '/pages/hammer-basic/home'
             });
         },
-        // #endif
-        h5onGotUserInfo: function(e) {
-            uni.reLaunch({
-                url: '/pages/hammer-basic/home'
-            });
-        }
+		bindGetUserInfo (e) {
+			console.log(e.detail.userInfo);
+		}
     },
     onShow() {
         console.log("进入🔨入口")
     }
 }
 </script>
+<style lang="scss">
+	.login-btn {
+		visibility: hidden;
+		display: none;
+	}
+</style>

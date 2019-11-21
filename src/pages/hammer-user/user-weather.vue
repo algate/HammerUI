@@ -24,34 +24,13 @@
             <view class="cancel-btn" @tap="hideInput" v-show="inputShowed">取消</view>
         </view>
         <map :latitude="lat" :longitude="lng" :markers="covers" :scale="12"></map>
-        <view>
-
+        <view class="box weather">
+            <text v-if="weather.city">{{weather.city.text}} : {{weather.city.data}}</text>
+            <text v-if="weather.weather">{{weather.weather.text}} : {{weather.weather.data}}</text>
+            <text v-if="weather.temperature">{{weather.temperature.text}} : {{weather.temperature.data}} ℃</text>
+            <text v-if="weather.winddirection">风速 : {{weather.winddirection.data}} {{weather.windpower.data}}</text>
+            <text v-if="weather.humidity">{{weather.humidity.text}} : {{weather.humidity.data}}</text>
         </view>
-        <!-- <scroll-view scroll-y class="scrollView">
-            <view class="tui-list">
-                <view class="tui-list-cell" :class="[index==address.length-1?'tui-cell-last':'']" v-for="(item,index) in address"
-                 :key="index">
-                    <view class=" addr-title ">{{item.title}}</view>
-                    <view class="addr-box ">
-                        <view class="addr-detail ">
-                            <text class="distance">{{item.distance}}m</text>
-                            {{item.address}}
-                        </view>
-                        <view class="addr-opera ">
-                            <view class="opera-box " hover-class="opcity " :hover-stay-time="150 " @tap="call " :data-id="item.id" v-if="item.tel">
-                                <hammer-icon :from="'iconfont'" :name="'voipphone'" :size="14" ></hammer-icon>
-                                <view class=""></view>
-                                <view class="text">打电话</view>
-                            </view>
-                            <view class="opera-box " hover-class="opcity" :hover-stay-time="150" @tap="go" :data-id="item.id">
-                                <hammer-icon :from="'tui'" :name="'position-fill'" :size="14" ></hammer-icon>
-                                <view class="text">到这里</view>
-                            </view>
-                        </view>
-                    </view>
-                </view>
-            </view>
-        </scroll-view> -->
     </view>
 </template>
 
@@ -68,7 +47,8 @@
                 lng: 116.35231,
                 covers: [],
                 address: [],
-                scrollH: 256
+                scrollH: 256,
+                weather: {}
             }
         },
         onLoad(options) {
@@ -80,7 +60,6 @@
                 let winHeight = uni.getSystemInfoSync().windowHeight;
                 this.scrollH = winHeight - 44 - uni.upx2px(600);
                 this.getLocation(() => {
-                    // this.getPoiAround(options.key || "加油站")
                     this.getWeather()
                 });
             }, 300)
@@ -126,9 +105,9 @@
                         location: '', //location： 经纬度坐标。 为空时， 基于当前位置进行地址解析。 格式： '经度,纬度'
                         success: (data) => {
                             console.log(data);
+                            that.weather = data;
                             uni.showModal({
                                 title: "信息",
-                                content: data,
                                 showCancel: false,
                                 confirmColor: "#00AB98",
                                 success: (res) => {
@@ -150,116 +129,15 @@
                     })
                 }, 0);
             },
-            getPoiAround(keywords) {
-                //检索周边的POI
-                uni.showLoading({
-                    title: "加载中..."
-                })
-                const that = this;
-                setTimeout(() => {
-                    this.amapPlugin.getPoiAround({
-                        querykeywords: keywords,
-                        location: '', //location： 经纬度坐标。 为空时， 基于当前位置进行地址解析。 格式： '经度,纬度'
-                        success: (data) => {
-                            let arr = [];
-                            let addr = [];
-                            for (let i = 0; i < data.markers.length; i++) {
-                                arr.push({
-                                    id: i,
-                                    latitude: data.markers[i].latitude,
-                                    longitude: data.markers[i].longitude,
-                                    title: data.markers[i].name
-                                })
-                                let tel = that.trim(data.poisData[i].tel);
-                                if (~tel.indexOf(";")) {
-                                    tel = tel.split(";")[0]
-                                }
-                                addr.push({
-                                    id: i,
-                                    latitude: data.markers[i].latitude,
-                                    longitude: data.markers[i].longitude,
-                                    title: data.markers[i].name,
-                                    address: data.markers[i].address,
-                                    tel: tel,
-                                    distance: data.poisData[i].distance
-                                })
-                            }
-
-                            this.address = addr;
-                            this.covers = arr;
-                            uni.hideLoading()
-                        },
-                        fail: (info) => {
-                            uni.showToast({
-                                title: '获取位置信息失败，请检查是否打开位置权限'
-                            })
-                            uni.hideLoading()
-                        }
-                    })
-                }, 0);
-
-            },
             bindInput: function(e) {
                 const keywords = e.detail.value;
                 this.getPoiAround(keywords);
-            },
-            /*marker: function(e) {
-                const that = this
-                const item = that.address[e.markerId || 0];
-                const menu = item.tel ? ["打电话", "到这里"] : ["到这里"];
-                uni.showActionSheet({
-                    itemList: menu,
-                    success(res) {
-                        if (res.tapIndex == 0 && item.tel) {
-                            uni.makePhoneCall({
-                                phoneNumber: item.tel
-                            })
-                        } else {
-                            const latitude = Number(item.latitude)
-                            const longitude = Number(item.longitude)
-                            uni.openLocation({
-                                name: item.title,
-                                address: item.address,
-                                latitude,
-                                longitude,
-                                scale: 18
-                            })
-                        }
-                    },
-                    fail(res) {
-                        console.log(res.errMsg)
-                    }
-                })
-
-            },*/
-            call(event) {
-                const index = Number(event.currentTarget.dataset.id);
-                const tel = this.address[index].tel;
-                if (tel) {
-                    uni.makePhoneCall({
-                        phoneNumber: tel
-                    })
-                }
-
-            },
-            go(event) {
-                const index = Number(event.currentTarget.dataset.id)
-                const item = this.address[index];
-                const latitude = Number(item.latitude)
-                const longitude = Number(item.longitude)
-                uni.openLocation({
-                    name: item.title,
-                    address: item.address,
-                    latitude,
-                    longitude,
-                    scale: 18
-                })
             }
         }
     }
 </script>
 
-<style>
+<style lang="scss">
     page {
         height: 100%;
     }
@@ -305,16 +183,27 @@
         width: 100%;
         height: 600rpx;
     }
+    .box.weather {
+        height: calc(100vh - 600rpx - 46px);
+        background: #00ab98;
+        color: #fff;
+        padding-top: 80rpx;
+        padding-left: 100rpx;
+        line-height: 60rpx;
+        text {
+            display: block;
+        }
+    }
 
     .opcity {
         opacity: 0.5;
     }
 
-    .scrollView {
+    /* .scrollView {
         width: 100%;
         background: #fff;
         height: calc(100vh - 46px - 600rpx);
-    }
+    } */
 
     .search-bar {
         position: relative;

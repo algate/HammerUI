@@ -3,13 +3,13 @@
         <view class="top-container">
             <view class="bg-img"></view>
             <view v-show="!isLogin" class="user-wrapper">
-                <navigator url="../main/main" hover-class="opcity" :hover-stay-time="150" class="user">
+                <view class="user">
                     <image class="avatar-img" src="../../static/images/mine/user-default.png"></image>
-                    <text class="user-info-mobile">请登录</text>
-                </navigator>
+                    <button class="login-btn" @tap="userLogin">登录</button>
+                </view>
             </view>
             <view v-show="isLogin" class="user">
-                <image class="avatar-img" :src="userInfo.avatarUrl?userInfo.avatarUrl:'/static/images/my/mine_def_touxiang.png'"></image>
+                <image class="avatar-img" :src="userInfo.avatarUrl?userInfo.avatarUrl:'/static/images/logo.svg'"></image>
                 <view class="user-info-mobile">
                     <text>{{userInfo.nickName}}</text>
                     <view class="edit-img" hover-class="opcity" :hover-stay-time="150" @tap="edit">
@@ -61,10 +61,10 @@
                     <hammer-icon class="github" from="iconfont" name="edit" :size="36"></hammer-icon>
                     <text class="item-name">反馈</text>
                 </view>
-                <view @tap="tapEvent" data-index="3" class="item" hover-class="opcity" :hover-stay-time="150">
+                <!-- <view @tap="tapEvent" data-index="3" class="item" hover-class="opcity" :hover-stay-time="150">
                     <hammer-icon class="github" from="iconfont" name="time" :size="36"></hammer-icon>
                     <text class="item-name">日志</text>
-                </view>
+                </view> -->
             </view>
         </view>
         <view @tap="logout" class="logout h-margin-top" :hover-stay-time="150">
@@ -82,11 +82,11 @@ export default {
         ...mapState(["isLogin","userInfo"])
     },
     data() {
-        return {}
+        return {
+        }
     },
-    onShow: function() {},
     methods: {
-        ...mapMutations(["logoff"]),
+        ...mapMutations(["logoff","login"]),
         logout: function() {
             uni.showModal({
                 title: "提示",
@@ -94,9 +94,10 @@ export default {
                 confirmColor: "#00AB98",
                 success: (res) => {
                     if (res.confirm) {
-                        uni.reLaunch({
-                            url: "/pages/main/main"
-                        })
+                        /* uni.reLaunch({
+                            url: "/pages/index/index"
+                        }) */
+						this.logoff(false);
                     }
                 }
             });
@@ -105,6 +106,9 @@ export default {
             uni.showToast({
                 title: 'Tips: 别点了😊'
             })
+        },
+        userLogin() {
+			this.logoff(true);
         },
         tapEvent: function(e) {
             let index = e.currentTarget.dataset.index;
@@ -117,9 +121,9 @@ export default {
             } else if (index == 2) {
                 let key = e.currentTarget.dataset.key;
                 url = "../hammer-user/user-amap?key=" + key
-            } else {
+            }/* else {
                 url = "../log/log"
-            }
+            }*/
             uni.navigateTo({
                 url: url
             })
@@ -171,6 +175,14 @@ export default {
     width: 100%;
     height: 440rpx;
     background: linear-gradient($hammer-color, #f1f1f1);
+}
+
+.login-btn {
+    border: none;
+    background: none;
+    &:after {
+        border: none;
+    }
 }
 
 .logout {

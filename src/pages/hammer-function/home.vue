@@ -5,7 +5,7 @@
                 <navigator hover-class="none" :url="'/pages/hammer-function/' + item.name" class="nav-li" open-type="navigate" :class="item.bgColor" v-for="(item,index) in elements" :key="index" :style="{animation: 'bounceInDown ' + ((index+1)*0.2+1) + 's ' + ((index)*0.4) + 's 1 both'}">
                     <view class="nav-title">{{item.title}}</view>
                     <view class="nav-name">{{item.name}}</view>
-                    <text><hammer-icon :from="item.from" :name="item.hammerIcon" color="#fff" :size="item.size"></hammer-icon></text>
+                    <view class="nav-icon"><hammer-icon :from="item.from" :name="item.hammerIcon" color="#fff" :size="item.size"></hammer-icon></view>
                 </navigator>
             </view>
         </scroll-view>

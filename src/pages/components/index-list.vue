@@ -143,9 +143,14 @@ export default {
         }
     },
     // #endif
+    // #ifdef MP-WEIXIN
     onReady() {
-        this.init()
+        if(this.listData.length > 0) {
+            this.initData();
+            setTimeout(() => this.init(),0)
+        }
     },
+    // #endif
     methods: {
         /**
          * scroll-view 滚动监听

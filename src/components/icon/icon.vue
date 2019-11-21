@@ -1,5 +1,5 @@
 <template>
-    <view :class="[from=='tui'?'tui-icon tui-icon-'+name:'iconfont icon-'+name]" :style="{ color: color, fontSize: size + 'px',fontWeight:bold?'bold':'normal'}" @tap="handleClick(index)"></view>
+    <view :class="[from=='iconfont' ? 'iconfont icon-'+name : 'tui-icon tui-icon-'+name]" :style="{ color: color, fontSize: (size?size:'24') + 'px',fontWeight:bold?'bold':'normal'}" @tap="handleClick(index)"></view>
 </template>
 <script>
 export default {

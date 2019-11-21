@@ -16,8 +16,8 @@ const store = new Vuex.Store({
                 state.isLogin = true;
             }
         },
-        logoff(state) {
-
+        logoff(state, isLogin) {
+			state.isLogin = isLogin;
         }
     }
 })

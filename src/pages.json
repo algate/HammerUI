@@ -1,7 +1,7 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/main/main",
+			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "ChuiziUI🔨",
 				"navigationBarBackgroundColor": "#00AB98",
@@ -312,21 +312,21 @@
 		"selectedColor": "#00ab98",
 		"backgroundColor": "#fff",
 		"borderStyle": "black",
-		"height": "100rpx",
+		"height": "80px",
 		"list": [{
 			"pagePath": "pages/hammer-basic/home",
-			"iconPath": "static/images/tabBar/basic-default.svg",
-			"selectedIconPath": "static/images/tabBar/basic.svg",
+			"iconPath": "static/images/tabBar/basic-default.png",
+			"selectedIconPath": "static/images/tabBar/basic.png",
 			"text": "基础"
 		},{
 			"pagePath": "pages/hammer-function/home",
-			"iconPath": "static/images/tabBar/function-default.svg",
-			"selectedIconPath": "static/images/tabBar/function.svg",
+			"iconPath": "static/images/tabBar/function-default.png",
+			"selectedIconPath": "static/images/tabBar/function.png",
 			"text": "功能"
 		},{
 			"pagePath": "pages/hammer-user/mine",
-			"iconPath": "static/images/tabBar/hammer-default.svg",
-			"selectedIconPath": "static/images/tabBar/hammer.svg"
+			"iconPath": "static/images/tabBar/hammer-default.png",
+			"selectedIconPath": "static/images/tabBar/hammer.png"
 		}]
 	},
 	"globalStyle": {
@@ -334,5 +334,15 @@
 		"navigationBarTitleText": "ChuiziUI",
 		"navigationBarBackgroundColor": "#5677FC",
 		"backgroundColor": "#F8F8F8"
+	},
+	"condition" : { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [
+			{
+				"name": "", //模式名称
+				"path": "", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			}
+		]
 	}
 }
