@@ -29,7 +29,7 @@ export default {
             uni.hideLoading();
             // 状态管理中存放地址栏参数
             this.userInfo = {
-                nickName: 'hammer',
+                nickName: 'HammerUI',
                 avatarUrl: '/static/images/logo.svg',
                 gender: 0, //性别 0：未知、1：男、2：女
                 province: '北京市',

@@ -21,13 +21,13 @@
                 <view class="page-view">
                     <swiper indicator-dots autoplay circular :interval="5000" :duration="150" class="swiper">
                         <swiper-item v-if="index%2===0" @tap.stop="detail">
-                            <image src="../../static/images/mall/banner/2.jpg" class="slide-image" />
+                            <image src="http://shp.qpic.cn/ishow/2735011111/1547177102_704174346_5257_sProdImgNo_3.jpg/0" class="slide-image" />
                         </swiper-item>
                         <swiper-item @tap.stop="detail">
-                            <image src="../../static/images/mall/banner/4.jpg" class="slide-image" />
+                            <image src="http://shp.qpic.cn/ishow/2735010915/1547020571_704174346_15249_sProdImgNo_3.jpg/0" class="slide-image" />
                         </swiper-item>
                         <swiper-item @tap.stop="detail">
-                            <image src="../../static/images/mall/banner/5.jpg" class="slide-image" />
+                            <image src="http://shp.qpic.cn/ishow/2735010915/1547020061_-888937974_25739_sProdImgNo_3.jpg/0" class="slide-image" />
                         </swiper-item>
                     </swiper>
                     <view class="class-box">
@@ -35,19 +35,19 @@
                             <view class="class-name">{{item}}</view>
                             <view class="g-container">
                                 <view class="g-box" @tap.stop="productList" data-key="高价回收">
-                                    <image src="../../static/images/product/11.jpg" class="g-image" />
+                                    <image src="http://shp.qpic.cn/ishow/2735010915/1547020571_704174346_15249_sProdImgNo_2.jpg/0" class="g-image" />
                                     <view class="g-title">高价回收</view>
                                 </view>
                                 <view class="g-box" @tap.stop="productList" data-key="好物优选">
-                                    <image src="../../static/images/product/22.jpg" class="g-image" />
+                                    <image src="http://shp.qpic.cn/ishow/2735010915/1547020514_704174346_3495_sProdImgNo_2.jpg/0" class="g-image" />
                                     <view class="g-title">好物优选</view>
                                 </view>
                                 <view class="g-box" @tap.stop="productList" data-key="iphone X">
-                                    <image src="../../static/images/product/33.jpg" class="g-image" />
+                                    <image src="http://shp.qpic.cn/ishow/2735010816/1546935488_-888937974_8713_sProdImgNo_2.jpg/0" class="g-image" />
                                     <view class="g-title">iphone X</view>
                                 </view>
                                 <view class="g-box" @tap.stop="productList" data-key="电动牙刷" v-if="index%2===0">
-                                    <image src="../../static/images/product/44.jpg" class="g-image" />
+                                    <image src="http://shp.qpic.cn/ishow/2735010718/1546855949_-888937974_7998_sProdImgNo_2.jpg/0" class="g-image" />
                                     <view class="g-title">电动牙刷</view>
                                 </view>
                             </view>
@@ -57,35 +57,35 @@
                             <view class="class-name">专场推荐{{index+1}}</view>
                             <view class="g-container">
                                 <view class="g-box" @tap.stop="productList" data-key="笔记本" v-if="index%2===0">
-                                    <image src="../../static/images/product/11.jpg" class="g-image" />
+                                    <image src="http://shp.qpic.cn/ishow/2735010915/1547020571_704174346_15249_sProdImgNo_2.jpg/0" class="g-image" />
                                     <view class="g-title">笔记本</view>
                                 </view>
                                 <view class="g-box" @tap.stop="productList" data-key="电水壶">
-                                    <image src="../../static/images/product/22.jpg" class="g-image" />
+                                    <image src="http://shp.qpic.cn/ishow/2735010915/1547020514_704174346_3495_sProdImgNo_2.jpg/0" class="g-image" />
                                     <view class="g-title">电水壶</view>
                                 </view>
                                 <view class="g-box" @tap.stop="productList" data-key="iphone X">
-                                    <image src="../../static/images/product/33.jpg" class="g-image" />
+                                    <image src="http://shp.qpic.cn/ishow/2735010816/1546935488_-888937974_8713_sProdImgNo_2.jpg/0" class="g-image" />
                                     <view class="g-title">iphone X</view>
                                 </view>
                                 <view class="g-box" @tap.stop="productList" data-key="电动牙刷">
-                                    <image src="../../static/images/product/44.jpg" class="g-image" />
+                                    <image src="http://shp.qpic.cn/ishow/2735010718/1546855949_-888937974_7998_sProdImgNo_2.jpg/0" class="g-image" />
                                     <view class="g-title">电动牙刷</view>
                                 </view>
                                 <view class="g-box" @tap.stop="productList" data-key="抽纸">
-                                    <image src="../../static/images/product/55.jpg" class="g-image" />
+                                    <image src="http://shp.qpic.cn/ishow/2735010415/1546587152_-888937974_8639_sProdImgNo_2.jpg/0" class="g-image" />
                                     <view class="g-title">抽纸</view>
                                 </view>
                                 <view class="g-box" @tap.stop="productList" data-key="笔记本">
-                                    <image src="../../static/images/product/11.jpg" class="g-image" />
+                                    <image src="http://shp.qpic.cn/ishow/2735010415/1546586181_704174346_30735_sProdImgNo_2.jpg/0" class="g-image" />
                                     <view class="g-title">笔记本</view>
                                 </view>
                                 <view class="g-box" @tap.stop="productList" data-key="电水壶">
-                                    <image src="../../static/images/product/22.jpg" class="g-image" />
+                                    <image src="http://shp.qpic.cn/ishow/2735010414/1546584023_704174346_17634_sProdImgNo_2.jpg/0" class="g-image" />
                                     <view class="g-title">电水壶</view>
                                 </view>
                                 <view class="g-box" @tap.stop="productList" data-key="iphone X" v-if="index%2===0">
-                                    <image src="../../static/images/product/33.jpg" class="g-image" />
+                                    <image src="http://shp.qpic.cn/ishow/2735010415/1546585341_-888937974_25945_sProdImgNo_2.jpg/0" class="g-image" />
                                     <view class="g-title">iphone X</view>
                                 </view>
                             </view>
@@ -95,27 +95,27 @@
                             <view class="class-name">专场推荐{{index+1}}</view>
                             <view class="g-container">
                                 <view class="g-box" @tap.stop="productList" data-key="iphone X">
-                                    <image src="../../static/images/product/33.jpg" class="g-image" />
+                                    <image src="http://shp.qpic.cn/ishow/2735010718/1546855949_-888937974_7998_sProdImgNo_2.jpg/0" class="g-image" />
                                     <view class="g-title">iphone X</view>
                                 </view>
                                 <view class="g-box" @tap.stop="productList" data-key="电动牙刷">
-                                    <image src="../../static/images/product/44.jpg" class="g-image" />
+                                    <image src="http://shp.qpic.cn/ishow/2735010415/1546587152_-888937974_8639_sProdImgNo_2.jpg/0" class="g-image" />
                                     <view class="g-title">电动牙刷</view>
                                 </view>
                                 <view class="g-box" @tap.stop="productList" data-key="抽纸">
-                                    <image src="../../static/images/product/55.jpg" class="g-image" />
+                                    <image src="http://shp.qpic.cn/ishow/2735010915/1547020571_704174346_15249_sProdImgNo_2.jpg/0" class="g-image" />
                                     <view class="g-title">抽纸</view>
                                 </view>
                                 <view class="g-box" @tap.stop="productList" data-key="笔记本">
-                                    <image src="../../static/images/product/11.jpg" class="g-image" />
+                                    <image src="http://shp.qpic.cn/ishow/2735010415/1546586181_704174346_30735_sProdImgNo_2.jpg/0" class="g-image" />
                                     <view class="g-title">笔记本</view>
                                 </view>
                                 <view class="g-box" @tap.stop="productList" data-key="电水壶">
-                                    <image src="../../static/images/product/22.jpg" class="g-image" />
+                                    <image src="http://shp.qpic.cn/ishow/2735010816/1546935488_-888937974_8713_sProdImgNo_2.jpg/0" class="g-image" />
                                     <view class="g-title">电水壶</view>
                                 </view>
                                 <view class="g-box" @tap.stop="productList" data-key="iphone X" v-if="index%2===0">
-                                    <image src="../../static/images/product/33.jpg" class="g-image" />
+                                    <image src="http://shp.qpic.cn/ishow/2735010415/1546585341_-888937974_25945_sProdImgNo_2.jpg/0" class="g-image" />
                                     <view class="g-title">iphone X</view>
                                 </view>
                             </view>
@@ -217,8 +217,8 @@
 
     .tui-searchbox {
         width: 100%;
-        height: 92upx;
-        padding: 0 30upx;
+        height: 92rpx;
+        padding: 0 30rpx;
         box-sizing: border-box;
         background: #fff;
         display: flex;
@@ -236,7 +236,7 @@
     .tui-searchbox::after {
         content: '';
         position: absolute;
-        border-bottom: 1upx solid #d2d2d2;
+        border-bottom: 1rpx solid #d2d2d2;
         -webkit-transform: scaleY(0.5);
         transform: scaleY(0.5);
         bottom: 0;
@@ -246,10 +246,10 @@
 
     .tui-search-input {
         width: 100%;
-        height: 60upx;
+        height: 60rpx;
         background: #f1f1f1;
-        border-radius: 30upx;
-        font-size: 26upx;
+        border-radius: 30rpx;
+        font-size: 26rpx;
         color: #999;
         display: flex;
         align-items: center;
@@ -257,26 +257,26 @@
     }
 
     .tui-search-text {
-        padding-left: 16upx;
+        padding-left: 16rpx;
     }
 
     .tab-view {
         /* height: 100%; */
-        width: 200upx;
+        width: 200rpx;
         position: fixed;
         left: 0;
         z-index: 10;
     }
 
     .tab-bar-item {
-        width: 200upx;
-        height: 110upx;
+        width: 200rpx;
+        height: 110rpx;
         background: #f6f6f6;
         box-sizing: border-box;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 26upx;
+        font-size: 26rpx;
         color: #444;
         font-weight: 400;
     }
@@ -284,7 +284,7 @@
     .active {
         position: relative;
         color: #000;
-        font-size: 30upx;
+        font-size: 30rpx;
         font-weight: 600;
         background: #fcfcfc;
     }
@@ -292,8 +292,8 @@
     .active::before {
         content: "";
         position: absolute;
-        border-left: 8upx solid #E41F19;
-        height: 30upx;
+        border-left: 8rpx solid #E41F19;
+        height: 30rpx;
         left: 0;
     }
 
@@ -302,7 +302,7 @@
     .right-box {
         width: 100%;
         position: fixed;
-        padding-left: 220upx;
+        padding-left: 220rpx;
         box-sizing: border-box;
         left: 0;
     }
@@ -310,24 +310,24 @@
     .page-view {
         width: 100%;
         overflow: hidden;
-        padding-top: 20upx;
-        padding-right: 20upx;
+        padding-top: 20rpx;
+        padding-right: 20rpx;
         box-sizing: border-box;
         padding-bottom: env(safe-area-inset-bottom);
     }
 
     .swiper {
         width: 100%;
-        height: 220upx;
-        border-radius: 12upx;
+        height: 300rpx;
+        border-radius: 12rpx;
         overflow: hidden;
         transform: translateZ(0);
     }
 
     /* #ifdef APP-PLUS || MP */
     .swiper .wx-swiper-dot {
-        width: 8upx;
-        height: 8upx;
+        width: 8rpx;
+        height: 8rpx;
         display: inline-flex;
         background: none;
         justify-content: space-between;
@@ -337,7 +337,7 @@
         content: '';
         flex-grow: 1;
         background: rgba(255, 255, 255, 0.8);
-        border-radius: 16upx;
+        border-radius: 16rpx;
         overflow: hidden;
     }
 
@@ -346,7 +346,7 @@
     }
 
     .swiper .wx-swiper-dot.wx-swiper-dot-active {
-        width: 16upx;
+        width: 16rpx;
     }
 
     /* #endif */
@@ -380,28 +380,28 @@
 
     .slide-image {
         width: 100%;
-        height: 220upx;
+        height: 300rpx;
     }
 
     .class-box {
-        padding-top: 30upx;
+        padding-top: 30rpx;
     }
 
     .class-item {
         background: #fff;
         width: 100%;
         box-sizing: border-box;
-        padding: 20upx;
-        margin-bottom: 20upx;
-        border-radius: 12upx;
+        padding: 20rpx;
+        margin-bottom: 20rpx;
+        border-radius: 12rpx;
     }
 
     .class-name {
-        font-size: 22upx;
+        font-size: 22rpx;
     }
 
     .g-container {
-        /* padding-top: 20upx; */
+        /* padding-top: 20rpx; */
         display: flex;
         display: -webkit-flex;
         justify-content: flex-start;
@@ -412,15 +412,15 @@
     .g-box {
         width: 33.3333%;
         text-align: center;
-        padding-top: 40upx;
+        padding-top: 40rpx;
     }
 
     .g-image {
-        width: 120upx;
-        height: 120upx;
+        width: 120rpx;
+        height: 120rpx;
     }
 
     .g-title {
-        font-size: 22upx;
+        font-size: 22rpx;
     }
 </style>

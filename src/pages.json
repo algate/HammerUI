@@ -305,6 +305,15 @@
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
+		},
+		{
+			"path": "pages/hammer-user/log",
+			"style": {
+				"navigationBarTitleText": "日志-🖌",
+				"disableScroll": true,
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
 		}
 	],
 	"tabBar": {

@@ -61,10 +61,10 @@
                     <hammer-icon class="github" from="iconfont" name="edit" :size="36"></hammer-icon>
                     <text class="item-name">反馈</text>
                 </view>
-                <!-- <view @tap="tapEvent" data-index="3" class="item" hover-class="opcity" :hover-stay-time="150">
+                <view @tap="tapEvent" data-index="3" class="item" hover-class="opcity" :hover-stay-time="150">
                     <hammer-icon class="github" from="iconfont" name="time" :size="36"></hammer-icon>
                     <text class="item-name">日志</text>
-                </view> -->
+                </view>
             </view>
         </view>
         <view @tap="logout" class="logout h-margin-top" :hover-stay-time="150">
@@ -121,9 +121,9 @@ export default {
             } else if (index == 2) {
                 let key = e.currentTarget.dataset.key;
                 url = "../hammer-user/user-amap?key=" + key
-            }/* else {
-                url = "../log/log"
-            }*/
+            } else {
+                url = "../hammer-user/log"
+            }
             uni.navigateTo({
                 url: url
             })
