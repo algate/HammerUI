@@ -7,7 +7,7 @@ const store = new Vuex.Store({
     state: {
         userInfo: {},
         isLogin: false,
-        version: '1.0.1'
+        version: '1.0.0'
     },
     mutations: {
         login(state, userInfo) {
