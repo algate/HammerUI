@@ -1,7 +1,15 @@
 <template>
     <view>
-        <button type="default" @tap="h5onGotUserInfo">进入🔨主页</button>
-		<button v-if="canIUse" class="login-btn" open-type="getUserInfo" type="hidden" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">微信登录</button>
+        <view class="hammer-tencent">
+            <image src="/static/images/mine/tencent.png" mode="widthFix"></image>
+        </view>
+        <view class="hammer-logo">
+            <view class="logo">
+                <image src="/static/images/tabBar/hammer.svg" mode="scaleToFill" />
+            </view>
+        </view>
+        <button class="goToHome bg-color" @tap="h5onGotUserInfo">登录</button>
+        <button v-if="canIUse" class="login-btn" open-type="getUserInfo" type="hidden" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">微信登录</button>
     </view>
 </template>
 <script>
@@ -16,11 +24,11 @@ export default {
     data() {
         return {
             userInfo: {},
-			canIUse: wx.canIUse('button.open-type.getUserInfo')
+            canIUse: wx.canIUse('button.open-type.getUserInfo')
         };
     },
     onLoad() {
-		let that = this;
+        let that = this;
         uni.showLoading({
             title: '加载中...'
         });
@@ -39,42 +47,42 @@ export default {
             this.login(this.userInfo);
         }
         // #endif
-		// 查看是否授权
+        // 查看是否授权
         // #ifdef MP-WEIXIN
-		wx.getSetting({
-		  success (res){
-			if (res.authSetting['scope.userInfo']) {
-			  // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-			  wx.getUserInfo({
-				success: function(res) {
-				  that.login(res.userInfo);
-				}
-			  })
-			}
-		  }
-		});
+        wx.getSetting({
+            success(res) {
+                if (res.authSetting['scope.userInfo']) {
+                    // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+                    wx.getUserInfo({
+                        success: function(res) {
+                            that.login(res.userInfo);
+                        }
+                    })
+                }
+            }
+        });
         // #endif
         this.init()
     },
     methods: {
-		...mapMutations(["login"]),
+        ...mapMutations(["login"]),
         init() {
             uni.hideLoading()
         },
         h5onGotUserInfo: function() {
-			/* uni.login({
-				provider: 'weixin',
-				success: function (loginRes) {
-					console.log(loginRes.authResult);
-				}
-			}); */
+            /* uni.login({
+                provider: 'weixin',
+                success: function (loginRes) {
+                    console.log(loginRes.authResult);
+                }
+            }); */
             uni.reLaunch({
                 url: '/pages/hammer-basic/home'
             });
         },
-		bindGetUserInfo (e) {
-			console.log(e.detail.userInfo);
-		}
+        bindGetUserInfo(e) {
+            console.log(e.detail.userInfo);
+        }
     },
     onShow() {
         console.log("进入🔨入口")
@@ -82,8 +90,66 @@ export default {
 }
 </script>
 <style lang="scss">
-	.login-btn {
-		visibility: hidden;
-		display: none;
-	}
+@keyframes swingHammer {
+    20% {
+        -webkit-transform: rotate3d(0, 0, 1, 15deg);
+        transform: rotate3d(0, 0, 1, 15deg);
+    }
+
+    40% {
+        -webkit-transform: rotate3d(0, 0, 1, -12deg);
+        transform: rotate3d(0, 0, 1, -12deg);
+    }
+
+    60% {
+        -webkit-transform: rotate3d(0, 0, 1, 15deg);
+        transform: rotate3d(0, 0, 1, 15deg);
+    }
+
+    80% {
+        -webkit-transform: rotate3d(0, 0, 1, -12deg);
+        transform: rotate3d(0, 0, 1, -12deg);
+    }
+
+    to {
+        -webkit-transform: rotate3d(0, 0, 1, 15deg);
+        transform: rotate3d(0, 0, 1, 15deg);
+    }
+}
+
+.hammer-logo {
+    text-align: center;
+
+    .logo {
+        width: 50vw;
+        height: 50vw;
+        transform: translateX(50%);
+        animation: swingHammer 3s infinite;
+
+        image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.goToHome {
+    margin-top: 160upx;
+    width: 60%;
+}
+
+.login-btn {
+    visibility: hidden;
+    display: none;
+}
+
+.hammer-tencent {
+    margin-bottom: 100upx;
+
+    image {
+        width: 100%;
+        background: #2ba045;
+    }
+}
 </style>

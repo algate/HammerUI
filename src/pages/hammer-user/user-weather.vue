@@ -104,20 +104,17 @@
                     that.amapPlugin.getWeather({
                         location: '', //location： 经纬度坐标。 为空时， 基于当前位置进行地址解析。 格式： '经度,纬度'
                         success: (data) => {
-                            console.log(data);
                             that.weather = data;
-                            uni.showModal({
+                            /*uni.showModal({
                                 title: "信息",
                                 showCancel: false,
                                 confirmColor: "#00AB98",
                                 success: (res) => {
                                     if (res.confirm) {
                                         // 点击确定执行方法
-                                    }/* else if (res.cancel) {
-                                        console.log('用户点击取消');
-                                    }*/
+                                    }
                                 }
-                            });
+                            });*/
                             uni.hideLoading()
                         },
                         fail: (info) => {
