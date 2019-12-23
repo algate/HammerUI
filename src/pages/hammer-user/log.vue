@@ -100,6 +100,9 @@ export default {
 
 .hammer-log {
     padding: 30rpx;
+    box-sizing: border-box;
+    height: calc(100vh - 60rpx);
+    overflow-y: auto;
 }
 .tui-content-log {
     border-radius: 10rpx;

@@ -1,7 +1,7 @@
 <template>
     <view>
         <view class="hammer-tencent">
-            <image src="/static/images/mine/tencent.png" mode="widthFix"></image>
+            <image src="/static/images/mine/wechat.png" mode="widthFix"></image>
         </view>
         <view class="hammer-logo">
             <view class="logo">
@@ -90,6 +90,14 @@ export default {
 }
 </script>
 <style lang="scss">
+.hammer-tencent {
+    margin-bottom: 160upx;
+
+    image {
+        width: 100%;
+        background: #2ba045;
+    }
+}
 @keyframes swingHammer {
     20% {
         -webkit-transform: rotate3d(0, 0, 1, 15deg);
@@ -144,12 +152,4 @@ export default {
     display: none;
 }
 
-.hammer-tencent {
-    margin-bottom: 100upx;
-
-    image {
-        width: 100%;
-        background: #2ba045;
-    }
-}
 </style>

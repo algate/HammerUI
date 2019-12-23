@@ -3,21 +3,15 @@
         <view class="search-bar">
             <view class="search-bar-form">
                 <view class="search-bar-box">
-                    <!-- #ifdef APP-PLUS || MP -->
                     <hammer-icon name="search" :size="16"></hammer-icon>
-                    <!-- #endif -->
                     <input confirm-type="search" class="search-bar-input" placeholder="请输入您的目的地" :value="inputVal" :focus="inputShowed"
                      @confirm="bindInput" @input="inputTyping" />
                     <view class="icon-clear" v-if="inputVal" @tap="clearInput">
-                        <!-- #ifdef APP-PLUS || MP -->
-                        <hammer-icon from="iconfont" name="delete" :size="14"></hammer-icon>
-                        <!-- #endif -->
+                        <hammer-icon name="close" :size="14"></hammer-icon>
                     </view>
                 </view>
                 <label class="search-bar-label" v-show="!inputShowed" @tap="showInput">
-                    <!-- #ifdef APP-PLUS || MP -->
                     <hammer-icon name="search" :size="16"></hammer-icon>
-                    <!-- #endif -->
                     <view class="search-bar-text">请输入您的目的地</view>
                 </label>
             </view>
@@ -138,6 +132,10 @@
     page {
         height: 100%;
     }
+    input,
+    uni-input {
+        overflow: inherit;
+    }
 
     .tui-list {
         background-color: #fff;
@@ -238,7 +236,6 @@
     .search-bar-text {
         display: inline-block;
         font-size: 14px;
-        vertical-align: middle;
     }
 
     .search-bar-box {
@@ -254,6 +251,7 @@
         height: 30px;
         line-height: 30px;
         font-size: 14px;
+        display: inline-block;
     }
 
     .icon-clear {
