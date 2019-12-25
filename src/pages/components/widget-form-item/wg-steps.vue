@@ -18,6 +18,7 @@
 </template>
 <script>
 export default {
+    name: 'WgSteps',
     data () {
         return {
             levelNum: 8,

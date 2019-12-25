@@ -12,6 +12,7 @@
 </template>
 <script>
 export default {
+    name: 'WgPicture',
     props: {
         element: {
             type: Object

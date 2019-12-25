@@ -15,6 +15,7 @@
 </template>
 <script>
 export default {
+    name: "WgDate",
     props: {
         element: {
             type: Object

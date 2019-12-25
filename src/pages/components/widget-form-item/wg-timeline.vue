@@ -1,142 +1,177 @@
 <template>
     <view>
-        <view class="cu-bar solid-bottom bg-white">
-            <view class="action">时间轴线</view>
+        <view class="title">
+            <image class="work-order-icon" src="/static/images/workorder/work-order-history.png"></image>
+            {{title}}
         </view>
         <view class="cu-timeline">
-            <view class="cu-time">接单</view>
-            <view class="cu-item text-blue">
-                <view class="bg-blue content">
-                    <text>20:00</text> 【月球】快件已到达月球，准备发往地球
-                </view>
-                <view class="bg-cyan content">
-                    <text>10:00</text> 【银河系】快件已到达银河系，准备发往月球
-                </view>
-            </view>
-            <view class="cu-time">完成</view>
-            <view class="cu-item">
-                <view class="content">
-                    <view class="cu-capsule radius">
-                        <view class="cu-tag bg-cyan">上午</view>
-                        <view class="cu-tag line-cyan">10:00</view>
+            <view :class="`${index === 0 ? 'cu-item text-blue' : 'cu-item'}`" v-for="(item, index) in data">
+                <view :class="`${index === 0 ? 'bg-blue content' : 'content'}`">
+                    <view>
+                        【{{item.optName || '<未知>'}}】{{item.optState}}
                     </view>
-                    <view class="margin-top">这是第一次，我家的铲屎官走了这么久。久到足足有三天！！ 在听到他的脚步声响在楼梯间的那一刻，我简直想要破门而出，对着他狠狠地吼上10分钟，然后再看心情要不要他进门。</view>
+                    <view>
+                        地点：{{item.locAddress || `${index === data.length - 1 ? '【PC端操作】,无地理位置信息' : '<未知>'}`}}
+                    </view>
+                    <view>
+                        时间：{{item.optTime || '<未知>'}}
+                    </view>
                 </view>
             </view>
         </view>
-        <view class="cu-bar solid-bottom bg-white margin-top">
-            <view class="action">时间轴线2</view>
-        </view>
-        <view class="tui-order-tracking">
-            <tui-time-axis>
+        <!--<view class="cu-bar solid-bottom bg-white">-->
+            <!--<view class="action">时间轴线</view>-->
+        <!--</view>-->
+        <!--<view class="cu-timeline">-->
+            <!--<view class="cu-time">接单</view>-->
+            <!--<view class="cu-item text-blue">-->
+                <!--<view class="bg-blue content">-->
+                    <!--<text>20:00</text> 【月球】快件已到达月球，准备发往地球-->
+                <!--</view>-->
+                <!--<view class="bg-cyan content">-->
+                    <!--<text>10:00</text> 【银河系】快件已到达银河系，准备发往月球-->
+                <!--</view>-->
+            <!--</view>-->
+            <!--<view class="cu-time">完成</view>-->
+            <!--<view class="cu-item">-->
+                <!--<view class="content">-->
+                    <!--<view class="cu-capsule radius">-->
+                        <!--<view class="cu-tag bg-cyan">上午</view>-->
+                        <!--<view class="cu-tag line-cyan">10:00</view>-->
+                    <!--</view>-->
+                    <!--<view class="margin-top">这是第一次，我家的铲屎官走了这么久。久到足足有三天！！ 在听到他的脚步声响在楼梯间的那一刻，我简直想要破门而出，对着他狠狠地吼上10分钟，然后再看心情要不要他进门。</view>-->
+                <!--</view>-->
+            <!--</view>-->
+        <!--</view>-->
+        <!--<view class="cu-bar solid-bottom bg-white margin-top">-->
+            <!--<view class="action">时间轴线2</view>-->
+        <!--</view>-->
+        <!--<view class="tui-order-tracking">-->
+            <!--<tui-time-axis>-->
 
-                <tui-timeaxis-item bgcolor="none">
-                    <template v-slot:node>
-                        <view class="tui-node tui-bg-primary">
-                            <tui-icon name="check" color="#fff" :size="14" :bold="true"></tui-icon>
-                        </view>
-                    </template>
+                <!--<tui-timeaxis-item bgcolor="none">-->
+                    <!--<template v-slot:node>-->
+                        <!--<view class="tui-node tui-bg-primary">-->
+                            <!--<tui-icon name="check" color="#fff" :size="14" :bold="true"></tui-icon>-->
+                        <!--</view>-->
+                    <!--</template>-->
 
-                    <template v-slot:content>
-                        <view>
-                            <view class="tui-order-title">已签收</view>
-                            <view class="tui-order-desc">您的订单已由本人签收。感谢您在商城购物，欢迎再次光临。</view>
-                            <view class="tui-order-time tui-gray">2019-05-01 18:48:26</view>
-                        </view>
-                    </template>
-                </tui-timeaxis-item>
+                    <!--<template v-slot:content>-->
+                        <!--<view>-->
+                            <!--<view class="tui-order-title">已签收</view>-->
+                            <!--<view class="tui-order-desc">您的订单已由本人签收。感谢您在商城购物，欢迎再次光临。</view>-->
+                            <!--<view class="tui-order-time tui-gray">2019-05-01 18:48:26</view>-->
+                        <!--</view>-->
+                    <!--</template>-->
+                <!--</tui-timeaxis-item>-->
 
-                <tui-timeaxis-item bgcolor="none">
-                    <template v-slot:node>
-                        <view class="tui-node">
-                            <tui-icon name="people" color="#fff" :size="13"></tui-icon>
-                        </view>
-                    </template>
-                    <template v-slot:content>
-                        <view class="tui-order-title tui-gray">派送中</view>
-                        <view class="tui-order-desc tui-light-gray">您的订单正在配送途中（快递员：echo.，电话：
-                            <text class='tui-primary'>13822448855</text>），请您耐心等待。</view>
-                        <view class="tui-order-time tui-gray">2019-05-01 16:29:07</view>
-                    </template>
-                </tui-timeaxis-item>
+                <!--<tui-timeaxis-item bgcolor="none">-->
+                    <!--<template v-slot:node>-->
+                        <!--<view class="tui-node">-->
+                            <!--<tui-icon name="people" color="#fff" :size="13"></tui-icon>-->
+                        <!--</view>-->
+                    <!--</template>-->
+                    <!--<template v-slot:content>-->
+                        <!--<view class="tui-order-title tui-gray">派送中</view>-->
+                        <!--<view class="tui-order-desc tui-light-gray">您的订单正在配送途中（快递员：echo.，电话：-->
+                            <!--<text class='tui-primary'>13822448855</text>），请您耐心等待。</view>-->
+                        <!--<view class="tui-order-time tui-gray">2019-05-01 16:29:07</view>-->
+                    <!--</template>-->
+                <!--</tui-timeaxis-item>-->
 
-                <tui-timeaxis-item bgcolor="none">
-                    <template v-slot:node>
-                        <view class="tui-node">
-                            <tui-icon name="transport" color="#fff" :size="13"></tui-icon>
-                        </view>
-                    </template>
-                    <template v-slot:content>
-                        <view class="tui-order-title tui-gray">运输中</view>
-                        <view class="tui-order-desc tui-light-gray">您的订单已到达XX【北京XX营业部】</view>
-                        <view class="tui-order-time tui-gray">2019-05-01 16:17:32</view>
-                    </template>
-                </tui-timeaxis-item>
+                <!--<tui-timeaxis-item bgcolor="none">-->
+                    <!--<template v-slot:node>-->
+                        <!--<view class="tui-node">-->
+                            <!--<tui-icon name="transport" color="#fff" :size="13"></tui-icon>-->
+                        <!--</view>-->
+                    <!--</template>-->
+                    <!--<template v-slot:content>-->
+                        <!--<view class="tui-order-title tui-gray">运输中</view>-->
+                        <!--<view class="tui-order-desc tui-light-gray">您的订单已到达XX【北京XX营业部】</view>-->
+                        <!--<view class="tui-order-time tui-gray">2019-05-01 16:17:32</view>-->
+                    <!--</template>-->
+                <!--</tui-timeaxis-item>-->
 
-                <tui-timeaxis-item bgcolor="none">
-                    <template v-slot:node>
-                        <view class="tui-node tui-node-small"></view>
-                    </template>
+                <!--<tui-timeaxis-item bgcolor="none">-->
+                    <!--<template v-slot:node>-->
+                        <!--<view class="tui-node tui-node-small"></view>-->
+                    <!--</template>-->
 
-                    <template v-slot:content>
-                        <view class="tui-order-desc tui-light-gray tui-ptop">您的订单已在XX【北京XX营业部】收货完成</view>
-                        <view class="tui-order-time tui-gray">2019-05-01 08:40:32</view>
-                    </template>
-                </tui-timeaxis-item>
+                    <!--<template v-slot:content>-->
+                        <!--<view class="tui-order-desc tui-light-gray tui-ptop">您的订单已在XX【北京XX营业部】收货完成</view>-->
+                        <!--<view class="tui-order-time tui-gray">2019-05-01 08:40:32</view>-->
+                    <!--</template>-->
+                <!--</tui-timeaxis-item>-->
 
-                <tui-timeaxis-item bgcolor="none">
-                    <template v-slot:node>
-                        <view class="tui-node tui-node-small"></view>
-                    </template>
-                    <template v-slot:content>
-                        <view class="tui-order-desc tui-light-gray tui-ptop">您的订单由XXXX送往XX【北京XX营业部】</view>
-                        <view class="tui-order-time tui-gray">2019-05-01 08:17:32</view>
-                    </template>
-                </tui-timeaxis-item>
+                <!--<tui-timeaxis-item bgcolor="none">-->
+                    <!--<template v-slot:node>-->
+                        <!--<view class="tui-node tui-node-small"></view>-->
+                    <!--</template>-->
+                    <!--<template v-slot:content>-->
+                        <!--<view class="tui-order-desc tui-light-gray tui-ptop">您的订单由XXXX送往XX【北京XX营业部】</view>-->
+                        <!--<view class="tui-order-time tui-gray">2019-05-01 08:17:32</view>-->
+                    <!--</template>-->
+                <!--</tui-timeaxis-item>-->
 
-                <tui-timeaxis-item bgcolor="none">
-                    <template v-slot:node>
-                        <view class="tui-node">
-                            <tui-icon name="home" color="#fff" :size="12"></tui-icon>
-                        </view>
-                    </template>
-                    <template v-slot:content>
-                        <view class="tui-order-title tui-gray">仓库处理中</view>
-                        <view class="tui-order-desc tui-light-gray">打包完成</view>
-                        <view class="tui-order-time tui-gray">2019-05-01 08:09:16</view>
-                    </template>
-                </tui-timeaxis-item>
+                <!--<tui-timeaxis-item bgcolor="none">-->
+                    <!--<template v-slot:node>-->
+                        <!--<view class="tui-node">-->
+                            <!--<tui-icon name="home" color="#fff" :size="12"></tui-icon>-->
+                        <!--</view>-->
+                    <!--</template>-->
+                    <!--<template v-slot:content>-->
+                        <!--<view class="tui-order-title tui-gray">仓库处理中</view>-->
+                        <!--<view class="tui-order-desc tui-light-gray">打包完成</view>-->
+                        <!--<view class="tui-order-time tui-gray">2019-05-01 08:09:16</view>-->
+                    <!--</template>-->
+                <!--</tui-timeaxis-item>-->
 
-                <tui-timeaxis-item bgcolor="none">
-                    <template v-slot:node>
-                        <view class="tui-node">
-                            <tui-icon name="order" color="#fff" :size="12"></tui-icon>
-                        </view>
-                    </template>
-                    <template v-slot:content>
-                        <view class="tui-order-title tui-gray">已下单</view>
-                        <view class="tui-order-desc tui-light-gray">您的订单将下传XXX仓库，准备出库</view>
-                        <view class="tui-order-time tui-gray">2019-05-01 02:09:16</view>
-                    </template>
-                </tui-timeaxis-item>
+                <!--<tui-timeaxis-item bgcolor="none">-->
+                    <!--<template v-slot:node>-->
+                        <!--<view class="tui-node">-->
+                            <!--<tui-icon name="order" color="#fff" :size="12"></tui-icon>-->
+                        <!--</view>-->
+                    <!--</template>-->
+                    <!--<template v-slot:content>-->
+                        <!--<view class="tui-order-title tui-gray">已下单</view>-->
+                        <!--<view class="tui-order-desc tui-light-gray">您的订单将下传XXX仓库，准备出库</view>-->
+                        <!--<view class="tui-order-time tui-gray">2019-05-01 02:09:16</view>-->
+                    <!--</template>-->
+                <!--</tui-timeaxis-item>-->
 
-            </tui-time-axis>
-        </view>
+            <!--</tui-time-axis>-->
+        <!--</view>-->
     </view>
 </template>
 <script>
-// import tuiIcon from "@/components/icon/icon"
+import tuiIcon from "@/components/icon/icon"
 import tuiTimeAxis from "@/components/time-line/time-axis/time-axis"
 import tuiTimeaxisItem from "@/components/time-line/timeaxis-item/timeaxis-item"
 export default {
+    name: 'WgTimeline',
+    props: {
+        data: {
+            type: Array,
+            default: []
+        },
+        title: {
+            type: String,
+            default: '时间线'
+        }
+    },
     components: {
-        // tuiIcon,
+        tuiIcon,
         tuiTimeAxis,
         tuiTimeaxisItem
     }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
+    .title {
+        font-weight: bold;
+        font-size: 16px;
+        margin-top: 5px;
+    }
     .tui-order-header {
         padding: 30upx;
         box-sizing: border-box;
@@ -214,5 +249,11 @@ export default {
 
     .tui-primary {
         color: #5677fc;
+    }
+
+    .work-order-icon {
+        width: 16px;
+        height: 16px;
+        margin: 0 5px -2px 0;
     }
 </style>

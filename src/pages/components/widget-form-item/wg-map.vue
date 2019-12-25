@@ -25,6 +25,7 @@
 import BmapMap from "pages/components/widget-map/bmap-map"
 import AmapMap from "pages/components/widget-map/amap-map"
 export default {
+    name: 'WgMap',
     props: {
         element: {
             type: Object,

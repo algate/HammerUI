@@ -43,9 +43,6 @@
     </view>
 </template>
 <script type="text/javascript">
-    import http from '@/common/http.js';
-    import env from '@/environment.js';
-
     export default {
         props: {
             element: {
@@ -87,7 +84,7 @@
                 }
             },
             getProvinceList() {
-                return http.post('/userSignInfo/getProvince', {}, {
+                /*return http.post('/userSignInfo/getProvince', {}, {
                     baseUrl: env.baseDataApi
                 }).then(res => {
                     if (res.code !== '0000') {
@@ -105,13 +102,13 @@
                         title: '数据请求失败，请稍候再试。',
                         icon: 'none'
                     });
-                });
+                });*/
             },
             getCityListByProvince(province) {
                 if (!province) {
                     return;
                 }
-                return http.post("/userSignInfo/getCityByProvince", province, {
+                /*return http.post("/userSignInfo/getCityByProvince", province, {
                     baseUrl: env.baseDataApi,
                     headers: {
                         "content-type": "application/json;charset=utf-8"
@@ -132,13 +129,13 @@
                         title: '数据请求失败，请稍候再试。',
                         icon: 'none'
                     });
-                });
+                });*/
             },
             getAreaListByCity(city) {
                 if (!city) {
                     return;
                 }
-                return http.post("/userSignInfo/getDistrictByCity", city, {
+                /*return http.post("/userSignInfo/getDistrictByCity", city, {
                     baseUrl: env.baseDataApi,
                     headers: {
                         "content-type": "application/json;charset=utf-8"
@@ -151,7 +148,6 @@
                         });
                         return;
                     }
-
                     this.$set(this.$data.regions, 2, res.result.map(v => v.code));
                 }).catch(e => {
                     console.log(e);
@@ -159,7 +155,7 @@
                         title: '数据请求失败，请稍候再试。',
                         icon: 'none'
                     });
-                });
+                });*/
             },
             getValue() {
                 if (!this.$props.element.shengshuqu) {

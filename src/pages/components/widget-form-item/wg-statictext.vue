@@ -8,33 +8,19 @@
 </template>
 <script>
 export default {
+    name: 'WgStatictext',
     props: {
         element: {
             type: Object,
             required: true
         }
     },
-    computed: {
-        textareaValue: {
-            // getter
-            get () {
-                return this.element.options.defaultValue
-            },
-            // setter
-            set (newValue) {
-                return this.element.options.defaultValue = newValue
-            }
-        }
-    },
     data () {
         return {
-            // textareaValue: this.element.options.defaultValue
+            textareaValue: this.element.options.defaultValue || ''
         }
     },
     methods: {
-        textareaInput(e) {
-            this.textareaValue = e.detail.value
-        },
         getValue() {
             if (this.$props.element.type !== 'textarea') {
                 return null;
@@ -42,6 +28,26 @@ export default {
             let data = {};
             data[this.$props.element.model] = this.textareaValue;
             return  data;
+        },
+        validate() {
+            if (this.$props.element.type !== 'textarea') {
+                return true;
+            }
+
+            let rules = this.$props.element.rules;
+            if (!rules || rules.length === 0) {
+                return true;
+            }
+
+            if (!this.textareaValue) {
+                uni.showToast({
+                    title: rules[0].message || `${this.$props.element.name}不能为空`,
+                    icon: 'none'
+                });
+                return false;
+            }
+
+            return true;
         }
     }
 }

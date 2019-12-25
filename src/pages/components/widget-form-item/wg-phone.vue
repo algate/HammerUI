@@ -13,6 +13,7 @@
 </template>
 <script>
 export default {
+    name: 'WgPhone',
     props: {
         element: {
             type: Object,

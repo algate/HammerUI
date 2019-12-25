@@ -10,6 +10,7 @@
 </template>
 <script>
 export default {
+    name: 'WgTime',
     props: {
         element: {
             type: Object

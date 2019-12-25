@@ -9,7 +9,7 @@
         </view>
         <view class="h-margin-top h-padding-left-right">
             <view class="hammer-flex flex-wrap flex-grow">
-                <view class="h-col-4 flex-item hammer-tag" :class="'bg-' + item.name" v-for="(item,index) in ColorList" :key="item.name + index" v-if="item.name!='gray'">
+                <view class="h-col-4 flex-item hammer-tag" :class="'bg-' + item.name" v-for="(item,index) in ColorList" :key="index" v-if="item.name!='gray'">
                     <view>{{item.title}} {{`bg-${item.name}`}}</view>
                 </view>
             </view>

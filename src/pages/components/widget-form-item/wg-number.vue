@@ -46,6 +46,7 @@
 import hammerNumberbox from "@/components/number-box/number-box"
 export default {
     // props来自父组件的数据：props可以是简单的数组，或者使用对象作为替代，对象允许配置高级选项，如类型检测、自定义验证和设置默认值。
+    name: "WgNumber",
     props: {
         element: {
             type: Object,
@@ -81,13 +82,21 @@ export default {
     },
     methods: {
         getValue() {
+            if (this.$props.element.type !== 'number') {
+                return null;
+            }
+            let data = {};
+            data[this.$props.element.model] = this.value;
+            return  data;
+        },
+        /*getValue() {
             if (this.element.type !== 'number') {
                 return null;
             }
             let data = {};
             data[this.element.model] = this.value;
             return  data;
-        },
+        },*/
         change: function(e) {
                 this.value = e.value
         },
