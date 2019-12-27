@@ -3,7 +3,12 @@ module.exports = {
     {
         "type": "scanCode",
         "name": "扫码",
-        "model": "scanCode"
+        "model": "scanCode",
+        "options": {
+            "options": {
+                "defaultValue": null
+            }
+        }
     },
     {
         "type": "input",
@@ -12,7 +17,7 @@ module.exports = {
         "options":
         {
             "width": "100%",
-            "defaultValue": "",
+            "defaultValue": "input输入框",
             "required": false,
             "dataType": "string",
             "pattern": "",
@@ -34,7 +39,7 @@ module.exports = {
         "options":
         {
             "width": "100%",
-            "defaultValue": "",
+            "defaultValue": "多行文本描述",
             "required": false,
             "disabled": false,
             "pattern": "",
@@ -78,60 +83,6 @@ module.exports = {
         "rules": []
     },
     {
-        "type": "text",
-        "name": "文字",
-        "icon": "icon-wenzishezhi-",
-        "options":
-        {
-            "defaultValue": "这是一段文本",
-            "customClass": "",
-            "remoteFunc": "func_1571127408000_87179"
-        },
-        "key": "1571127408000_87179",
-        "model": "text",
-        "rules": []
-    },
-    {
-        "type": "cascader",
-        "content": "cascaders",
-        "name": "级联选择器",
-        "icon": "icon-jilianxuanze",
-        "options":
-        {
-            "defaultValue": [],
-            "width": "",
-            "placeholder": "多级选择器",
-            "disabled": false,
-            "clearable": false,
-            "remote": true,
-            "remoteOptions": [],
-            "props":
-            {
-                "value": "value",
-                "label": "label",
-                "children": "children"
-            },
-            "remoteFunc": "func_1571127416000_13407"
-        },
-        "key": "1571127416000_13407",
-        "model": "linkage",
-        "rules": []
-    },
-    {
-        "type": "editor",
-        "name": "编辑器",
-        "icon": "icon-fuwenbenkuang",
-        "options":
-        {
-            "defaultValue": "",
-            "width": "",
-            "remoteFunc": "func_1571127415000_86255"
-        },
-        "key": "1571127415000_86255",
-        "model": "editor",
-        "rules": []
-    },
-    {
         "type": "imgupload",
         "name": "图片",
         "icon": "icon-tupian",
@@ -162,98 +113,12 @@ module.exports = {
         "rules": []
     },
     {
-        "type": "blank",
-        "name": "自定义",
-        "icon": "icon-zidingyishuju",
-        "options":
-        {
-            "defaultType": "String",
-            "remoteFunc": "func_1571127413000_52162"
-        },
-        "key": "1571127413000_52162",
-        "model": "blank",
-        "rules": []
-    },
-    {
-        "type": "cascader",
-        "chanpinxian": "chanpinxian",
-        "name": "产品型号",
-        "icon": "icon-jilianxuanze",
-        "options":
-        {
-            "defaultValue": [],
-            "width": "",
-            "placeholder": "根据产品线获取产品型号",
-            "disabled": false,
-            "clearable": false,
-            "remote": true,
-            "remoteOptions": [],
-            "props":
-            {
-                "value": "value",
-                "label": "label",
-                "children": "children"
-            },
-            "remoteFunc": "func_1571127410000_26870"
-        },
-        "key": "1571127410000_26870",
-        "model": "cascader",
-        "rules": []
-    },
-    {
-        "type": "cascader",
-        "shengshuqu": "shengshiqi",
-        "name": "省市区选择器",
-        "icon": "icon-jilianxuanze",
-        "options":
-        {
-            "defaultValue": [],
-            "width": "",
-            "placeholder": "请选择省市区",
-            "disabled": false,
-            "clearable": false,
-            "remote": true,
-            "remoteOptions": [],
-            "props":
-            {
-                "value": "value",
-                "label": "label",
-                "children": "children"
-            },
-            "remoteFunc": "func_1571127409000_11139"
-        },
-        "key": "1571127409000_11139",
-        "model": "region",
-        "rules": []
-    },
-    {
-        "type": "slider",
-        "name": "滑块",
-        "icon": "icon-slider",
-        "options":
-        {
-            "defaultValue": 0,
-            "disabled": false,
-            "required": false,
-            "min": 0,
-            "max": 100,
-            "step": 1,
-            "showInput": false,
-            "range": false,
-            "width": "",
-            "remoteFunc": "func_1571127408000_2681"
-        },
-        "key": "1571127408000_2681",
-        "model": "slider",
-        "rules": []
-    },
-    {
         "type": "select",
         "name": "下拉选择框",
         "icon": "icon-select",
         "options":
         {
-            "defaultValue": "",
+            "defaultValue": 0,
             "multiple": false,
             "disabled": false,
             "clearable": false,
@@ -283,22 +148,6 @@ module.exports = {
         },
         "key": "1571127406000_77850",
         "model": "select",
-        "rules": []
-    },
-    {
-        "type": "color",
-        "name": "颜色选择器",
-        "icon": "icon-color",
-        "options":
-        {
-            "defaultValue": "",
-            "disabled": false,
-            "showAlpha": false,
-            "required": false,
-            "remoteFunc": "func_1571127405000_97877"
-        },
-        "key": "1571127405000_97877",
-        "model": "color",
         "rules": []
     },
     {
@@ -462,13 +311,19 @@ module.exports = {
         "name": "手机号码",
         "options": {
             "placeholder": "请输入手机号码",
-            "verificationCode": true
+            "verificationCode": true,
+            "defaultValue": null
         },
         "mode": "telephone"
     },
     {
         "type": "map",
         "name": "地图展示",
-        "mode": "map"
+        "mode": "map",
+        "options": {
+            "options": {
+                "defaultValue": null
+            }
+        }
     }]
 }

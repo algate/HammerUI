@@ -26,7 +26,7 @@
 // import WidgetForm from '@/pages/components/widget-form';
 import WidgetForm from '@/pages/components/widget-form-item';
 // let customFormsJson = require("@/static/custom-forms.json");
-const customFormsJson = require('static/custom-forms.js')
+let customFormsJson = require('static/custom-forms.js');
 
 export default {
     components: {

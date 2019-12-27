@@ -3,10 +3,10 @@
         <view class="hammer-box bg-white h-margin-top">
             <view class="sub-title">
                 图片上传
-                <span v-if="imgList.length > 0">
+                <!-- <span v-if="imgList.length > 0">
                     <span class="text-red" v-if="isWaiting">(有文件尚未上传)</span>
                     <span class="text-green" v-if="!isWaiting">(所有文件已上传)</span>
-                </span>
+                </span> -->
             </view>
             <view class="action">
                 {{imgList.length}}张
@@ -15,8 +15,8 @@
         <view class="bg-white">
             <view class="grid grid-col-4">
                 <view class="bg-img-eq grid-item" v-for="(item,index) in imgList" :key="index"
-                      :data-url="imgList[index]">
-                    <image :src="imgList[index]" mode="aspectFill"></image>
+                      :data-url="item">
+                    <image :src="item" mode="aspectFill"></image>
                     <view class="hammer-close" @tap.stop="DelImg" :data-index="index">
                         <hammer-icon name="close"></hammer-icon>
                     </view>
@@ -45,7 +45,7 @@
             return {
                 imgList: [],
                 uploadedFiles: [], // 已上传的文件列表
-                isWaiting: false // 是否有等待上传的文件
+                // isWaiting: false // 是否有等待上传的文件
             }
         },
         mounted() {
@@ -80,46 +80,28 @@
             ChooseImage() {
                 uni.chooseImage({
                     count: 4, //默认9
-                    // sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
-                    // sourceType: ['album'], //从相册选择
+                    sizeType: [/*'original', */'compressed'], //可以指定是原图还是压缩图，默认二者都有
+                    // sourceType: ['album','camera'], //从相册选择,使用相机
                     success: (res) => {
-                        if (this.imgList.length !== 0) {
-                            this.imgList = this.imgList.concat(res.tempFilePaths);
-                        } else {
-                            this.imgList = res.tempFilePaths
-                        }
-                        res.tempFilePaths.forEach(() => {
-                            this.uploadedFiles.push({});
+                        console.log(res.tempFiles); // Array<Object>    图片的本地文件列表，每一项是一个 File 对象
+                        console.log(res.tempFilePaths); // Array<String> 图片的本地文件路径列表
+                        // this.imgList.push(res.tempFilePaths);
+                        res.tempFilePaths.forEach(path => {
+                            this.imgList.push(path);
                         });
-                        this.isWaiting = true;
+                        this.imgList.forEach(img => {
+                            console.log(img);
+                            uni.compressImage({
+                                src: img,
+                                quality: 80,
+                                success: res => {
+                                    console.log(res);
+                                    this.uploadedFiles.push(res.tempFilePath)
+
+                                }
+                            });
+                        });
                     }
-                });
-            },
-            submit(index) {
-                let that = this;
-                if (index === this.imgList.length) {
-                    uni.showToast({
-                        title: '所有图片处理完毕'
-                    });
-                    this.isWaiting = false;
-                    return;
-                }
-                uni.showLoading({
-                    title: `正在处理第${index + 1}张图片`,
-                    mask: true
-                });
-                if (this.uploadedFiles[index].url) {
-                    // 当前文件已上传，不需要再次上传
-                    console.log('图片存在');
-                    this.submit(index + 1);
-                    return;
-                }
-                imageCompress.compress(this.imgList[index]).then((data) => {
-                    this.uploadedFiles[index] = data.base64;
-                    setTimeout(function () {
-                        uni.hideLoading();
-                        that.submit(index + 1);
-                    }, 100);
                 });
             },
             getValue() {
@@ -127,14 +109,8 @@
                     return;
                 }
                 let data = {};
-                if (this.imgList.length > 0 ) {
-                    console.log('图片压缩');
-                    this.submit(0);
-                    console.log(this.uploadedFiles);
-                    data[this.$props.element.model] = this.uploadedFiles;
-                } else {
-                    data[this.$props.element.model] = this.uploadedFiles;
-                }
+                // data[this.$props.element.model] = this.uploadedFiles;
+                data[this.$props.element.model] = this.imgList;
                 return data;
             }
         }

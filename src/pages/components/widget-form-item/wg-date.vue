@@ -22,8 +22,13 @@ export default {
         }
     },
     computed: {
-        date () {
-            return this.element.options.defaultValue
+        date: {
+            get() {
+                return this.element.options.defaultValue
+            },
+            set(newValue) {
+                this.element.options.defaultValue = newValue
+            }
         }
     },
     data() {

@@ -1,37 +1,65 @@
 <template>
     <form>
-        <template v-for="(item, index) in formCustom">
-            <view class="hammer-form" :key="item.key">
+        <block v-for="(item, index) in formCustom" :key="index">
+            <view class="hammer-form">
                 <!-- 单行输入框 -->
-                <WgInput :ref="`comp_${index}`" :element="item" />
+                <!-- <template  v-if="item.type='input'"> -->
+                    <WgInput :ref="`comp_${index}`" :element="item"/>
+                <!-- </template> -->
                 <!-- 文本描述 -->
-                <WgStaticText :ref="`comp_${index}`" :element="item" />
+                <!-- <template  v-if="item.type == 'textarea'"> -->
+                    <WgStaticText :ref="`comp_${index}`" :element="item"/>
+                <!-- </template> -->
                 <!-- 下拉选择 -->
-                <WgSelect :ref="`comp_${index}`" :element="item" />
+                <!-- <template  v-if="item.type='select'"> -->
+                    <WgSelect :ref="`comp_${index}`" :element="item"/>
+                <!-- </template> -->
                 <!-- 单选 -->
-                <WgRadio :ref="`comp_${index}`" :element="item" />
+                <!-- <template  v-if="item.type='radio'"> -->
+                    <WgRadio :ref="`comp_${index}`" :element="item"/>
+                <!-- </template> -->
                 <!-- 多选 -->
-                <WgCheckbox :ref="`comp_${index}`" :element="item" />
+                <!-- <template  v-if="item.type='checkbox'"> -->
+                    <WgCheckbox :ref="`comp_${index}`" :element="item"/>
+                <!-- </template> -->
                 <!-- 时间 -->
-                <WgTime :ref="`comp_${index}`" :element="item" />
+                <!-- <template  v-if="item.type='time'"> -->
+                    <WgTime :ref="`comp_${index}`" :element="item"/>
+                <!-- </template> -->
                 <!-- date -->
-                <WgDate :ref="`comp_${index}`" :element="item" />
+                <!-- <template  v-if="item.type='date'"> -->
+                    <WgDate :ref="`comp_${index}`" :element="item"/>
+                <!-- </template> -->
                 <!-- 开关 -->
-                <WgSwitch :ref="`comp_${index}`" :element="item" />
+                <!-- <template  v-if="item.type='switch'"> -->
+                    <WgSwitch :ref="`comp_${index}`" :element="item"/>
+                <!-- </template> -->
                 <!-- 图片展示 -->
-                <WgPicture :ref="`comp_${index}`" :element="item" />
+                <!-- <template  v-if="item.type='picture'"> -->
+                    <WgPicture :ref="`comp_${index}`" :element="item"/>
+                <!-- </template> -->
                 <!-- 图片上传 -->
-                <WgUpload :ref="`comp_${index}`" :element="item" />
+                <!-- <template  v-if="item.type='imgupload'"> -->
+                    <WgUpload :ref="`comp_${index}`" :element="item"/>
+                <!-- </template> -->
                 <!-- 手机号码(带验证码) -->
-                <WgPhone :ref="`comp_${index}`" :element="item" />
+                <!-- <template  v-if="item.type='phone'"> -->
+                    <WgPhone :ref="`comp_${index}`" :element="item"/>
+                <!-- </template> -->
                 <!-- 数字输入框 -->
-                <wgNumber :ref="`comp_${index}`" :element="item" />
+                <!-- <template  v-if="item.type='number'"> -->
+                    <wgNumber :ref="`comp_${index}`" :element="item"/>
+                <!-- </template> -->
                 <!-- 地图定位 -->
-                <WgMap :ref="`comp_${index}`" :element=item />
+                <!-- <template  v-if="item.type='map'"> -->
+                    <WgMap :ref="`comp_${index}`" :element="item"/>
+                <!-- </template> -->
                 <!-- JSSDK -->
-                <WgScanCode :ref="`comp_${index}`" :element="item" />
+                <!-- <template  v-if="item.type='scanCode'"> -->
+                    <WgScanCode :ref="`comp_${index}`" :element="item"/>
+                <!-- </template> -->
             </view>
-        </template>
+        </block>
     </form>
 </template>
 <script>
@@ -50,7 +78,12 @@ import WgNumber from './wg-number'
 import WgMap from './wg-map'
 import WgScanCode from './wg-scanCode'
 export default {
-    props: ["formCustom"],
+    name: 'WidgetForm',
+    props: {
+        formCustom: {
+            type: Array
+        }
+    },
     components: {
         WgInput,
         WgStaticText,

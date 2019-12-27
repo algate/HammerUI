@@ -3,7 +3,7 @@
         <view class="title">{{element.name}}</view>
         <picker @change="PickerChange" :value="defaultValue" :range="options">
             <view class="picker">
-                {{defaultValue || defaultValue === 0?options[defaultValue]:(element.options.placeholder || '请选择一个选项')}}
+                {{defaultValue || defaultValue === 0 ? options[defaultValue]:(element.options.placeholder || '请选择一个选项')}}
             </view>
         </picker>
     </view>
@@ -18,12 +18,23 @@ export default {
     },
     computed: {
         options (){
-            return this.element.options.options.map(ele => ele.value)
+            let isArray = Array.isArray(this.element.options.options);
+            if (isArray) {
+                return this.element.options.options.map(ele => ele.value)
+            }
+        },
+        defaultValue: {
+            get() {
+                return this.element.options.defaultValue
+            },
+            set(newValue) {
+                console.log(newValue);
+                this.element.options.defaultValue = newValue
+            }
         }
     },
     data() {
         return {
-            defaultValue: this.element.options.defaultValue
         };
     },
     methods: {

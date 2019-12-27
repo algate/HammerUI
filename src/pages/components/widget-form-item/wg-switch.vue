@@ -21,7 +21,7 @@ export default {
             },
             // setter
             set (newValue) {
-                return this.element.options.defaultValue = newValue
+                this.element.options.defaultValue = newValue
             }
         }
     },

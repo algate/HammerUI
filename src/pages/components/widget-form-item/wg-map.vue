@@ -7,6 +7,7 @@
             <map style="width: 100%; height: 300px;" :latitude="latitude" :longitude="longitude" :markers="covers">
             </map>
         </view>
+        <!-- #ifdef H5 -->
         <view class="hammer-box bg-white">
             <view class="sub-title">百度地图-JavaScriptSDK</view>
         </view>
@@ -19,11 +20,14 @@
         <view>
             <AmapMap></AmapMap>
         </view>
+        <!-- #endif -->
     </view>
 </template>
 <script>
+// #ifdef H5
 import BmapMap from "pages/components/widget-map/bmap-map"
 import AmapMap from "pages/components/widget-map/amap-map"
+// #endif
 export default {
     name: 'WgMap',
     props: {
@@ -32,10 +36,12 @@ export default {
             required: true
         }
     },
+    // #ifdef H5
     components:{
         BmapMap,
         AmapMap
     },
+    // #endif
     data () {
         return {
             title: 'map',

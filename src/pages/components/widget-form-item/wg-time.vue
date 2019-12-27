@@ -17,8 +17,13 @@ export default {
         }
     },
     computed: {
-        time () {
-            return this.element.options.defaultValue
+        time: {
+            get() {
+                return this.element.options.defaultValue
+            },
+            set(newValue) {
+                this.element.options.defaultValue = newValue
+            }
         }
     },
     data() {

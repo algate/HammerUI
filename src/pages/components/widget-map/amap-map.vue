@@ -12,14 +12,14 @@
                 AmapObject: null
             }
         },
-        computed: {
+        /*computed: {
             lang() {
                 return this.$t('message');
             }
-        },
+        },*/
         mounted() {
             uni.showLoading({
-                title: this.lang.global.loading,
+                title: "高德地图加载中……",
                 mask: true
             });
             this.$hammer.$loadAMap.init().then(res => {
@@ -35,7 +35,6 @@
         }
     }
 </script>
-
 <style lang="scss">
     .mapPage {
         width: 100%;

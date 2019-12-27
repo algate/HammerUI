@@ -13,13 +13,14 @@
             }
         },
         computed: {
-            lang() {
+            /*lang() {
                 return this.$t('message');
-            }
+            }*/
         },
         mounted() {
             uni.showLoading({
-                title: this.lang.global.loading,
+                // title: this.lang.global.loading,
+                title: '百度地图加载中……',
                 mask: true
             });
             this.$hammer.$loadBMap.init().then(res => {

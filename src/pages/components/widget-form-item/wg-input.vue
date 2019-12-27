@@ -18,20 +18,21 @@ export default {
         }
     },
     computed: {
+        /*value() {
+            return this.element.options.defaultValue
+        }*/
         value: {
-            // getter
-            get () {
+            get() {
                 return this.element.options.defaultValue
             },
-            // setter
-            set (newValue) {
-                return this.element.options.defaultValue = newValue
+            set(newValue) {
+                this.element.options.defaultValue = newValue
             }
         }
     },
     data() {
         return {
-            // value: this.element.options.defaultValue?this.element.options.defaultValue:''
+            // value: this.element.options.defaultValue ? this.element.options.defaultValue:''
         }
     },
     methods: {

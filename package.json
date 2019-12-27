@@ -43,7 +43,7 @@
   "devDependencies": {
     "@dcloudio/uni-cli-shared": "*",
     "@dcloudio/uni-template-compiler": "*",
-    "@dcloudio/vue-cli-plugin-hbuilderx": "^2.0.0-24220191115006",
+    "@dcloudio/vue-cli-plugin-hbuilderx": "latest",
     "@dcloudio/vue-cli-plugin-uni": "latest",
     "@dcloudio/vue-cli-plugin-uni-optimize": "*",
     "@dcloudio/webpack-uni-mp-loader": "*",

@@ -2,7 +2,7 @@
     <view v-if="element.type == 'textarea'">
         <view class="hammer-box bg-white h-margin-top align-start">
             <view class="sub-title">{{element.name}}</view>
-            <textarea v-model="textareaValue" :style="{width: element.options.width}" @input="textareaInput" :placeholder="element.options.placeholder" :disabled="element.options.disabled"></textarea>
+            <textarea v-model="textareaValue" :style="{width: element.options.width}" :placeholder="element.options.placeholder" :disabled="element.options.disabled"></textarea>
         </view>
     </view>
 </template>
@@ -15,9 +15,19 @@ export default {
             required: true
         }
     },
+    computed: {
+        textareaValue: {
+            get() {
+                return this.element.options.defaultValue
+            },
+            set(newValue) {
+                this.element.options.defaultValue = newValue
+            }
+        }
+    },
     data () {
         return {
-            textareaValue: this.element.options.defaultValue || ''
+
         }
     },
     methods: {
