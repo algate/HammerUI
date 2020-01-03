@@ -1,8 +1,12 @@
 <script>
-	import Vue from 'vue'
+    let settings = require('./settings');
 	export default {
 		onLaunch: function() {
 			console.log('App Launch')
+            // 调试跳转页面
+            uni.reLaunch({
+                url: '/pages/hammer-basic/basic-custom-forms'
+            })
 		},
 		onShow: function() {
 			console.log('App Show')
