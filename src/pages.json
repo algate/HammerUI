@@ -105,6 +105,66 @@
 			}
 		},
 		{
+			"path": "pages/demos/demo1",
+			"style": {
+				"navigationBarTitleText": "单选-🥢"
+			}
+		},
+		{
+			"path": "pages/demos/demo2",
+			"style": {
+				"navigationBarTitleText": "多级联动-🍔"
+			}
+		},
+		{
+			"path": "pages/demos/demo3",
+			"style": {
+				"navigationBarTitleText": "省市区选择-🍆"
+			}
+		},
+		{
+			"path": "pages/demos/demo4",
+			"style": {
+				"navigationBarTitleText": "自定义确定取消文字及颜色-🍅"
+			}
+		},
+		{
+			"path": "pages/demos/demo5",
+			"style": {
+				"navigationBarTitleText": "插槽自定义选择器头部-🥚"
+			}
+		},
+		{
+			"path": "pages/demos/demo6",
+			"style": {
+				"navigationBarTitleText": "可视区自定义滚动个数-🥒"
+			}
+		},
+		{
+			"path": "pages/demos/demo7",
+			"style": {
+				"navigationBarTitleText": "自定义数据结构-🍉"
+			}
+		},
+		{
+			"path": "pages/demos/demo9",
+			"style": {
+				"navigationBarTitleText": "自定义样式颜色-🥜"
+			}
+		},
+		{
+			"path": "pages/demos/demo10",
+			"style": {
+				"navigationBarTitleText": "相关事件-🌻"
+			}
+		},
+		{
+			"path": "pages/demos/demo11",
+			"style": {
+				"navigationBarTitleText": "异步加载整体数据-🍺"
+			}
+		},
+		{
 			"path": "pages/hammer-function/function-popup",
 			"style": {
 				"navigationBarTitleText": "下拉选择底部弹层-🐊",
@@ -278,6 +338,223 @@
 				"navigationBarTitleText": "EG:自定义mescroll组件-🐋",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/hammer-function/function-charts",
+			"style": {
+				"navigationBarTitleText": "uCharts高性能跨全端图表-📱",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/ucharts/basic/index",
+			"style": {
+				"navigationBarTitleText": "uCharts跨全端图表",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/app/index",
+			"style": {
+				"navigationBarTitleText": "应用",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/doc/index",
+			"style": {
+				"navigationBarTitleText": "手册",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/basic/column/column",
+			"style": {
+				"navigationBarTitleText": "基本柱状图",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/basic/column/meter",
+			"style": {
+				"navigationBarTitleText": "温度计式图表",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/basic/column/stack",
+			"style": {
+				"navigationBarTitleText": "堆叠图",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/basic/mix/mix",
+			"style": {
+				"navigationBarTitleText": "混合图",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/basic/line/rotate",
+			"style": {
+				"navigationBarTitleText": "横屏模式带滚动条",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/basic/column/rotate",
+			"style": {
+				"navigationBarTitleText": "横屏图表",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/basic/column/mark-line",
+			"style": {
+				"navigationBarTitleText": "标记线",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/basic/candle/candle",
+			"style": {
+				"navigationBarTitleText": "基本K线图",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/basic/line/line",
+			"style": {
+				"navigationBarTitleText": "基本折线图",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/basic/line/line-scroll",
+			"style": {
+				"navigationBarTitleText": "折线图带滚动条",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/basic/line/curve",
+			"style": {
+				"navigationBarTitleText": "基本曲线图",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/basic/area/time",
+			"style": {
+				"navigationBarTitleText": "时间X轴",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/basic/area/area",
+			"style": {
+				"navigationBarTitleText": "基本区域图",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/basic/pie/pie",
+			"style": {
+				"navigationBarTitleText": "基本饼图",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/basic/pie/rose",
+			"style": {
+				"navigationBarTitleText": "玫瑰图",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/basic/pie/ring",
+			"style": {
+				"navigationBarTitleText": "基本环形图",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/basic/gauge/gauge",
+			"style": {
+				"navigationBarTitleText": "仪表盘",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/basic/radar/radar",
+			"style": {
+				"navigationBarTitleText": "雷达图",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/basic/word/word",
+			"style": {
+				"navigationBarTitleText": "词云图",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+	    	"path": "pages/ucharts/basic/funnel/funnel",
+	    	"style": {
+	    		"navigationBarTitleText": "漏斗图",
+	    		"navigationBarTextStyle":"black"
+	    	}
+	    },{
+	    	"path": "pages/ucharts/basic/map/map",
+	    	"style": {
+	    		"navigationBarTitleText": "地图",
+	    		"navigationBarTextStyle":"black"
+	    	}
+	    },{
+			"path": "pages/ucharts/basic/arcbar/arcbar",
+			"style": {
+				"navigationBarTitleText": "基本圆弧进度条",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/basic/arcbar/mix",
+			"style": {
+				"navigationBarTitleText": "多重圆弧进度条",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/basic/column/column-scroll",
+			"style": {
+				"navigationBarTitleText": "柱状图带滚动条",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/doc/view",
+			"style": {
+				"navigationBarTitleText": "文档详情",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/app/demo/component",
+			"style": {
+				"navigationBarTitleText": "(v-for)组件内使用示例",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/app/demo/index",
+			"style": {
+				"navigationBarTitleText": "单页多图表好性能",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/app/demo/candle",
+			"style": {
+				"navigationBarTitleText": "K线图与柱状图联动",
+				"navigationBarTextStyle":"black"
+			}
+		},{
+			"path": "pages/ucharts/app/demo/scroll",
+			"style": {
+				"navigationBarTitleText": "scroll-view中使用",
+				"navigationBarTextStyle":"black"
+			}
+		},
+		{
+			"path": "pages/hammer-function/function-trees",
+			"style": {
+				"navigationBarTitleText": "tree结构树-🌹",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "black"
+			}
+		},
+		{
+			"path": "pages/hammer-function/function-trees/index",
+			"style": {
+				"navigationBarTitleText": "树-🎧",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "black"
 			}
 		},
 		{

@@ -47,12 +47,11 @@ export default {
             this.index = e.target.value;
             // 此处写请求接口，返回是否有children停止
             this.subName = 'N级联动';
-            this.subArray = ['请选择', '威海1', '北京2', '深圳3'];
-            // this.subArray = ['请选择'];
             this.subIndex = 0;
+            this.subArray = ['请选择', `威海${Math.floor(Math.random()*100)}`, `北京${Math.floor(Math.random()*100)}`, `深圳${Math.floor(Math.random()*100)}`];
 
             let indexValue = e.target.value
-            this.$emit("confirm", {indexValue});
+            // this.$emit("confirm", {indexValue});
         },
         subChange(index) {
             console.log(index)

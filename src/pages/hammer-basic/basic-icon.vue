@@ -1509,8 +1509,8 @@ export default {
 </script>
 <style>
 .tui-grid-icon {
-    width: 64rpx;
-    height: 64rpx;
+    /*width: 30upx;*/
+    height: 70upx;
     margin: 0 auto;
     text-align: center;
     vertical-align: middle;

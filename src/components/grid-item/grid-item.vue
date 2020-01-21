@@ -47,7 +47,7 @@
 <style>
 	.tui-grid {
 		position: relative;
-		padding: 40rpx 20rpx;
+		padding: 20rpx;
 		box-sizing: border-box;
 		background: #fff;
 		float: left;

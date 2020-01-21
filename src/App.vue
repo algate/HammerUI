@@ -4,9 +4,17 @@
 		onLaunch: function() {
 			console.log('App Launch')
             // 调试跳转页面
-            uni.reLaunch({
+            /*uni.reLaunch({
                 url: '/pages/hammer-basic/basic-custom-forms'
-            })
+            })*/
+            // #ifdef H5
+            if (settings.whiteListPages.indexOf(this.$route.path) === -1) {
+                // 跳转页面不在白名单中，强制跳转到鉴权页面
+                uni.reLaunch({
+                    url: '/pages/index/index'
+                })
+            }
+            // #endif
 		},
 		onShow: function() {
 			console.log('App Show')

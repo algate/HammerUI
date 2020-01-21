@@ -72,6 +72,22 @@
                         hammerIcon: 'fengefu',
                         size: 50,
                         bgColor : 'bg-blue'
+                    },
+                    {
+                        title: 'uCharts高性能跨全端图表',
+                        name: 'function-charts',
+                        from: 'tui',
+                        hammerIcon: 'histogram',
+                        size: 50,
+                        bgColor : 'bg-purple'
+                    },
+                    {
+                        title: 'tree结构树',
+                        name: 'function-trees',
+                        from: 'tui',
+                        hammerIcon: 'listview',
+                        size: 50,
+                        bgColor : 'bg-mauve'
                     }
                 ],
             };
