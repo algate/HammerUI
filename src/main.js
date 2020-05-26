@@ -15,6 +15,8 @@ import * as constant from '@/libs/constant.js';
 // 定义全局组件
 import hammerIcon from "@/components/icon/icon"
 Vue.component('hammer-icon', hammerIcon);
+import hammerButton from "@/components/hammer-button/hammer-button.vue"
+Vue.component('hammer-button', hammerButton);
 
 //初始化store
 Vue.prototype.$store = store;

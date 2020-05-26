@@ -2,13 +2,19 @@
     <view>
         <view class="top-container">
             <view class="bg-img"></view>
-            <view v-show="!isLogin" class="user-wrapper">
-                <view class="user">
-                    <image class="avatar-img" src="../../static/images/mine/user-default.png"></image>
-                    <button class="login-btn" @tap="userLogin">登录</button>
-                </view>
-            </view>
-            <view v-show="isLogin" class="user">
+			<!-- #ifdef MP-WEIXIN -->
+			<view class="user">
+			    <image class="avatar-img" :src="userInfo.avatarUrl?userInfo.avatarUrl:'/static/images/logo.svg'"></image>
+			    <view class="user-info-mobile">
+			        <text>{{userInfo.nickName || 'HammerUI'}}</text>
+			        <view class="edit-img" hover-class="opcity" :hover-stay-time="150" @tap="edit">
+			            <hammer-icon from="iconfont" name="edit" :size="24"></hammer-icon>
+			        </view>
+			    </view>
+			</view>
+			<!-- #endif -->
+			<!-- #ifdef H5 -->
+            <view class="user">
                 <image class="avatar-img" :src="userInfo.avatarUrl?userInfo.avatarUrl:'/static/images/logo.svg'"></image>
                 <view class="user-info-mobile">
                     <text>{{userInfo.nickName}}</text>
@@ -17,9 +23,10 @@
                     </view>
                 </view>
             </view>
+			<!-- #endif -->
         </view>
         <view class="middle-container justify-around">
-            <view data-url="../myWashTicket/myWashTicket" @tap="tapEvent" data-index="1" class="middle-item" hover-class="opcity" :hover-stay-time="150">
+            <view @tap="tapEvent" data-index="1" class="middle-item" hover-class="opcity" :hover-stay-time="150">
                 <image class="ticket-img" src="/static/images/logo.svg"></image>
                 <text class="middle-tag">锤子 UI</text>
             </view>
@@ -67,9 +74,7 @@
                 </view>
             </view>
         </view>
-        <view @tap="logout" class="logout h-margin-top" :hover-stay-time="150">
-            <button class="bg-color" v-show="isLogin">退出</button>
-        </view>
+		<hammer-toast ref="toast"></hammer-toast>
     </view>
 </template>
 <script>
@@ -77,44 +82,40 @@ import {
     mapState,
     mapMutations
 } from "vuex"
+import hammerToast from "@/pages/components/extend/toast/toast"
+// #ifdef H5
+const hammerClipboard = require("@/libs/loadClipboard.js");
+// #endif
 export default {
+	components: {
+		hammerToast
+	},
     computed: {
-        ...mapState(["isLogin","userInfo"])
+        ...mapState(["userInfo"])
     },
     data() {
         return {
+			isLogin: false
         }
     },
+	onLoad() {
+		let that = this;
+	},
     methods: {
-        ...mapMutations(["logoff","login"]),
-        logout: function() {
-            uni.showModal({
-                title: "提示",
-                content: "确定退出登录？",
-                confirmColor: "#00AB98",
-                success: (res) => {
-                    if (res.confirm) {
-                        /* uni.reLaunch({
-                            url: "/pages/index/index"
-                        }) */
-						this.logoff(false);
-                    }
-                }
-            });
-        },
+        ...mapMutations(["login"]),
         edit() {
-            uni.showToast({
-                title: 'Tips: 别点了😊'
-            })
-        },
-        userLogin() {
-			this.logoff(true);
+			this.$refs.toast.show({
+				title: "Tips: 别点了😊",
+				iconFrom: "iconfont",
+				iconName: "roundcheck",
+				icon: true
+			})
         },
         tapEvent: function(e) {
             let index = e.currentTarget.dataset.index;
             let url = "";
             if (index == 1) {
-                url = "../about/about"
+                url = "../hammer-user/about"
             } else if (index == 4) {
                 let key = e.currentTarget.dataset.key;
                 url = "../hammer-user/user-weather?key=" + key
@@ -129,22 +130,43 @@ export default {
             })
         },
         github: function(type) {
+			let that = this;
             if (type == 1) {
-                const that = this
                 uni.setClipboardData({
                     data: "https://github.com/algate/HammerUI",
-                    success(res) {
-                        uni.getClipboardData({
-                            success(res) {
-                                that.showToast({
-                                    title: "链接已复制"
-                                })
+                    success() {
+                        uni.getClipboardData({	
+                            success() {
+								that.$refs.toast.show({
+									title: "链接已复制",
+									iconFrom: "iconfont",
+									iconName: "roundcheck",
+									icon: true
+								})
                             }
                         })
                     }
                 })
             } else {
                 // #ifdef H5
+				hammerClipboard.getClipboardData("https://github.com/algate/HammerUI", res => {
+					if (res) {
+						that.$refs.toast.show({
+							title: "链接已复制",
+							iconFrom: "iconfont",
+							iconName: "roundcheck",
+							icon: true
+						})
+					} else {
+						that.$refs.toast.show({
+							title: "复制失败",
+							iconFrom: "iconfont",
+							iconName: "roundclose",
+							iconColor: "#e54d42",
+							icon: true
+						})
+					}
+				});
                 window.open("https://github.com/algate/HammerUI");
                 // #endif
             }
@@ -164,7 +186,7 @@ export default {
 }
 
 .top-container {
-    height: 440rpx;
+    height: 440upx;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -173,7 +195,7 @@ export default {
 .bg-img {
     position: absolute;
     width: 100%;
-    height: 440rpx;
+    height: 440upx;
     background: linear-gradient($hammer-color, #f1f1f1);
 }
 
@@ -183,12 +205,6 @@ export default {
     &:after {
         border: none;
     }
-}
-
-.logout {
-    position: relative;
-    z-index: 2;
-    margin: 40rpx 60rpx;
 }
 
 .user-wrapper {
@@ -204,12 +220,12 @@ export default {
     justify-content: center;
     position: relative;
     z-index: 2;
-    margin-top: 100rpx;
+    margin-top: 100upx;
 }
 
 .avatar-img {
-    width: 160rpx;
-    height: 160rpx;
+    width: 160upx;
+    height: 160upx;
     border-radius: 50%;
     align-self: center;
 }
@@ -217,35 +233,34 @@ export default {
 .user-info {
     display: flex;
     flex-direction: row;
-    margin-top: 30rpx;
+    margin-top: 30upx;
     align-items: center;
 }
 
 .user-info-mobile {
-    margin-top: 30rpx;
+    margin-top: 30upx;
     position: relative;
-    font-size: 28rpx;
+    font-size: 50upx;
     color: #FEFEFE;
-    line-height: 28rpx;
+    line-height: 50upx;
     align-self: center;
-    padding: 0 50rpx;
-}
-
-.edit-img {
-    position: absolute;
-    right: 0;
-    bottom: -4rpx;
+    padding: 0 50upx;
+	.edit-img {
+	    position: absolute;
+	    right: 0;
+	    bottom: -4upx;
+	}
 }
 
 .middle-container {
-    height: 138rpx;
+    height: 138upx;
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-radius: 10rpx;
+    border-radius: 10upx;
     background-color: #FFFFFF;
-    margin: -30rpx 30rpx 26rpx 30rpx;
-    box-shadow: 0 10rpx 20rpx 4rpx #efefef;
+    margin: -30upx 30upx 26upx 30upx;
+    box-shadow: 0 10upx 20upx 4upx #efefef;
     position: relative;
     z-index: 2;
 
@@ -259,41 +274,41 @@ export default {
 }
 
 .ticket-img {
-    width: 80rpx;
-    height: 80rpx;
+    width: 80upx;
+    height: 80upx;
 }
 
 .middle-tag {
-    font-size: 28rpx;
+    font-size: 28upx;
     color: #333333;
-    line-height: 28rpx;
+    line-height: 28upx;
     font-weight: bold;
-    padding-left: 22rpx;
+    padding-left: 22upx;
 }
 
 .car-img {
-    width: 80rpx;
-    height: 80rpx;
-    margin-left: 97rpx;
+    width: 80upx;
+    height: 80upx;
+    margin-left: 97upx;
 }
 
 .bottom-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 40rpx 80rpx 40rpx 80rpx;
-    margin: 0 30rpx;
+    padding: 40upx 80upx 40upx 80upx;
+    margin: 0 30upx;
     background-color: #FFFFFF;
-    border-radius: 10rpx;
+    border-radius: 10upx;
     box-sizing: border-box;
-    box-shadow: 0 0 10rpx #e9e9e9;
+    box-shadow: 0 0 10upx #e9e9e9;
 }
 
 .ul-item {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 30rpx;
+    margin-bottom: 30upx;
 }
 
 .item {
@@ -304,14 +319,14 @@ export default {
 }
 
 .item-img {
-    width: 64rpx;
-    height: 64rpx;
+    width: 64upx;
+    height: 64upx;
 }
 
 .item-name {
-    font-size: 24rpx;
+    font-size: 24upx;
     color: #666666;
-    min-width: 80rpx;
+    min-width: 80upx;
     text-align: center;
 }
 

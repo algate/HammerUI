@@ -76,8 +76,8 @@ export default {
     white-space: nowrap;
     overflow: hidden;
     color: #f54f46;
-    height: 60rpx;
-    line-height: 60rpx;
+    height: 60upx;
+    line-height: 60upx;
 }
 .hammer-animation {
     animation: hammer-rolling 12s linear infinite;
@@ -94,24 +94,24 @@ export default {
 }
 .tower-swiper .tower-item {
     transform: scale(calc(0.5 + var(--index) / 10));
-    margin-left: calc(var(--left) * 100rpx - 150rpx);
+    margin-left: calc(var(--left) * 100upx - 150upx);
     z-index: var(--index);
 }
 
 .hammer-log {
-    padding: 30rpx;
+    padding: 30upx;
     box-sizing: border-box;
-    height: calc(100vh - 60rpx);
+    height: calc(100vh - 60upx);
     overflow-y: auto;
 }
 .tui-content-log {
-    border-radius: 10rpx;
+    border-radius: 10upx;
     position: relative;
-    padding: 20rpx 26rpx;
-    font-size: 28rpx;
+    padding: 20upx 26upx;
+    font-size: 28upx;
     color: #fff;
     background: #00ab98;
-    border: 1rpx solid #5c8dff;
+    border: 1upx solid #5c8dff;
     display: inline-block;
 }
 
@@ -120,15 +120,15 @@ export default {
     position: absolute;
     width: 0;
     height: 0;
-    top: 14rpx;
-    border: 16rpx solid;
+    top: 14upx;
+    border: 16upx solid;
     right: 100%;
     border-color: transparent #00ab98 transparent transparent;
 }
 
 .bg-gray {
     background: #ededed !important;
-    border: 1rpx solid #ededed !important;
+    border: 1upx solid #ededed !important;
     color: #999 !important;
 }
 
@@ -137,18 +137,18 @@ export default {
 }
 
 .tui-version-date {
-    font-size: 32rpx;
+    font-size: 32upx;
     font-weight: bold;
-    padding-bottom: 20rpx;
+    padding-bottom: 20upx;
 }
 
 .tui-doc-box {
-    padding-top: 20rpx;
+    padding-top: 20upx;
     word-break: break-all;
 }
 
 .tui-link {
-    padding-bottom: 20rpx;
+    padding-bottom: 20upx;
     color: #0066cc;
 }
 </style>

@@ -1,7 +1,7 @@
 {
-    "name" : "",
-    "appid" : "",
-    "description" : "",
+    "name" : "锤子UI",
+    "appid" : "__UNI__409E321",
+    "description" : "uni-app代码片段的分享，以及基础组件的封装",
     "versionName" : "1.0.0",
     "versionCode" : "100",
     "transformPx" : false,
@@ -54,7 +54,9 @@
             "sdkConfigs" : {
                 "speech" : {
                     "ifly" : {}
-                }
+                },
+                "push" : {},
+                "oauth" : {}
             }
         }
     },

@@ -29,9 +29,10 @@
     /*每个页面公共css */
     @import "./hammerui/common/hammer.scss";
     @import "./hammerui/common/animate.css";
-    @import "./hammerui/common/tuiicon.scss";
+    @import "./hammerui/common/hammericon.scss";
     @import "./hammerui/common/cuiicon.css";
     /* 组件css */
     @import "./hammerui/components.scss";
+	/* 页面展示使用icon */
     @import "./hammerui/hammericon.scss";
 </style>

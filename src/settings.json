@@ -1,9 +1,5 @@
 {
     "whiteListPages": [
-        "/pages/hammer-basic/basic-custom-forms",
-        "/pages/hammer-function/function-linkage",
-        "/pages/hammer-function/function-dateTime",
-        "/pages/hammer-function/function-charts",
-        "/pages/hammer-function/function-trees/index"
+        "/pages/hammer-user/about"
     ]
 }

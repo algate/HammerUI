@@ -244,12 +244,12 @@
     .tui-list-cell::after {
         content: '';
         position: absolute;
-        border-bottom: 1rpx solid #eaeef1;
+        border-bottom: 1upx solid #eaeef1;
         -webkit-transform: scaleY(0.5);
         transform: scaleY(0.5);
         bottom: 0;
         right: 0;
-        left: 30rpx;
+        left: 30upx;
     }
 
     .tui-cell-last::after {
@@ -263,7 +263,7 @@
 
     map {
         width: 100%;
-        height: 600rpx;
+        height: 600upx;
     }
 
     .opcity {
@@ -273,7 +273,7 @@
     .scrollView {
         width: 100%;
         background: #fff;
-        height: calc(100vh - 46px - 600rpx);
+        height: calc(100vh - 46px - 600upx);
     }
 
     .search-bar {
@@ -362,16 +362,16 @@
 
     .tui-list-cell {
         display: initial;
-        padding: 30rpx;
+        padding: 30upx;
     }
 
     .addr-title {
-        font-size: 30rpx;
-        line-height: 40rpx;
+        font-size: 30upx;
+        line-height: 40upx;
         color: #000;
         font-weight: bold;
         width: 100%;
-        padding-bottom: 20rpx;
+        padding-bottom: 20upx;
     }
 
     .addr-box {
@@ -381,20 +381,20 @@
     }
 
     .addr-detail {
-        width: 450rpx;
+        width: 450upx;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 2;
         /*! autoprefixer: ignore next */
         -webkit-box-orient: vertical;
-        font-size: 24rpx;
+        font-size: 24upx;
         color: #999;
     }
 
     .distance {
         color: #5982fd;
-        padding-right: 6rpx;
+        padding-right: 6upx;
     }
 
     .addr-opera {
@@ -405,17 +405,17 @@
 
     .opera-box {
         text-align: center;
-        margin-left: 26rpx;
+        margin-left: 26upx;
     }
 
     .mini-img {
-        width: 44rpx;
-        height: 44rpx;
+        width: 44upx;
+        height: 44upx;
     }
 
     .text {
         color: #333;
-        font-size: 24rpx;
-        line-height: 30rpx;
+        font-size: 24upx;
+        line-height: 30upx;
     }
 </style>

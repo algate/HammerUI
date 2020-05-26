@@ -73,6 +73,14 @@
 			}
 		},
 		{
+			"path": "pages/hammer-basic/basic-button",
+			"style": {
+				"navigationBarTitleText": "按钮-😠",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
 			"path": "pages/hammer-function/home",
 			"style": {
 				"navigationBarTitleText": "功能组件-📖",
@@ -575,6 +583,15 @@
 			}
 		},
 		{
+			"path": "pages/hammer-user/about",
+			"style": {
+				"navigationBarTitleText": "关于-锤子UI",
+				"disableScroll": true,
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
 			"path": "pages/hammer-user/user-weather",
 			"style": {
 				"navigationBarTitleText": "天气-☀",
@@ -598,7 +615,6 @@
 		"selectedColor": "#00ab98",
 		"backgroundColor": "#fff",
 		"borderStyle": "black",
-		"height": "80px",
 		"list": [{
 			"pagePath": "pages/hammer-basic/home",
 			"iconPath": "static/images/tabBar/basic-default.png",
@@ -615,20 +631,16 @@
 			"selectedIconPath": "static/images/tabBar/hammer.png"
 		}]
 	},
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"hammer-(.*)": "@/components/hammer-$1/hammer-$1.vue"
+		}
+	},
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "ChuiziUI",
 		"navigationBarBackgroundColor": "#5677FC",
 		"backgroundColor": "#F8F8F8"
-	},
-	"condition" : { //模式配置，仅开发期间生效
-		"current": 0, //当前激活的模式(list 的索引项)
-		"list": [
-			{
-				"name": "", //模式名称
-				"path": "", //启动页面，必选
-				"query": "" //启动参数，在页面的onLoad函数里面得到
-			}
-		]
 	}
 }

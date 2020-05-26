@@ -37,5 +37,9 @@ module.exports = {
         version: "1.0.0",
         date: "Nov 22, 2019",
         log: ["✅ 添加日志记录", "复制链接功能cliboard.min.js插件", "修复若干个bug问题"]
+    }, {
+        version: "1.0.2",
+        date: "May 24, 2020",
+        log: ["✅ 版本更新", "实现微信用户信息展示授权", "新增按钮功能", "不同图标icon展示不用的颜色", "添加HammerUI说明", "修复若干个bug问题"]
     }]
 }

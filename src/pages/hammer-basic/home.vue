@@ -20,8 +20,8 @@
                     {
                         title: '布局',
                         name: 'basic-layout',
-                        from: 'iconfont',
-                        hammerIcon: 'hammer',
+                        from: 'tui',
+                        hammerIcon: 'manage',
                         size: 50,
                         bgColor : 'bg-red'
 
@@ -31,6 +31,14 @@
                         name: 'basic-icon',
                         from: 'iconfont',
                         hammerIcon: 'hammer',
+                        size: 50,
+                        bgColor: 'bg-orange'
+                    },
+                    {
+                        title: '按钮',
+                        name: 'basic-button',
+                        from: 'iconfont',
+                        hammerIcon: 'bofang',
                         size: 50,
                         bgColor: 'bg-orange'
                     },

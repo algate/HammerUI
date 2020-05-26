@@ -6,19 +6,13 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
     state: {
         userInfo: {},
-        isLogin: false,
-        version: '1.0.0'
+        version: '1.0.2'
     },
     mutations: {
         login(state, userInfo) {
-            console.log(userInfo);
             if (userInfo && Object.keys(userInfo).length !== 0) {
                 state.userInfo = userInfo;
-                state.isLogin = true;
             }
-        },
-        logoff(state, isLogin) {
-			state.isLogin = isLogin;
         }
     }
 })
