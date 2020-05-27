@@ -3,13 +3,19 @@
         <view class="top-container">
             <view class="bg-img"></view>
 			<!-- #ifdef MP-WEIXIN -->
-			<view class="user">
-			    <image class="avatar-img" :src="userInfo.avatarUrl?userInfo.avatarUrl:'/static/images/logo.svg'"></image>
+			<view class="user" v-if="isLogin">
+				<image class="avatar-img" :src="userInfo.avatarUrl">
 			    <view class="user-info-mobile">
-			        <text>{{userInfo.nickName || 'HammerUI'}}</text>
+                    <text>{{userInfo.nickName}}</text>
 			        <view class="edit-img" hover-class="opcity" :hover-stay-time="150" @tap="edit">
 			            <hammer-icon from="iconfont" name="edit" :size="24"></hammer-icon>
 			        </view>
+			    </view>
+			</view>
+			<view class="user" v-else>
+			    <image class="avatar-img" :src="userInfo.avatarUrl?userInfo.avatarUrl:'/static/images/logo.svg'"></image>
+			    <view class="user-info-mobile">
+					<hammer-button class="bg-color" open-type="getUserInfo" lang="zh_CN" @getuserinfo="bindGetUserInfo" width="280upx" height="90upx">微信登录</hammer-button>
 			    </view>
 			</view>
 			<!-- #endif -->
@@ -100,9 +106,63 @@ export default {
     },
 	onLoad() {
 		let that = this;
+		// 获取授权 - 用于展示用户信息
+		// #ifdef MP-WEIXIN
+		if(Object.keys(this.userInfo).length > 0){
+			uni.showToast({
+				title: '欢迎使用锤子UI'
+			})
+			this.isLogin = true;
+		} else {
+			this.isLogin = false;
+			wx.getSetting({
+				success (res) {
+					console.log('getSetting', res);
+					if (res.authSetting['scope.userInfo']) {
+						wx.getUserInfo({
+							success(r) {
+								console.log('getUserInfo', r);
+								that.userInfo = r.userInfo;
+								uni.showToast({
+									title: '欢迎使用锤子UI'
+								})
+								that.isLogin = true;
+							}
+						})
+					} else {
+						uni.showModal({
+						    title: '提示',
+						    content: '授权微信登录可以更好的体验HammerUI!',
+							confirmColor: '#07BB07',
+						    success: function (type) {
+								if (type.confirm) {
+									uni.redirectTo({
+									    url: '/pages/index/index'
+									});
+									// that.openSetting();
+								} else if (type.cancel) {
+									console.log('点击微信登陆显示昵称');
+								}
+						    }
+						});
+					}
+				}
+			})
+		}
+		// #endif
 	},
     methods: {
         ...mapMutations(["login"]),
+		bindGetUserInfo(e) {
+			console.log(e);
+			this.login(e.userInfo);
+			if(e.userInfo) {
+				this.isLogin = true;
+				uni.showToast({
+					title: '欢迎使用锤子UI'
+				})
+			}
+		},
         edit() {
 			this.$refs.toast.show({
 				title: "Tips: 别点了😊",

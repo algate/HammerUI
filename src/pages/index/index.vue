@@ -6,6 +6,8 @@
 		</view>
 		<!-- #ifdef MP-WEIXIN -->
 		<view class="wx-login">
+			<hammer-button v-if="canIUse" open-type="getUserInfo" lang="zh_CN" @getuserinfo="bindGetUserInfo" width="280upx" height="90upx">授权微信登录</hammer-button>
+			<view v-else>请升级微信版本</view>
 			<hammer-button style="margin-left:50upx;" type="green" @tap="experienceHammerUI" width="280upx" height="90upx">体验🔨UI!</hammer-button>
 		</view>
 		<!-- #endif -->
@@ -47,6 +49,13 @@ export default {
 			this.login(userInfo);
 		}
 		// #endif
+		// 查看是否授权
+		// #ifdef MP-WEIXIN
+		// 跳转到首页
+		/* uni.reLaunch({
+		    url: '/pages/hammer-basic/home'
+		}); */
+		// #endif
 	},
 	methods: {
 		...mapMutations(['login']),
@@ -57,6 +66,15 @@ export default {
 			});
 		},
 		// #endif
+		bindGetUserInfo(e) {
+			console.log(e);
+			this.login(e.userInfo);
+			if(e.userInfo) {
+				uni.reLaunch({
+					url: '/pages/hammer-basic/home'
+				});
+			}
+		},
 		experienceHammerUI() {
 			uni.reLaunch({
 				url: '/pages/hammer-basic/home'
