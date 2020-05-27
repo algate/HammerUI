@@ -122,11 +122,11 @@ export default {
 						wx.getUserInfo({
 							success(r) {
 								console.log('getUserInfo', r);
-								that.userInfo = r.userInfo;
+								that.isLogin = true;
+								that.login(r.userInfo);
 								uni.showToast({
 									title: '欢迎使用锤子UI'
 								})
-								that.isLogin = true;
 							}
 						})
 					} else {
@@ -139,9 +139,10 @@ export default {
 									uni.redirectTo({
 									    url: '/pages/index/index'
 									});
-									// that.openSetting();
 								} else if (type.cancel) {
-									console.log('点击微信登陆显示昵称');
+									uni.showToast({
+										title: '点击微信登陆显示昵称',
+									});
 								}
 						    }
 						});
@@ -154,7 +155,6 @@ export default {
     methods: {
         ...mapMutations(["login"]),
 		bindGetUserInfo(e) {
-			console.log(e);
 			this.login(e.userInfo);
 			if(e.userInfo) {
 				this.isLogin = true;

@@ -49,13 +49,6 @@ export default {
 			this.login(userInfo);
 		}
 		// #endif
-		// 查看是否授权
-		// #ifdef MP-WEIXIN
-		// 跳转到首页
-		/* uni.reLaunch({
-		    url: '/pages/hammer-basic/home'
-		}); */
-		// #endif
 	},
 	methods: {
 		...mapMutations(['login']),
