@@ -90,7 +90,7 @@ uni-page-body {
     background: #eee;
 }
 .search {
-    padding: 10rpx;
+    padding: 10upx;
     background: #ffffff;
     display: flex;
     align-items: center;
@@ -106,14 +106,14 @@ uni-page-body {
 
 .search .bd input {
     width: 100%;
-    height: 60rpx;
-    border-radius: 10rpx;
+    height: 60upx;
+    border-radius: 10upx;
     box-sizing: border-box;
 }
 
 .search .ft {
     font-size: 0;
-    padding: 30rpx;
-    margin: -30rpx;
+    padding: 30upx;
+    margin: -30upx;
 }
 </style>

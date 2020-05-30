@@ -172,8 +172,8 @@
 
 <style>
 	.demo-tip{
-		padding: 18rpx;
-		font-size: 28rpx;
+		padding: 18upx;
+		font-size: 28upx;
 		font-weight: bold;
 		text-align: center;
 		background: #CFE0DA;

@@ -59,7 +59,7 @@
         <tui-bottom-popup :show="popupShow" @close="popup">
             <view class="tui-share">
                 <view class="tui-share-title">分享到</view>
-                <scroll-view scroll-x style="padding-right:20rpx">
+                <scroll-view scroll-x style="padding-right:20upx">
                     <view class="tui-share-top">
                         <view class="tui-share-item" :class="[shareList[0].share.length-1===index?'tui-item-last':'']" v-for="(item,index) in shareList[0].share"
                          :key="index" @tap="popup">
@@ -226,14 +226,14 @@
 </script>
 <style lang="scss">
     .demo-content {
-        margin: 50rpx 15rpx;
+        margin: 50upx 15upx;
     }
     .demo-cell {
-        padding-top: 50rpx;
+        padding-top: 50upx;
     }
     .demo-cell-t {
-        padding: 10rpx;
-        border-radius: 5rpx;
+        padding: 10upx;
+        border-radius: 5upx;
         border: #EEEEEE 1px solid;
         display: flex;
         justify-content: center;
@@ -243,7 +243,7 @@
         color: #333333;
     }
     .demo-cell-b {
-        margin-top: 10rpx;
+        margin-top: 10upx;
     }
     .demo-cell-b text {
         font-size: 14px;
@@ -265,23 +265,23 @@
 
     .tui-selected-list {
         background: #fff;
-        border-radius: 20rpx;
+        border-radius: 20upx;
         overflow: hidden;
         transform: translateZ(0);
     }
 
     .tui-dropdown-scroll {
-        height: 400rpx;
+        height: 400upx;
     }
 
     .tui-cell-class {
         display: flex;
         align-items: center;
-        padding: 26rpx 30rpx !important;
+        padding: 26upx 30upx !important;
     }
 
     .tui-ml-20 {
-        margin-left: 20rpx;
+        margin-left: 20upx;
     }
 
     .tui-share {
@@ -291,29 +291,29 @@
     }
 
     .tui-share-title {
-        font-size: 26rpx;
+        font-size: 26upx;
         color: #7E7E7E;
         text-align: center;
-        line-height: 26rpx;
-        padding: 20rpx 0 50rpx 0;
+        line-height: 26upx;
+        padding: 20upx 0 50upx 0;
     }
 
     .tui-share-top,
     .tui-share-bottom {
         min-width: 101%;
-        padding: 0 20rpx 0 30rpx;
+        padding: 0 20upx 0 30upx;
         white-space: nowrap;
     }
 
     .tui-mt {
-        margin-top: 30rpx;
-        padding-bottom: 150rpx;
+        margin-top: 30upx;
+        padding-bottom: 150upx;
     }
 
     .tui-share-item {
-        width: 126rpx;
+        width: 126upx;
         display: inline-block;
-        margin-right: 24rpx;
+        margin-right: 24upx;
         text-align: center;
     }
 
@@ -323,7 +323,7 @@
 
     .tui-empty {
         display: inline-block;
-        width: 30rpx;
+        width: 30upx;
         visibility: hidden;
     }
 
@@ -332,27 +332,27 @@
         align-items: center;
         justify-content: center;
         background: #fafafa;
-        height: 126rpx;
-        width: 126rpx;
-        border-radius: 32rpx;
+        height: 126upx;
+        width: 126upx;
+        border-radius: 32upx;
     }
 
     .tui-share-text {
-        font-size: 24rpx;
+        font-size: 24upx;
         color: #7E7E7E;
-        line-height: 24rpx;
-        padding: 20rpx 0;
+        line-height: 24upx;
+        padding: 20upx 0;
         white-space: nowrap;
     }
 
     .tui-btn-cancle {
         width: 100%;
-        height: 100rpx;
+        height: 100upx;
         position: absolute;
         left: 0;
         bottom: 0;
         background: #f6f6f6;
-        font-size: 36rpx;
+        font-size: 36upx;
         color: #3e3e3e;
         display: flex;
         align-items: center;

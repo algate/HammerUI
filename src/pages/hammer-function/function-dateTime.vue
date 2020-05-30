@@ -146,9 +146,9 @@
 
 <style>
     .sub-title {
-        font-size: 24rpx;
+        font-size: 24upx;
         color: #7a7a7a;
-        padding-top: 18rpx;
+        padding-top: 18upx;
     }
 
     .hammer-primary {
@@ -156,11 +156,11 @@
     }
 
     .hammer-btn-box {
-        padding: 10rpx 40rpx;
+        padding: 10upx 40upx;
         box-sizing: border-box;
     }
 
     .hammer-btn-btm {
-        margin-bottom: 36rpx;
+        margin-bottom: 36upx;
     }
 </style>

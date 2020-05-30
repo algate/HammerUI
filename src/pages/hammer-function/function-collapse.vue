@@ -44,7 +44,7 @@
 		<view class="tui-title">手风琴效果(有一个一直开着)</view>
 		<view>
 			<block v-for="(item,index) in dataList3" :key="index">
-				<tui-collapse :index="index" :current="current2" height="120rpx" bdBgColor="#fff" translateY="0" @click="change4">
+				<tui-collapse :index="index" :current="current2" height="120upx" bdBgColor="#fff" translateY="0" @click="change4">
 					<template v-slot:title>
 						<tui-list-cell>{{item.name}}</tui-list-cell>
 					</template>
@@ -148,20 +148,20 @@
 
 <style>
 	.container {
-		padding: 20rpx 0 120rpx 0;
+		padding: 20upx 0 120upx 0;
 		box-sizing: border-box;
 	}
 
 	.tui-title {
-		padding: 40rpx 30rpx 20rpx;
+		padding: 40upx 30upx 20upx;
 		box-sizing: border-box;
-		font-size: 32rpx;
+		font-size: 32upx;
 	}
 
 	.tui-content {
-		padding: 20rpx 30rpx;
+		padding: 20upx 30upx;
 		background: #fff;
 		color: #555;
-		font-size: 26rpx;
+		font-size: 26upx;
 	}
 </style>

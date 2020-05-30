@@ -193,17 +193,17 @@
 
 <style>
     .example {
-        padding: 0 30rpx 30rpx
+        padding: 0 30upx 30upx
     }
 
     .example-title {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: 32rpx;
+        font-size: 32upx;
         color: #464e52;
-        padding: 30rpx 30rpx 30rpx 50rpx;
-        margin-top: 20rpx;
+        padding: 30upx 30upx 30upx 50upx;
+        margin-top: 20upx;
         position: relative;
         background-color: #fdfdfd;
         border-bottom: 1px #f5f5f5 solid
@@ -217,37 +217,37 @@
     .example-title:after {
         content: '';
         position: absolute;
-        left: 30rpx;
+        left: 30upx;
         margin: auto;
         top: 0;
         bottom: 0;
-        width: 6rpx;
-        height: 32rpx;
+        width: 6upx;
+        height: 32upx;
         background-color: #ccc
     }
 
     .example .example-title {
-        margin: 40rpx 0
+        margin: 40upx 0
     }
 
     .example-body {
-        padding: 30rpx;
+        padding: 30upx;
         background: #fff
     }
 
     .example-info {
-        padding: 30rpx;
+        padding: 30upx;
         color: #3b4144;
         background: #fff
     }
 
     .image {
-        width: 50rpx;
-        height: 50rpx;
+        width: 50upx;
+        height: 50upx;
     }
 
     .text {
-        font-size: 26rpx;
-        margin-top: 10rpx;
+        font-size: 26upx;
+        margin-top: 10upx;
     }
 </style>

@@ -44,14 +44,14 @@
 
 <style>
     .hammer-text {
-        padding-left: 10rpx;
+        padding-left: 10upx;
         vertical-align: middle;
-        font-size: 26rpx
+        font-size: 26upx
     }
 
     .hammer-divider-img {
-        width: 32rpx;
-        height: 32rpx;
+        width: 32upx;
+        height: 32upx;
         vertical-align: middle;
     }
 </style>

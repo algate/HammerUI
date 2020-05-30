@@ -130,14 +130,14 @@
 <style>
 	/*样式的width和height一定要与定义的cWidth和cHeight相对应*/
 	.qiun-charts {
-		width: 750rpx;
-		height: 340rpx;
+		width: 750upx;
+		height: 340upx;
 		background: linear-gradient(to top, #28E5A0, #0BB7D6);
 		background-size: 100% 100%;
 	}
 	
 	.chartsa {
-		width: 750rpx;
-		height: 340rpx;
+		width: 750upx;
+		height: 340upx;
 	}
 </style>

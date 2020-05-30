@@ -144,11 +144,11 @@ export default {
     }
     .hammer-number-box {
         color: $hammer-color;
-        padding: 20rpx;
+        padding: 20upx;
         box-sizing: border-box;
-        margin-bottom: 20rpx;
+        margin-bottom: 20upx;
         background: #fff;
-        font-size: 30rpx;
+        font-size: 30upx;
         display: flex;
         align-items: center;
         justify-content: space-between;

@@ -339,13 +339,13 @@
 
     .hammer-picker-header {
         width: 100%;
-        height: 90rpx;
-        padding: 0 40rpx;
+        height: 90upx;
+        padding: 0 40upx;
         display: flex;
         justify-content: space-between;
         align-items: center;
         box-sizing: border-box;
-        font-size: 32rpx;
+        font-size: 32upx;
         background: #fff;
         position: relative;
     }
@@ -353,7 +353,7 @@
     .hammer-picker-header::after {
         content: '';
         position: absolute;
-        border-bottom: 1rpx solid #eaeef1;
+        border-bottom: 1upx solid #eaeef1;
         -webkit-transform: scaleY(0.5);
         transform: scaleY(0.5);
         bottom: 0;
@@ -363,7 +363,7 @@
 
     .hammer-picker-body {
         width: 100%;
-        height: 500rpx;
+        height: 500upx;
         overflow: hidden;
         background-color: #fff;
     }
@@ -372,17 +372,17 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 36rpx;
+        font-size: 36upx;
         color: #333;
     }
 
     .hammer-text {
-        font-size: 24rpx;
-        padding-left: 8rpx;
+        font-size: 24upx;
+        padding-left: 8upx;
     }
 
     .hammer-btn-picker {
-        padding: 16rpx;
+        padding: 16upx;
         box-sizing: border-box;
         text-align: center;
         text-decoration: none;

@@ -1,8 +1,8 @@
 <template>
 	<view class="qiun-columns">
-		<scroll-view scroll-y="true" style="height: 400rpx;" @scroll="scroll">
-			<view style="height: 400rpx;">
-				<image src="../../../static/images/banner/banner1.png" style="width: 750rpx;height: 400rpx;"></image>
+		<scroll-view scroll-y="true" style="height: 400upx;" @scroll="scroll">
+			<view style="height: 400upx;">
+				<image src="../../../static/images/banner/banner1.png" style="width: 750upx;height: 400upx;"></image>
 			</view>
 			<!--#ifdef H5 -->
 			<view class="qiun-bg-white qiun-title-bar qiun-common-mt" >

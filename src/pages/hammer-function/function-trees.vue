@@ -15,6 +15,6 @@
 
 <style>
     .hammer-navigator-box {
-        padding: 10rpx 20rpx;
+        padding: 10upx 20upx;
     }
 </style>

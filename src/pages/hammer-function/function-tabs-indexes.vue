@@ -6,13 +6,13 @@
             </swiper-item>
         </swiper>
         <view class="VerticalBox">
-            <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation :scroll-top="verticalNavTop" style="height:calc(100vh - 375rpx)">
+            <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation :scroll-top="verticalNavTop" style="height:calc(100vh - 375upx)">
                 <view class="cu-item" :class="index==tabCur?'text-color cur':''" v-for="(item,index) in list" :key="index" @tap="TabSelect"
                  :data-id="index">
                     Tabs-{{item.name}}
                 </view>
             </scroll-view>
-            <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 375rpx)"
+            <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 375upx)"
              :scroll-into-view="'main-'+mainCur" @scroll="VerticalMain">
                 <view class="list-item bg-white" v-for="(item,index) in list" :key="index" :id="'main-'+index">
                     <view class="hammer-box">
@@ -145,11 +145,11 @@
 
 <style lang="scss">
     .screen-swiper {
-        height: 375rpx;
+        height: 375upx;
     }
 
     .VerticalNav.nav {
-        width: 200rpx;
+        width: 200upx;
         white-space: initial;
         color: #444;
     }
@@ -160,8 +160,8 @@
         background-color: #fff;
         margin: 0;
         border: none;
-        height: 80rpx;
-        line-height: 80rpx;
+        height: 80upx;
+        line-height: 80upx;
         position: relative;
     }
 
@@ -171,13 +171,13 @@
 
     .VerticalNav.nav .cu-item.cur::after {
         content: "";
-        width: 8rpx;
-        height: 30rpx;
-        border-radius: 10rpx 0 0 10rpx;
+        width: 8upx;
+        height: 30upx;
+        border-radius: 10upx 0 0 10upx;
         position: absolute;
         background-color: currentColor;
         top: 0;
-        right: 0rpx;
+        right: 0upx;
         bottom: 0;
         margin: auto;
     }
@@ -188,10 +188,10 @@
 
     .VerticalMain {
         flex: 1;
-        margin-left: 20rpx;
+        margin-left: 20upx;
         .list-item {
             background: #fff;
-            margin: 20rpx 0;
+            margin: 20upx 0;
         }
     }
 </style>

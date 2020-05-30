@@ -5,14 +5,14 @@
             <view class="sub-title">轮播：图片轮播、顶部信息滚动等</view>
         </view>
         <view class="hammer-box bg-white h-margin-top">
-            <view class="iconfont icon-notification" style="size:20rpx;color:#f54f46;"></view>
+            <view class="iconfont icon-notification" style="size:20upx;color:#f54f46;"></view>
             <view class="hammer-scorll-view">
                 <view class="hammer-animation">🔨欢迎小程序搜索-chuizi; 不要跟我谈理想，我的理想就是不上班; 欢迎关注公众号-前端洋葱</view>
             </view>
         </view>
         <!--headlines-->
         <view class="hammer-box bg-white h-margin-top">
-            <view class="iconfont icon-notification" style="size:20rpx;"></view>
+            <view class="iconfont icon-notification" style="size:20upx;"></view>
             <swiper :vertical="true" :autoplay="true" :circular="true" :interval="4000" class="hammer-swiper">
                 <swiper-item v-for="(item,index) in headlines" :key="index" class="hammer-swiper-item">
                     <view class="tui-news-item">{{item}}</view>
@@ -21,7 +21,7 @@
         </view>
         <!--headlines-->
         <view class="hammer-box bg-white h-margin-top">
-            <view class="iconfont icon-notification" style="size:20rpx;"></view>
+            <view class="iconfont icon-notification" style="size:20upx;"></view>
             <swiper :vertical="false" :autoplay="true" :circular="true" :interval="4000" class="hammer-swiper">
                 <swiper-item v-for="(item,index) in headlines" :key="index" class="hammer-swiper-item">
                     <view class="tui-news-item">{{item}}</view>
@@ -183,8 +183,8 @@ export default {
         white-space: nowrap;
         overflow: hidden;
         color: #f54f46;
-        height: 60rpx;
-        line-height: 60rpx;
+        height: 60upx;
+        line-height: 60upx;
     }
 
     .hammer-animation {
@@ -202,7 +202,7 @@ export default {
     }
     .tower-swiper .tower-item {
         transform: scale(calc(0.5 + var(--index) / 10));
-        margin-left: calc(var(--left) * 100rpx - 150rpx);
+        margin-left: calc(var(--left) * 100upx - 150upx);
         z-index: var(--index);
     }
 </style>

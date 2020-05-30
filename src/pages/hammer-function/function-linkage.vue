@@ -82,9 +82,9 @@ export default {
 </script>
 <style lang="scss">
 .sub-title {
-    font-size: 24rpx;
+    font-size: 24upx;
     color: #7a7a7a;
-    padding-top: 18rpx;
+    padding-top: 18upx;
 }
 
 .hammer-primary {
@@ -92,12 +92,12 @@ export default {
 }
 
 .hammer-btn-box {
-    padding: 10rpx 40rpx;
+    padding: 10upx 40upx;
     box-sizing: border-box;
 }
 
 .hammer-btn-btm {
-    margin-bottom: 36rpx;
+    margin-bottom: 36upx;
 }
 
 .list {
@@ -105,14 +105,14 @@ export default {
     .list-item {
         display: flex;
         align-items: center;
-        height: 88rpx;
+        height: 88upx;
         background-color: $uni-text-color-inverse;
-        margin-bottom: 8rpx;
-        padding: 0 20rpx;
+        margin-bottom: 8upx;
+        padding: 0 20upx;
 
         .item-title {
             flex: 1;
-            font-size: 32rpx;
+            font-size: 32upx;
         }
     }
 }

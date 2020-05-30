@@ -1,6 +1,6 @@
 <template>
     <view class="view-wrap">
-        <scroll-view class="scroll-view" :style="{height: 'calc(100vh - ' + topSizeSub + bottomSize + 'rpx)'}" scroll-y :scroll-top="scrollTop" @scroll="scroll">
+        <scroll-view class="scroll-view" :style="{height: 'calc(100vh - ' + topSizeSub + bottomSize + 'upx)'}" scroll-y :scroll-top="scrollTop" @scroll="scroll">
             <view class="block-wrap">
                 <view class="block" v-for="(item, index) in list" :key="index">
                     <view v-if="index == listItemCur" class="block__title block__title--cur" :style="{color: color}">
@@ -435,14 +435,14 @@ export default {
     top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 30rpx;
+    padding: 30upx;
     text-align: center;
 }
 
 .view-wrap .empty-image {
-    width: 200rpx;
-    height: 200rpx;
-    margin: 160rpx auto 60rpx;
+    width: 200upx;
+    height: 200upx;
+    margin: 160upx auto 60upx;
 }
 
 .view-wrap .empty-text {
@@ -450,13 +450,13 @@ export default {
 }
 
 .scroll-view {
-    width: calc(100vw + 20rpx);
+    width: calc(100vw + 20upx);
 }
 
 .block-wrap {
     position: relative;
     width: 100%;
-    padding-right: 20rpx;
+    padding-right: 20upx;
     box-sizing: border-box;
 }
 
@@ -467,20 +467,20 @@ export default {
     width: 100%;
     background: #f7f7f7;
     font-weight: bold;
-    padding: 10rpx 20rpx;
+    padding: 10upx 20upx;
     z-index: 1;
 }
 
 .indicator {
     position: fixed;
-    right: 140rpx;
-    width: 100rpx;
-    height: 100rpx;
-    border-radius: 10rpx;
+    right: 140upx;
+    width: 100upx;
+    height: 100upx;
+    border-radius: 10upx;
     text-align: center;
-    line-height: 100rpx;
+    line-height: 100upx;
     color: #ffffff;
-    font-size: 60rpx;
+    font-size: 60upx;
     font-weight: bold;
     display: none;
     z-index: 3;
@@ -519,17 +519,17 @@ export default {
 }
 
 .tree__item {
-    font-size: 20rpx;
-    padding: 0rpx 8rpx;
+    font-size: 20upx;
+    padding: 0upx 8upx;
     color: #666666;
     font-weight: bold;
 }
 
 .tree__item>.key {
-    width: 32rpx;
-    height: 32rpx;
+    width: 32upx;
+    height: 32upx;
     border-radius: 50%;
-    line-height: 32rpx;
+    line-height: 32upx;
 }
 
 .tree__item--cur>.key {
@@ -539,21 +539,21 @@ export default {
 }
 
 .block__title {
-    height: 60rpx;
-    line-height: 60rpx;
+    height: 60upx;
+    line-height: 60upx;
     position: sticky;
     top: 0;
     z-index: 2;
     background: #ffffff;
-    font-size: 24rpx;
+    font-size: 24upx;
     font-weight: bold;
     color: #767676;
 }
 
 .block__title>.title-item {
-    border-top: 1rpx solid #ebedf0;
-    border-bottom: 1rpx solid #ebedf0;
-    padding: 0 20rpx;
+    border-top: 1upx solid #ebedf0;
+    border-bottom: 1upx solid #ebedf0;
+    padding: 0 20upx;
     background: #ededed;
 }
 
@@ -567,11 +567,11 @@ export default {
 
 .block__item {
     background: #ffffff;
-    padding: 30rpx 20rpx;
+    padding: 30upx 20upx;
 }
 
 .block__item:not(:last-child) {
-    border-bottom: 1rpx solid #ebedf0;
+    border-bottom: 1upx solid #ebedf0;
 }
 
 .item {
@@ -580,18 +580,18 @@ export default {
 }
 
 .item__hd {
-    width: 80rpx;
-    height: 80rpx;
+    width: 80upx;
+    height: 80upx;
     border-radius: 50%;
     font-weight: bold;
-    line-height: 80rpx;
+    line-height: 80upx;
     text-align: center;
-    margin-right: 20rpx;
+    margin-right: 20upx;
     color: #ffffff;
 }
 
 .info__name {
-    margin-bottom: 10rpx;
+    margin-bottom: 10upx;
 }
 
 .info__title {

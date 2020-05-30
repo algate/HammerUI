@@ -42,11 +42,11 @@
 <style lang="scss">
 .mapPage {
     width: 100%;
-    height: 400rpx;
+    height: 400upx;
 
     #allBMap {
         width: 100%;
-        height: 400rpx;
+        height: 400upx;
     }
 }
 </style>

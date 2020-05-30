@@ -80,11 +80,11 @@
 
 <style>
     .hammer-btn-box {
-        padding: 10rpx 40rpx;
+        padding: 10upx 40upx;
         box-sizing: border-box;
     }
 
     .hammer-btn-btm {
-        margin-bottom: 36rpx;
+        margin-bottom: 36upx;
     }
 </style>

@@ -6,7 +6,7 @@
         </view>
         <view class="hammer-box bg-black">
             <view class="hammer-search">
-                <view class="tui-icon tui-icon-search" style="size:20rpx;"></view>
+                <view class="tui-icon tui-icon-search" style="size:20upx;"></view>
                 <input type="text" placeholder="请输入字体名称" confirm-type="search" @input="searchIcon"></input>
             </view>
         </view>
@@ -1517,7 +1517,7 @@ export default {
 }
 
 .tui-grid-icon+.tui-grid-label {
-    margin-top: 10rpx;
+    margin-top: 10upx;
 }
 
 .tui-grid-label {
@@ -1525,7 +1525,7 @@ export default {
     text-align: center;
     font-weight: 400;
     color: #888;
-    font-size: 30rpx;
+    font-size: 30upx;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

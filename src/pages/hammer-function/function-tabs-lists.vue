@@ -172,7 +172,7 @@
             checkCor: function() {
                 let that = this;
                 //这里计算按照实际情况进行修改，动态数据要进行动态分析
-                //思路：窗体高度/单个分类高度 200rpx 转px计算 =>得到一屏幕所显示的个数，结合后台传回分类总数进行计算
+                //思路：窗体高度/单个分类高度 200upx 转px计算 =>得到一屏幕所显示的个数，结合后台传回分类总数进行计算
                 //数据很多可以多次if判断然后进行滚动距离计算即可
                 if (that.currentTab > 7) {
                     that.scrollTop = 500
@@ -217,8 +217,8 @@
 
     .tui-searchbox {
         width: 100%;
-        height: 92rpx;
-        padding: 0 30rpx;
+        height: 92upx;
+        padding: 0 30upx;
         box-sizing: border-box;
         background: #fff;
         display: flex;
@@ -236,7 +236,7 @@
     .tui-searchbox::after {
         content: '';
         position: absolute;
-        border-bottom: 1rpx solid #d2d2d2;
+        border-bottom: 1upx solid #d2d2d2;
         -webkit-transform: scaleY(0.5);
         transform: scaleY(0.5);
         bottom: 0;
@@ -246,10 +246,10 @@
 
     .tui-search-input {
         width: 100%;
-        height: 60rpx;
+        height: 60upx;
         background: #f1f1f1;
-        border-radius: 30rpx;
-        font-size: 26rpx;
+        border-radius: 30upx;
+        font-size: 26upx;
         color: #999;
         display: flex;
         align-items: center;
@@ -257,26 +257,26 @@
     }
 
     .tui-search-text {
-        padding-left: 16rpx;
+        padding-left: 16upx;
     }
 
     .tab-view {
         /* height: 100%; */
-        width: 200rpx;
+        width: 200upx;
         position: fixed;
         left: 0;
         z-index: 10;
     }
 
     .tab-bar-item {
-        width: 200rpx;
-        height: 110rpx;
+        width: 200upx;
+        height: 110upx;
         background: #f6f6f6;
         box-sizing: border-box;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 26rpx;
+        font-size: 26upx;
         color: #444;
         font-weight: 400;
     }
@@ -284,7 +284,7 @@
     .active {
         position: relative;
         color: #000;
-        font-size: 30rpx;
+        font-size: 30upx;
         font-weight: 600;
         background: #fcfcfc;
     }
@@ -292,8 +292,8 @@
     .active::before {
         content: "";
         position: absolute;
-        border-left: 8rpx solid #E41F19;
-        height: 30rpx;
+        border-left: 8upx solid #E41F19;
+        height: 30upx;
         left: 0;
     }
 
@@ -302,7 +302,7 @@
     .right-box {
         width: 100%;
         position: fixed;
-        padding-left: 220rpx;
+        padding-left: 220upx;
         box-sizing: border-box;
         left: 0;
     }
@@ -310,24 +310,24 @@
     .page-view {
         width: 100%;
         overflow: hidden;
-        padding-top: 20rpx;
-        padding-right: 20rpx;
+        padding-top: 20upx;
+        padding-right: 20upx;
         box-sizing: border-box;
         padding-bottom: env(safe-area-inset-bottom);
     }
 
     .swiper {
         width: 100%;
-        height: 300rpx;
-        border-radius: 12rpx;
+        height: 300upx;
+        border-radius: 12upx;
         overflow: hidden;
         transform: translateZ(0);
     }
 
     /* #ifdef APP-PLUS || MP */
     .swiper .wx-swiper-dot {
-        width: 8rpx;
-        height: 8rpx;
+        width: 8upx;
+        height: 8upx;
         display: inline-flex;
         background: none;
         justify-content: space-between;
@@ -337,7 +337,7 @@
         content: '';
         flex-grow: 1;
         background: rgba(255, 255, 255, 0.8);
-        border-radius: 16rpx;
+        border-radius: 16upx;
         overflow: hidden;
     }
 
@@ -346,15 +346,15 @@
     }
 
     .swiper .wx-swiper-dot.wx-swiper-dot-active {
-        width: 16rpx;
+        width: 16upx;
     }
 
     /* #endif */
 
     /* #ifdef H5 */
     >>>.swiper .uni-swiper-dot {
-        width: 8rpx;
-        height: 8rpx;
+        width: 8upx;
+        height: 8upx;
         display: inline-flex;
         background: none;
         justify-content: space-between;
@@ -364,7 +364,7 @@
         content: '';
         flex-grow: 1;
         background: rgba(255, 255, 255, 0.8);
-        border-radius: 16rpx;
+        border-radius: 16upx;
         overflow: hidden;
     }
 
@@ -373,35 +373,35 @@
     }
 
     >>>.swiper .uni-swiper-dot.uni-swiper-dot-active {
-        width: 16rpx;
+        width: 16upx;
     }
 
     /* #endif */
 
     .slide-image {
         width: 100%;
-        height: 300rpx;
+        height: 300upx;
     }
 
     .class-box {
-        padding-top: 30rpx;
+        padding-top: 30upx;
     }
 
     .class-item {
         background: #fff;
         width: 100%;
         box-sizing: border-box;
-        padding: 20rpx;
-        margin-bottom: 20rpx;
-        border-radius: 12rpx;
+        padding: 20upx;
+        margin-bottom: 20upx;
+        border-radius: 12upx;
     }
 
     .class-name {
-        font-size: 22rpx;
+        font-size: 22upx;
     }
 
     .g-container {
-        /* padding-top: 20rpx; */
+        /* padding-top: 20upx; */
         display: flex;
         display: -webkit-flex;
         justify-content: flex-start;
@@ -412,15 +412,15 @@
     .g-box {
         width: 33.3333%;
         text-align: center;
-        padding-top: 40rpx;
+        padding-top: 40upx;
     }
 
     .g-image {
-        width: 120rpx;
-        height: 120rpx;
+        width: 120upx;
+        height: 120upx;
     }
 
     .g-title {
-        font-size: 22rpx;
+        font-size: 22upx;
     }
 </style>

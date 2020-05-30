@@ -16,6 +16,7 @@
 			<hammer-button class="bg-color" @tap="h5onGotUserInfo" type="green" width="280upx" height="90upx" :size="32">体验🔨UI!</hammer-button>
 		</view>
 		<!-- #endif -->
+		<view class="hammer-official-account"><official-account></official-account></view>
 	</view>
 </template>
 <script>
@@ -139,5 +140,15 @@ export default {
 	align-items: center;
 	flex-wrap: wrap;
 	justify-content: center;
+}
+.hammer-official-account{
+	position: fixed;
+	left: 5rpx;
+	right: 5rpx;
+	bottom: 0;
+	box-sizing: border-box;
+	official-account{
+		border-radius: 5rpx;
+	} 
 }
 </style>

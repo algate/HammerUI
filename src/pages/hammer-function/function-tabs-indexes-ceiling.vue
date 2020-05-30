@@ -15,7 +15,7 @@
         <!--searchbox-->
         <!--联系人列表-->
         <block v-for="(list,index) in lists" :key="index">
-            <tui-sticky :scrollTop="scrollTop" stickyHeight="66rpx" :index="index" @change="stickyChange" @select="selectIndex">
+            <tui-sticky :scrollTop="scrollTop" stickyHeight="66upx" :index="index" @change="stickyChange" @select="selectIndex">
                 <!--tips:sticky组件中最好不要嵌套其他自定义组件-->
                 <template v-slot:header>
                     <view class="tui-list-cell-divider">
@@ -173,8 +173,8 @@
 
     .tui-searchbox {
         width: 100%;
-        height: 100rpx;
-        padding: 0 30rpx;
+        height: 100upx;
+        padding: 0 30upx;
         box-sizing: border-box;
         background: #fff;
         display: flex;
@@ -185,10 +185,10 @@
 
     .tui-search-input {
         width: 100%;
-        height: 72rpx;
+        height: 72upx;
         background: #f5f6fa;
-        border-radius: 36rpx;
-        font-size: 30rpx;
+        border-radius: 36upx;
+        font-size: 30upx;
         color: #a8abb8;
         display: flex;
         align-items: center;
@@ -196,19 +196,19 @@
     }
 
     .tui-search-text {
-        padding-left: 16rpx;
+        padding-left: 16upx;
     }
 
     .tui-list-cell {
         position: relative;
         width: 100%;
-        padding: 15rpx 20rpx;
+        padding: 15upx 20upx;
         box-sizing: border-box;
         overflow: hidden;
         display: flex;
         align-items: center;
         background: #fff;
-        font-size: 32rpx;
+        font-size: 32upx;
         color: #333;
     }
 
@@ -219,12 +219,12 @@
     .tui-list-cell::after {
         content: '';
         position: absolute;
-        border-bottom: 1rpx solid #ddd;
+        border-bottom: 1upx solid #ddd;
         -webkit-transform: scaleY(0.5);
         transform: scaleY(0.5);
         bottom: 0;
-        right: 30rpx;
-        left: 100rpx;
+        right: 30upx;
+        left: 100upx;
     }
 
     .tui-cell-last::after {
@@ -234,15 +234,15 @@
     /*searchbox*/
 
     .tui-img {
-        width: 80rpx;
-        height: 80rpx;
+        width: 80upx;
+        height: 80upx;
         border-radius: 50%;
     }
 
     .tui-name {
         width: 80%;
-        padding-left: 30rpx;
-        font-size: 34rpx;
+        padding-left: 30upx;
+        font-size: 34upx;
         color: #333;
         overflow: hidden;
         white-space: nowrap;
@@ -250,12 +250,12 @@
     }
 
     .tui-list-cell-divider {
-        height: 66rpx;
-        padding-left: 30rpx;
-        font-size: 26rpx;
+        height: 66upx;
+        padding-left: 30upx;
+        font-size: 26upx;
         color: #555;
         background: #f5f6fa;
-        padding: 0 30rpx;
+        padding: 0 30upx;
         display: flex;
         align-items: center;
         font-weight: bold;
@@ -269,31 +269,31 @@
         justify-content: flex-start;
         z-index: 999999;
         position: fixed;
-        top: 132rpx;
+        top: 132upx;
         /* #ifdef H5 */
-        top: 220rpx;
+        top: 220upx;
         /* #endif */
         right: 0;
-        padding-right: 10rpx;
-        width: 44rpx;
+        padding-right: 10upx;
+        width: 44upx;
         color: #555;
         font-weight: bold;
     }
 
     .tui-indexed-list-text {
-        font-size: 22rpx;
+        font-size: 22upx;
         text-align: center;
     }
 
     .tui-indexed-list-alert {
         position: fixed;
-        width: 120rpx;
-        height: 120rpx;
-        right: 90rpx;
+        width: 120upx;
+        height: 120upx;
+        right: 90upx;
         top: 50%;
-        margin-top: -60rpx;
-        border-radius: 24rpx;
-        font-size: 50rpx;
+        margin-top: -60upx;
+        border-radius: 24upx;
+        font-size: 50upx;
         color: #fff;
         background-color: rgba(0, 0, 0, 0.65);
         display: flex;
@@ -304,15 +304,15 @@
     }
 
     .tui-indexed-list-alert text {
-        line-height: 50rpx;
+        line-height: 50upx;
     }
 
     .tui-footer {
-        padding: 30rpx 0;
+        padding: 30upx 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 30rpx;
+        font-size: 30upx;
         color: #999;
     }
 </style>

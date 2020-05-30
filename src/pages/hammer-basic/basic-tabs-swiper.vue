@@ -207,7 +207,7 @@
     .tab-view::before {
         content: '';
         position: absolute;
-        border-bottom: 4rpx solid #eaeef1;
+        border-bottom: 4upx solid #eaeef1;
         -webkit-transform: scaleY(0.5);
         transform: scaleY(0.5);
         bottom: 0;
@@ -217,7 +217,7 @@
 
     .tab-view {
         width: 100%;
-        height: 100rpx;
+        height: 100upx;
         overflow: hidden;
         box-sizing: border-box;
         position: fixed;
@@ -233,30 +233,30 @@
 
     .tab-bar-item {
         padding: 0;
-        height: 100rpx;
-        min-width: 80rpx;
-        line-height: 100rpx;
-        margin: 0 28rpx;
+        height: 100upx;
+        min-width: 80upx;
+        line-height: 100upx;
+        margin: 0 28upx;
         display: inline-block;
         text-align: center;
         box-sizing: border-box;
     }
 
     .tab-bar-title {
-        height: 100rpx;
-        line-height: 100rpx;
-        font-size: 32rpx;
+        height: 100upx;
+        line-height: 100upx;
+        font-size: 32upx;
         color: #999;
         font-weight: 400;
     }
 
     .active {
-        border-bottom: 6rpx solid #5677fc;
+        border-bottom: 6upx solid #5677fc;
     }
 
     .active .tab-bar-title {
         color: #5677fc !important;
-        font-size: 36rpx;
+        font-size: 36upx;
         font-weight: bold;
     }
 
@@ -266,7 +266,7 @@
     }
 
     .list-view {
-        margin-top: 100rpx;
+        margin-top: 100upx;
         width: 100%;
         background: #fff;
         box-sizing: border-box;
@@ -274,7 +274,7 @@
     }
 
     .list-cell {
-        padding: 30rpx;
+        padding: 30upx;
         box-sizing: border-box;
     }
 
@@ -284,22 +284,22 @@
     }
 
     .cell-title {
-        font-size: 36rpx;
-        line-height: 56rpx;
+        font-size: 36upx;
+        line-height: 56upx;
         word-break: break-all;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
-        /* padding-bottom: 30rpx; */
+        /* padding-bottom: 30upx; */
     }
 
     .img-container {
         width: 100%;
-        padding-top: 24rpx;
+        padding-top: 24upx;
         display: flex;
-        height: 160rpx;
+        height: 160upx;
         justify-content: space-between;
     }
 
@@ -311,29 +311,29 @@
 
     .img {
         width: 100%;
-        height: 160rpx;
+        height: 160upx;
         display: block;
         /* position: absolute;
           left: 50%;
           top:50%;
           transform: translate(-50%,-50%);
         */
-        border-radius: 4rpx;
+        border-radius: 4upx;
     }
 
     .sub-title {
-        padding-top: 24rpx;
-        font-size: 28rpx;
+        padding-top: 24upx;
+        font-size: 28upx;
         color: #BCBCBC;
         display: flex;
         align-items: center
     }
 
     .badge {
-        padding: 5rpx 10rpx;
-        font-size: 24rpx;
-        border-radius: 4rpx;
-        margin-right: 20rpx;
+        padding: 5upx 10upx;
+        font-size: 24upx;
+        border-radius: 4upx;
+        margin-right: 20upx;
     }
 
     .b-red {

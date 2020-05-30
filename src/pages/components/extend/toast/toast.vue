@@ -49,7 +49,7 @@
 			getWidth(icon,content){
 				let width="auto";
 				if(icon){
-					width=content?'420rpx':'360rpx'
+					width=content?'420upx':'360upx'
 				}
 				return width
 			}
@@ -60,7 +60,7 @@
 <style>
 	.hammer-toast {
 		background: rgba(0, 0, 0, 0.75);
-		border-radius: 10rpx;
+		border-radius: 10upx;
 		position: fixed;
 		visibility: hidden;
 		opacity: 0;
@@ -75,16 +75,16 @@
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
-		padding: 40rpx 20rpx;
+		padding: 40upx 20upx;
 		box-sizing: border-box;
 	}
 
 	.hammer-toast-padding {
-		padding-top: 50rpx !important;
-		padding-bottom: 50rpx !important;
+		padding-top: 50upx !important;
+		padding-bottom: 50upx !important;
 	}
 	.hammer-unicon-padding {
-		padding: 24rpx 40rpx !important;
+		padding: 24upx 40upx !important;
 		word-break: break-all;
 	}
 
@@ -95,25 +95,25 @@
 
 
 	.hammer-toast-img {
-		width: 120rpx;
-		height: 120rpx;
+		width: 120upx;
+		height: 120upx;
 		display: block;
-		margin-bottom: 28rpx;
+		margin-bottom: 28upx;
 	}
 
 	.hammer-toast-text {
-		font-size: 30rpx;
-		line-height: 30rpx;
+		font-size: 30upx;
+		line-height: 30upx;
 		font-weight: 400;
 		color: #fff;
 		text-align: center;
 	}
 	.hammer-unicon{
-		line-height: 40rpx !important;
-		font-size: 32rpx !important;
+		line-height: 40upx !important;
+		font-size: 32upx !important;
 	}
 	.hammer-content-ptop {
-		padding-top: 10rpx;
-		font-size: 26rpx !important;
+		padding-top: 10upx;
+		font-size: 26upx !important;
 	}
 </style>
