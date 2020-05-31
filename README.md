@@ -3,6 +3,9 @@
 订阅号搜索 前端洋葱(关注) - 点击 【锤子UI】菜单可以直接访问
 微信搜索 【锤子UI】也可以直接访问到小程序
 
+扫码关注：
+![Image](./src/static/images/mine/wx.png)
+
 # HammerUI
 
 ## Project setup
