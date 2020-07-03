@@ -2,7 +2,7 @@
 	<view>
 		<view class="hammer-tencent"><image src="/static/images/mine/wechat.png" mode="widthFix"></image></view>
 		<view class="hammer-logo">
-			<view class="logo"><image src="/static/images/tabBar/hammer.svg" mode="scaleToFill" /></view>
+			<view class="logo"><image src="/static/images/tabBar/hammer.svg" mode="scaleToFill"></image></view>
 		</view>
 		<!-- #ifdef MP-WEIXIN -->
 		<view class="wx-login">
@@ -12,20 +12,17 @@
 		</view>
 		<!-- #endif -->
 		<!-- #ifdef H5 -->
-		<view class="wx-login"> 
-			<hammer-button class="bg-color" @tap="h5onGotUserInfo" type="green" width="280upx" height="90upx" :size="32">体验🔨UI!</hammer-button>
-		</view>
+		<view class="wx-login"><hammer-button class="bg-color" @tap="h5onGotUserInfo" type="green" width="280upx" height="90upx" :size="32">体验🔨UI!</hammer-button></view>
 		<!-- #endif -->
+		<!-- #ifdef MP-WEIXIN -->
 		<view class="hammer-official-account"><official-account></official-account></view>
+		<!-- #endif -->
 	</view>
 </template>
 <script>
 import { mapState, mapMutations } from 'vuex';
-import hammerButton from "@/components/hammer-button/hammer-button.vue"
 export default {
-	components:{
-		hammerButton
-	},
+	components: {},
 	computed: {
 		...mapState(['isLogin'])
 	},
@@ -50,28 +47,47 @@ export default {
 			this.login(userInfo);
 		}
 		// #endif
+		// 查看是否授权
+		// #ifdef MP-WEIXIN
+		wx.getSetting({
+			success(res) {
+				if (res.authSetting['scope.userInfo']) {
+					wx.getUserInfo({
+						success(r) {
+							console.log('getUserInfo', r);
+							that.login(r.userInfo);
+							// 跳转到首页
+							uni.reLaunch({
+								url: '/pages/hammer-canvas/home'
+							});
+						}
+					});
+				}
+			}
+		});
+		// #endif
 	},
 	methods: {
 		...mapMutations(['login']),
 		// #ifdef H5
 		h5onGotUserInfo: function() {
 			uni.reLaunch({
-				url: '/pages/hammer-basic/home'
+				url: '/pages/hammer-canvas/home'
 			});
 		},
 		// #endif
 		bindGetUserInfo(e) {
 			console.log(e);
 			this.login(e.userInfo);
-			if(e.userInfo) {
+			if (e.userInfo) {
 				uni.reLaunch({
-					url: '/pages/hammer-basic/home'
+					url: '/pages/hammer-canvas/home'
 				});
 			}
 		},
 		experienceHammerUI() {
 			uni.reLaunch({
-				url: '/pages/hammer-basic/home'
+				url: '/pages/hammer-canvas/home'
 			});
 		}
 	},
@@ -141,14 +157,15 @@ export default {
 	flex-wrap: wrap;
 	justify-content: center;
 }
-.hammer-official-account{
+.hammer-official-account {
 	position: fixed;
 	left: 5rpx;
 	right: 5rpx;
-	bottom: 0;
+	// bottom: 0;
+	bottom: var(--window-bottom);
 	box-sizing: border-box;
-	official-account{
+	official-account {
 		border-radius: 5rpx;
-	} 
+	}
 }
 </style>

@@ -36,7 +36,7 @@ import {
 let titleJson = require("@/static/title.json");
 
 export default {
-    name: "hammerTitle",
+    name: "HammerTitle",
     props: {
         // 标题名称
         title: {

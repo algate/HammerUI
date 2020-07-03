@@ -5,6 +5,8 @@
 
 # HammerUI
 
+本项目是一个实验小程序项目，本身是基于ThorUI模板进行开发的。该项目主要是一些uni-app代码片段和组件的分享。项目中大部分组件，还有信息展示，都来源于网络，组件、信息展示、icon等中使用了ColorUI、ThorUI，UniUI组件、集合了Mecroll-Scroll、Ucharts、icon、button等很多三方组件，方便查找。如果想单独使用组件请移步相关Uni-app插件列表寻找相关组件信息进行使用，都可以在插件列表中找的。本项目免费开源，H5效果可在地址[HammerUI]('https://algate.github.io/HammerUI/')上预览。cui开头的都来自于colorUI，tui开头的都来自于thorUI。
+
 ## Project setup
 ```
 yarn install

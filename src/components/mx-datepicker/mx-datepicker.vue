@@ -11,10 +11,10 @@
 			</view>
 			<swiper class="picker-modal-body" :circular="true" :duration="200" :skip-hidden-item-layout="true" :current="calendarIndex" @change="onSwiperChange">
 				<swiper-item class="picker-calendar" v-for="(calendar,calendarIndex2) in calendars" :key="calendarIndex2">
-					<view class="picker-calendar-view" v-for="(week,index) in weeks" :key="index - 7">
+					<view class="picker-calendar-view" v-for="(week, index) in weeks" :key="`${index - 7}`">
 						<view class="picker-calendar-view-item">{{week}}</view>
 					</view>
-					<view class="picker-calendar-view" v-for="(date,dateIndex) in calendar" :key="dateIndex" @click="onSelectDate(date)">
+					<view class="picker-calendar-view" v-for="(date, dateIndex) in calendar" :key="dateIndex" @click="onSelectDate(date)">
 						<!-- 背景样式 -->
 						<view v-show="date.bgStyle.type" :class="'picker-calendar-view-'+date.bgStyle.type" :style="{background: date.bgStyle.background}"></view>
 						<!-- 正常和选中样式 -->

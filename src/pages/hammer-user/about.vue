@@ -7,7 +7,7 @@
 		<view class="tui-content-box">
 			<view class="tui-content">尊敬的开发者，欢迎体验 - 锤子UI！</view>
 			<view class="tui-content">
-				该项目主要是一些uni-app代码片段的分享，以及基础组件的封装。项目免费开源，H5效果可在
+				本项目是一个实验小程序项目，本身是基于ThorUI模板进行开发的。项目中大部分组件，还有信息展示，都来源于网络，组件、信息展示、icon等中使用了ColorUI、ThorUI，UniUI组件、集合了Mecroll-Scroll、Ucharts等很多三方组件，方便查找。该项目主要是一些uni-app代码片段和组件的分享。如果想单独使用组件请移步Uni-app插件列表寻找相关组件信息进行使用，都可以在插件列表中找的。本项目免费开源，H5效果可在
 				<text class="tui-content-email" @tap="copy('https://algate.github.io/HammerUI/')">锤子UI</text>上预览。
 			</view>
 			<view class="tui-content">项目可能存在缺陷或者bug，如果您在使用过程中发现问题或者有更好的建议，可反馈给我。</view>

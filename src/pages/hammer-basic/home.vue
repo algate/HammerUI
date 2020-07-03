@@ -2,7 +2,7 @@
     <view>
         <scroll-view scroll-y>
             <view class="nav-list">
-                <navigator hover-class="none" :url="'/pages/hammer-basic/' + item.name" class="nav-li" open-type="navigate" :class="item.bgColor" v-for="(item,index) in elements" :key="index" :style="{animation: 'bounceInDown ' + ((index+1)*0.2+1) + 's ' + ((index)*0.4) + 's 1 both'}">
+                <navigator hover-class="none" :url="'/pages/hammer-basic/' + item.name" class="nav-li" open-type="navigate" :class="item.bgColor" v-for="(item,index) in elements" :key="index" :style="{animation: 'bounceInDown ' + ((index+1)*0.2+1) + 's ' + ((index)*0.4) + 's 1 backwards'}">
                     <view class="nav-title">{{item.title}}</view>
                     <view class="nav-name">{{item.name}}</view>
                     <view class="nav-icon"><hammer-icon :from="item.from" :name="item.hammerIcon" color="#fff" :size="item.size"></hammer-icon></view>
@@ -34,21 +34,21 @@
                         size: 50,
                         bgColor: 'bg-orange'
                     },
-                    {
+                    /* {
                         title: '按钮',
                         name: 'basic-button',
                         from: 'iconfont',
                         hammerIcon: 'bofang',
                         size: 50,
-                        bgColor: 'bg-orange'
-                    },
+                        bgColor: 'bg-yellow'
+                    }, */
                     {
                         title: '轮播',
                         name: 'basic-swiper',
                         from: 'iconfont',
                         hammerIcon: 'lunbo1',
                         size: 50,
-                        bgColor: 'bg-yellow'
+                        bgColor: 'bg-olive'
                     },
                     {
                         title: '各种列表<Li>',
@@ -56,7 +56,7 @@
                         hammerIcon: 'listview',
                         size: 50,
                         from: 'tui',
-                        bgColor: 'bg-olive'
+                        bgColor: 'bg-green'
                     },
                     {
                         title: '自定义表单',
@@ -64,7 +64,7 @@
                         from: 'iconfont',
                         hammerIcon: 'app',
                         size: 50,
-                        bgColor : 'bg-green'
+                        bgColor : 'bg-cyan'
 
                     },
                     {
@@ -73,7 +73,7 @@
                         hammerIcon: 'label',
 						from: 'tui',
                         size: 50,
-                        bgColor : 'bg-cyan'
+                        bgColor : 'bg-blue'
                     },
                     {
                         title: '分割线',
@@ -81,7 +81,7 @@
                         hammerIcon: 'fengefu1',
 						from: 'iconfont',
                         size: 50,
-                        bgColor : 'bg-blue'
+                        bgColor : 'bg-purple'
                     }
                 ],
             };

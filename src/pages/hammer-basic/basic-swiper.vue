@@ -101,7 +101,7 @@ export default {
                 type: 'image',
                 url: 'http://shp.qpic.cn/ishow/2735011517/1547545098_-888937974_18837_sProdImgNo_3.jpg/0'
             }, {
-                id: 5,
+                id: 6,
                 type: 'image',
                 url: 'http://shp.qpic.cn/ishow/2735092409/1569290387_84828260_13119_sProdImgNo_2.jpg/0'
             }],

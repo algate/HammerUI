@@ -9,6 +9,54 @@
 			}
 		},
 		{
+			"path":"pages/hammer-canvas/home",
+			"style": {
+				"navigationBarTitleText":"Canvas⭐",
+				"navigationBarBackgroundColor":"#00AB98",
+				"navigationBarTextStyle":"black"
+			}
+		},
+		{
+			"path":"pages/hammer-canvas/canvas-threeJs",
+			"style": {
+				"navigationBarTitleText":"threeJs🌻",
+				"navigationBarBackgroundColor":"#00AB98",
+				"navigationBarTextStyle":"black"
+			}
+		},
+		{
+			"path":"pages/hammer-canvas/canvas-vectorJs",
+			"style": {
+				"navigationBarTitleText":"vectorJs🌻",
+				"navigationBarBackgroundColor":"#00AB98",
+				"navigationBarTextStyle":"black"
+			}
+		},
+		{
+			"path":"pages/hammer-canvas/canvas-tangram",
+			"style": {
+				"navigationBarTitleText":"tangram🍯",
+				"navigationBarBackgroundColor":"#00AB98",
+				"navigationBarTextStyle":"black"
+			}
+		},
+		{
+			"path":"pages/hammer-canvas/canvas-countdown",
+			"style": {
+				"navigationBarTitleText":"countdown🐝",
+				"navigationBarBackgroundColor":"#00AB98",
+				"navigationBarTextStyle":"black"
+			}
+		},
+		{
+			"path":"pages/hammer-canvas/canvas-particle",
+			"style": {
+				"navigationBarTitleText":"particle🍍",
+				"navigationBarBackgroundColor":"#00AB98",
+				"navigationBarTextStyle":"black"
+			}
+		},
+		{
 			"path": "pages/hammer-basic/home",
 			"style": {
 				"navigationBarTitleText": "基础组件🦏",
@@ -72,14 +120,14 @@
 				"navigationBarTextStyle": "white"
 			}
 		},
-		{
+		/* {
 			"path": "pages/hammer-basic/basic-button",
 			"style": {
 				"navigationBarTitleText": "按钮-😠",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
-		},
+		}, */
 		{
 			"path": "pages/hammer-function/home",
 			"style": {
@@ -616,6 +664,11 @@
 		"backgroundColor": "#fff",
 		"borderStyle": "black",
 		"list": [{
+			"pagePath": "pages/hammer-canvas/home",
+			"iconPath": "static/images/tabBar/canvas-default.png",
+			"selectedIconPath": "static/images/tabBar/canvas.png",
+			"text": "Canvas"
+		},{
 			"pagePath": "pages/hammer-basic/home",
 			"iconPath": "static/images/tabBar/basic-default.png",
 			"selectedIconPath": "static/images/tabBar/basic.png",
@@ -631,16 +684,16 @@
 			"selectedIconPath": "static/images/tabBar/hammer.png"
 		}]
 	},
-	"easycom": {
-		"autoscan": true,
-		"custom": {
-			"hammer-(.*)": "@/components/hammer-$1/hammer-$1.vue"
-		}
-	},
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "ChuiziUI",
 		"navigationBarBackgroundColor": "#5677FC",
 		"backgroundColor": "#F8F8F8"
+	},
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"hammer-(.*)": "@/components/hammer-$1/hammer-$1.vue"
+		}
 	}
 }

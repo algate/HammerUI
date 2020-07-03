@@ -1,5 +1,8 @@
 {
     "whiteListPages": [
-        "/pages/hammer-user/about"
+        "/pages/hammer-canvas/home",
+		"/pages/hammer-canvas/canvas-vectorJs",
+        "/pages/hammer-canvas/canvas-tangram",
+		"/pages/hammer-canvas/canvas-countdown"
     ]
 }

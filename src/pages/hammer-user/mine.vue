@@ -1,3 +1,8 @@
+<!--
+ 本页采用的是ThorUI模板组件关于tabBar中ss我的相关内容；
+ 原来模板查看请直接访问小程序 【ThorUI】我的菜单进行访问；
+ 我这里只是信息展示使用，原作者已经发布于uni-app插件，请移步uni-app官网插件列表查看
+ -->
 <template>
 	<view>
 		<view class="top-container">
@@ -7,11 +12,13 @@
 				<image class="avatar-img" :src="userInfo.avatarUrl"></image>
 				<view class="user-info-mobile">
 					<text>{{ userInfo.nickName }}</text>
-					<view class="edit-img" hover-class="opcity" :hover-stay-time="150" @tap="edit"><hammer-icon from="iconfont" name="edit" :size="24"></hammer-icon></view>
+					<view class="edit-img" hover-class="opcity" :hover-stay-time="150" @tap="edit">
+						<hammer-icon from="iconfont" name="edit" :size="24"></hammer-icon>
+					</view>
 				</view>
 			</view>
 			<view class="user" v-else>
-				<image class="avatar-img" :src="userInfo.avatarUrl ? userInfo.avatarUrl : '/static/images/logo.svg'"></image>
+				<image class="avatar-img" :src="userInfo.avatarUrl"></image>
 				<view class="user-info-mobile">
 					<hammer-button class="bg-color" open-type="getUserInfo" lang="zh_CN" @getuserinfo="bindGetUserInfo" width="280upx" height="90upx">微信登录</hammer-button>
 				</view>
@@ -19,7 +26,7 @@
 			<!-- #endif -->
 			<!-- #ifdef H5 -->
 			<view class="user">
-				<image class="avatar-img" :src="userInfo.avatarUrl ? userInfo.avatarUrl : '/static/images/logo.svg'"></image>
+				<image class="avatar-img" :src="userInfo.avatarUrl"></image>
 				<view class="user-info-mobile">
 					<text>{{ userInfo.nickName }}</text>
 					<view class="edit-img" hover-class="opcity" :hover-stay-time="150" @tap="edit"><hammer-icon from="iconfont" name="edit" :size="24"></hammer-icon></view>
@@ -76,8 +83,10 @@
 				</view>
 			</view>
 		</view>
-		<!-- #ifdef -->
-		<view class="hammer-official-account"><official-account @load="bindload" @error="binderror"></official-account></view>
+		<!-- #ifdef MP-WEIXIN -->
+		<view class="hammer-official-account">
+			<official-account @load="bindload" @error="binderror"></official-account>
+		</view>
 		<!-- #endif -->
 		<hammer-toast ref="toast"></hammer-toast>
 	</view>
@@ -105,19 +114,17 @@ export default {
 		// 获取授权 - 用于展示用户信息
 		// #ifdef MP-WEIXIN
 		if (Object.keys(this.userInfo).length > 0) {
+			this.isLogin = true;
 			uni.showToast({
 				title: '欢迎使用锤子UI'
 			});
-			this.isLogin = true;
 		} else {
 			this.isLogin = false;
 			wx.getSetting({
 				success(res) {
-					console.log('getSetting', res);
 					if (res.authSetting['scope.userInfo']) {
 						wx.getUserInfo({
 							success(r) {
-								console.log('getUserInfo', r);
 								that.isLogin = true;
 								that.login(r.userInfo);
 								uni.showToast({
@@ -130,8 +137,9 @@ export default {
 							title: '提示',
 							content: '授权微信登录可以更好的体验HammerUI!',
 							confirmColor: '#07BB07',
+							showCancel: false,
 							success: function(type) {
-								if (type.confirm) {
+								/* if (type.confirm) {
 									uni.redirectTo({
 										url: '/pages/index/index'
 									});
@@ -139,7 +147,10 @@ export default {
 									uni.showToast({
 										title: '点击微信登陆显示昵称'
 									});
-								}
+								} */
+								uni.showToast({
+									title: '点击微信登陆显示昵称'
+								});
 							}
 						});
 					}
@@ -407,7 +418,8 @@ export default {
 	position: fixed;
 	left: 5rpx;
 	right: 5rpx;
-	bottom: 0;
+	// bottom: 0;
+	bottom:var(--window-bottom);
 	box-sizing: border-box;
 	official-account{
 		border-radius: 5rpx;

@@ -77,7 +77,11 @@
             "scope.userLocation" : {
                 "desc" : "获取定位地址的天气还有周边等信息"
             }
-        }
+        },
+		/* 微信小程序分包优化 */
+		"optimization": {
+			"subPackages": true
+		}
     },
     "mp-alipay" : {
         "usingComponents" : true
