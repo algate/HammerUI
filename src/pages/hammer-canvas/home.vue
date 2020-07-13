@@ -24,26 +24,15 @@
         data() {
             return {
                 elements: [
-                    /* {
-						title: 'Three.js',
-                        name: 'canvas-threeJs',
-                        from: 'iconfont',
-                        hammerIcon: 'emoji',
-                        size: 30,
-                        bgColor : 'bg-red',
-						img: img.imgs[0].url
-                    }, */
-					// #ifdef H5
                     {
 						title: 'Vector.js',
                         name: 'canvas-vectorJs',
                         from: 'iconfont',
-                        hammerIcon: 'likefill',
+                        hammerIcon: 'like',
                         size: 30,
                         bgColor : 'bg-orange',
-						img: img.imgs[1].url
+						img: img.imgs[0].url
                     },
-					// #endif
                     {
 						title: 'Tangram.js',
                         name: 'canvas-tangram',
@@ -51,16 +40,16 @@
                         hammerIcon: 'favor',
                         size: 30,
                         bgColor : 'bg-yellow',
-						img: img.imgs[2].url
+						img: img.imgs[1].url
                     },
                     {
 						title: 'Countdown',
                         name: 'canvas-countdown',
-                        from: 'iconfont',
+                        from: 'tui',
                         hammerIcon: 'clock',
                         size: 30,
                         bgColor : 'bg-olive',
-						img: img.imgs[3].url
+						img: img.imgs[2].url
                     },
                     {
 						title: 'Particle',
@@ -69,7 +58,34 @@
                         hammerIcon: 'emojiflashfill',
                         size: 30,
                         bgColor : 'bg-cyan',
+						img: img.imgs[3].url
+                    },
+                    {
+						title: 'Favorite',
+                        name: 'canvas-favorite',
+                        from: 'iconfont',
+                        hammerIcon: 'likefill',
+                        size: 30,
+                        bgColor : 'bg-green',
 						img: img.imgs[4].url
+                    },
+                    {
+						title: 'Grids',
+                        name: 'canvas-grids',
+                        from: 'iconfont',
+                        hammerIcon: 'redpacket',
+                        size: 30,
+                        bgColor : 'bg-blue',
+						img: img.imgs[5].url
+                    },
+                    {
+						title: 'Mouseclick-effect',
+                        name: 'canvas-click-effect',
+                        from: 'iconfont',
+                        hammerIcon: 'sponsorfill',
+                        size: 30,
+                        bgColor : 'bg-purple',
+						img: img.imgs[6].url
                     },
                 ],
             };

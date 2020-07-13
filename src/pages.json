@@ -17,14 +17,6 @@
 			}
 		},
 		{
-			"path":"pages/hammer-canvas/canvas-threeJs",
-			"style": {
-				"navigationBarTitleText":"threeJs🌻",
-				"navigationBarBackgroundColor":"#00AB98",
-				"navigationBarTextStyle":"black"
-			}
-		},
-		{
 			"path":"pages/hammer-canvas/canvas-vectorJs",
 			"style": {
 				"navigationBarTitleText":"vectorJs🌻",
@@ -52,6 +44,30 @@
 			"path":"pages/hammer-canvas/canvas-particle",
 			"style": {
 				"navigationBarTitleText":"particle🍍",
+				"navigationBarBackgroundColor":"#00AB98",
+				"navigationBarTextStyle":"black"
+			}
+		},
+		{
+			"path":"pages/hammer-canvas/canvas-favorite",
+			"style": {
+				"navigationBarTitleText":"favorite🐌",
+				"navigationBarBackgroundColor":"#00AB98",
+				"navigationBarTextStyle":"black"
+			}
+		},
+		{
+			"path":"pages/hammer-canvas/canvas-grids",
+			"style": {
+				"navigationBarTitleText":"grids😷",
+				"navigationBarBackgroundColor":"#00AB98",
+				"navigationBarTextStyle":"black"
+			}
+		},
+		{
+			"path":"pages/hammer-canvas/canvas-click-effect",
+			"style": {
+				"navigationBarTitleText":"click-effect😷",
 				"navigationBarBackgroundColor":"#00AB98",
 				"navigationBarTextStyle":"black"
 			}

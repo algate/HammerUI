@@ -34,7 +34,6 @@ export default {
 	methods: {
 		setup() {
 			// #ifdef H5
-			// this.ctx = uni.createCanvasContext('tangram', this);
 			this.canvas = document.querySelector('#tangram canvas');
 			const dpr = uni.getSystemInfoSync().pixelRatio;
 			this.canvas.width = this.systemInfo.windowWidth * dpr;
@@ -44,7 +43,6 @@ export default {
 			this.applyData(this.ctx);
 			// #endif
 			// #ifdef MP-WEIXIN
-			// this.ctx = uni.createCanvasContext('tangram');
 			const query = uni.createSelectorQuery();
 			query
 				.select('#tangram')

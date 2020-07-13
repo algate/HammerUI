@@ -4,7 +4,6 @@
 
 <script>
 import digit from './countdown/digit.js';
-console.log(digit);
 export default {
 	data() {
 		return {
