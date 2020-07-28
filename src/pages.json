@@ -41,6 +41,22 @@
 			}
 		},
 		{
+			"path":"pages/hammer-canvas/canvas-click-effect",
+			"style": {
+				"navigationBarTitleText":"click-effect😷",
+				"navigationBarBackgroundColor":"#00AB98",
+				"navigationBarTextStyle":"black"
+			}
+		},
+		{
+			"path":"pages/hammer-canvas/canvas-move-effect",
+			"style": {
+				"navigationBarTitleText":"move-effect",
+				"navigationBarBackgroundColor":"#00AB98",
+				"navigationBarTextStyle":"black"
+			}
+		},
+		{
 			"path":"pages/hammer-canvas/canvas-particle",
 			"style": {
 				"navigationBarTitleText":"particle🍍",
@@ -60,14 +76,6 @@
 			"path":"pages/hammer-canvas/canvas-grids",
 			"style": {
 				"navigationBarTitleText":"grids😷",
-				"navigationBarBackgroundColor":"#00AB98",
-				"navigationBarTextStyle":"black"
-			}
-		},
-		{
-			"path":"pages/hammer-canvas/canvas-click-effect",
-			"style": {
-				"navigationBarTitleText":"click-effect😷",
 				"navigationBarBackgroundColor":"#00AB98",
 				"navigationBarTextStyle":"black"
 			}

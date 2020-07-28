@@ -52,13 +52,31 @@
 						img: img.imgs[2].url
                     },
                     {
+						title: 'Mouseclick-effect',
+                        name: 'canvas-click-effect',
+                        from: 'iconfont',
+                        hammerIcon: 'sponsorfill',
+                        size: 30,
+                        bgColor : 'bg-purple',
+						img: img.imgs[3].url
+                    },
+                    {
+						title: 'Mousemove-effect',
+                        name: 'canvas-move-effect',
+                        from: 'iconfont',
+                        hammerIcon: 'ailpay',
+                        size: 30,
+                        bgColor : 'bg-purple',
+						img: img.imgs[4].url
+                    },
+                    {
 						title: 'Particle',
                         name: 'canvas-particle',
                         from: 'iconfont',
                         hammerIcon: 'emojiflashfill',
                         size: 30,
                         bgColor : 'bg-cyan',
-						img: img.imgs[3].url
+						img: img.imgs[5].url
                     },
                     {
 						title: 'Favorite',
@@ -67,7 +85,7 @@
                         hammerIcon: 'likefill',
                         size: 30,
                         bgColor : 'bg-green',
-						img: img.imgs[4].url
+						img: img.imgs[6].url
                     },
                     {
 						title: 'Grids',
@@ -76,16 +94,7 @@
                         hammerIcon: 'redpacket',
                         size: 30,
                         bgColor : 'bg-blue',
-						img: img.imgs[5].url
-                    },
-                    {
-						title: 'Mouseclick-effect',
-                        name: 'canvas-click-effect',
-                        from: 'iconfont',
-                        hammerIcon: 'sponsorfill',
-                        size: 30,
-                        bgColor : 'bg-purple',
-						img: img.imgs[6].url
+						img: img.imgs[7].url
                     },
                 ],
             };
