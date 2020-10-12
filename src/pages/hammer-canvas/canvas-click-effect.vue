@@ -59,6 +59,11 @@ export default {
 	onReady() {
 		this.setup();
 	},
+	onUnload() {
+		(window && this.stop) ? window.cancelAnimationFrame(this.stop) : clearTimeout(this.stop);
+		this.canvas = null;
+		this.ctx = null;
+	},
 	methods: {
 		setup() {
 			// #ifdef H5

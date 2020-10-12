@@ -418,11 +418,10 @@ export default {
 	position: fixed;
 	left: 5rpx;
 	right: 5rpx;
-	// bottom: 0;
 	bottom:var(--window-bottom);
 	box-sizing: border-box;
 	official-account{
 		border-radius: 5rpx;
-	} 
+	}
 }
 </style>

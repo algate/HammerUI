@@ -61,6 +61,7 @@ export default {
 			
 			canvas: null,
 			ctx: null,
+			stop: null,
 			w: 0, 
 			h: 0,
 			hue: null,
@@ -84,6 +85,11 @@ export default {
 	},
 	onReady() {
 		this.setup();
+	},
+	onUnload() {
+		(window && this.stop) ? window.cancelAnimationFrame(this.stop) : clearTimeout(this.stop);
+		this.canvas = null;
+		this.ctx = null;
 	},
 	methods: {
 		setup() {
@@ -200,7 +206,7 @@ export default {
 
 		draw() {
 			this.clear();
-			(window && window.requestAnimationFrame(this.draw)) || setTimeout(this.draw);
+			this.stop = (window && window.requestAnimationFrame(this.draw)) || setTimeout(this.draw);
 			this.updateParticles();
 			this.updatePlanets();
 			this.tick++;

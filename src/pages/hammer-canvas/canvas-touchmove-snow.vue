@@ -3,8 +3,8 @@
 </template>
 <script>
 class Particle {
-	constructor(x, y, color) {
-		this.character = "*";
+	constructor(x, y, color, emoji) {
+		this.character = emoji;
 		this.velocity = {
 			x: (Math.random() < 0.5 ? -1 : 1) * (Math.random() / 2),
 			y: 1
@@ -48,9 +48,12 @@ export default {
 	data() {
 		return {
 			systemInfo: {},
+			emojis: ["❄️"],
+			// emojis: ["❄️","❅","❆","☁","☀"],
 			colors: ["#f37b1d", "#8dc63f", "#1cbbb4", "#e03997", "#8799a3"],
 			canvas: null,
 			ctx: null,
+			stop: null,
 			particles: []
 		};
 	},
@@ -63,6 +66,11 @@ export default {
 	},
 	onReady() {
 		this.setup();
+	},
+	onUnload() {
+		(window && this.stop) ? window.cancelAnimationFrame(this.stop) : clearTimeout(this.stop);
+		this.canvas = null;
+		this.ctx = null;
 	},
 	methods: {
 		setup() {
@@ -95,15 +103,16 @@ export default {
 		animation() {
 			this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 			this.updateParticles();
-			window ? window.requestAnimationFrame(this.animation) : setTimeout(this.animation, 1000 / 60);
+			this.stop = window ? window.requestAnimationFrame(this.animation) : setTimeout(this.animation, 1000 / 60);
 		},
 		onMouseMove(e) {
 			var x = e.clientX;
 			var y = e.clientY;
-			this.addParticle(x, y, this.colors[Math.floor(Math.random() * this.colors.length)]);
+			console.log(this.emojis[Math.floor(Math.random() * this.emojis.length)]);
+			this.addParticle(x, y, this.colors[Math.floor(Math.random() * this.colors.length)], this.emojis[Math.floor(Math.random() * this.emojis.length)]);
 		},
 		tapEvent(e) {
-			this.addParticle(e.changedTouches[0].clientX, e.changedTouches[0].clientY, this.colors[Math.floor(Math.random() * this.colors.length)]);
+			this.addParticle(e.changedTouches[0].clientX, e.changedTouches[0].clientY, this.colors[Math.floor(Math.random() * this.colors.length)], this.emojis[Math.floor(Math.random() * this.emojis.length)]);
 		},
 		updateParticles() {
 			if(this.particles.length === 0) {
@@ -120,8 +129,8 @@ export default {
 				}
 			}
 		},
-		addParticle(x, y, color) {
-			var particle = new Particle(x, y, color);
+		addParticle(x, y, color, emoji) {
+			var particle = new Particle(x, y, color, emoji);
 			this.particles.push(particle);
 		}
 	}

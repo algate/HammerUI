@@ -10,6 +10,7 @@ export default {
 			systemInfo: {},
 			canvas: null,
 			ctx: null,
+			stop: null,
 
 			WINDOW_WIDTH: 375,
 			WINDOW_HEIGHT: 250,
@@ -35,6 +36,13 @@ export default {
 	onReady() {
 		this.setup();
 	},
+	onUnload() {
+		console.log(`监听页面卸载`);
+		// (window && this.stop) ? window.cancelAnimationFrame(this.stop) : clearInterval(this.stop);
+		clearInterval(this.stop);
+		this.canvas = null;
+		this.ctx = null;
+	},
 	methods: {
 		setup() {
 			// #ifdef H5
@@ -48,12 +56,12 @@ export default {
 			this.WINDOW_HEIGHT = this.systemInfo.windowWidth / 2;
 			this.ctx = this.canvas.getContext('2d');
 			// this.ctx.scale(dpr, dpr);
-			setInterval(()=>{
+			/* setInterval(()=>{
 				this.clear(this.ctx);
 				this.render(this.ctx);
 				this.update(this.ctx);
-			},100)
-			
+			},100) */
+			this.stop = setInterval(this.animation, 100);
 			// #endif
 			// #ifdef MP-WEIXIN
 			const query = uni.createSelectorQuery();
@@ -70,13 +78,19 @@ export default {
 					this.WINDOW_HEIGHT = res[0].width / 2;
 					this.ctx = this.canvas.getContext('2d');
 					this.ctx.scale(dpr, dpr);
-					setInterval(()=>{
+					/* setInterval(()=>{
 						this.clear(this.ctx);
 						this.render(this.ctx);
 						this.update(this.ctx);
-					},100)
+					},100) */
+					this.stop = setInterval(this.animation, 100);
 				});
 			// #endif
+		},
+		animation() {
+			this.clear(this.ctx);
+			this.render(this.ctx);
+			this.update(this.ctx);
 		},
 		clear(ctx) {
 			ctx.clearRect(0, 0, this.WINDOW_WIDTH, this.WINDOW_HEIGHT);

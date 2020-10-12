@@ -26,7 +26,7 @@
 		},
 		data() {
 			return {
-				themeColor: '#000000',
+				themeColor: '#da8585',
 				titleColor: '#666666',
 				filterResult: '',
 				menuList: [{

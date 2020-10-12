@@ -31,6 +31,10 @@ export default {
 	onReady() {
 		this.setup();
 	},
+	onUnload() {
+		this.canvas = null;
+		this.ctx = null;
+	},
 	methods: {
 		setup() {
 			// #ifdef H5

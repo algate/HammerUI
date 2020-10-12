@@ -133,7 +133,8 @@ export default {
 	data() {
 		return {
 			systemInfo: {},
-			vars: {}
+			vars: {},
+			stop: null
 		};
 	},
 	onLoad() {
@@ -146,6 +147,9 @@ export default {
 	},
 	onReady() {
 		this.setup();
+	},
+	onUnload() {
+		clearTimeout(this.stop);
 	},
 	methods: {
 		setup() {
@@ -234,7 +238,10 @@ export default {
 			/* requestAnimationFrame(() => {
 				this.frame(vars);
 			}); */
-			setTimeout(() => {
+			/* setTimeout(() => {
+				this.frame(this.vars);
+			},60 / 1000); */
+			this.stop = setTimeout(() => {
 				this.frame(this.vars);
 			},60 / 1000);
 

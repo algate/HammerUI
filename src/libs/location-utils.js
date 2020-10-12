@@ -1,4 +1,3 @@
-// import wx from '@/common/jweixin.js';
 const getCurrentLocation = () => {
 	// 通过微信经纬度 - 使用百度地图api
 	return getCurrentLocationByWechat();

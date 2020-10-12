@@ -9,6 +9,7 @@ export default {
 			systemInfo: {},
 			canvas: null,
 			ctx: null,
+			stop: null,
 			dots: [],
 			warea: {
 				x: null,
@@ -27,6 +28,16 @@ export default {
 	},
 	onReady() {
 		this.setup();
+	},
+	onUnload() {
+		// window.cancelAnimationFrame(this.stop)
+		(window && this.stop) ? (window.cancelAnimationFrame(this.stop) ||
+					window.webkitCancelAnimationFrame(this.stop)/* ||
+					window.mozCancelAnimationFrame(this.stop) ||
+					window.oCancelAnimationFrame(this.stop) ||
+					window.msCancelAnimationFrame(this.stop) */) : clearTimeout(this.stop);
+		this.canvas = null;
+		this.ctx = null;
 	},
 	methods: {
 		setup() {
@@ -160,7 +171,7 @@ export default {
 			});
 			// console.log(window);
 			// this.RAF(this.animate);
-			(window &&
+			this.stop = (window &&
 				(window.requestAnimationFrame(this.animate) ||
 					window.webkitRequestAnimationFrame(this.animate) ||
 					window.mozRequestAnimationFrame(this.animate) ||

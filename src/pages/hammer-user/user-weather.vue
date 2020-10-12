@@ -122,7 +122,7 @@
             },
             bindInput: function(e) {
                 const keywords = e.detail.value;
-                this.getPoiAround(keywords);
+                this.getWeather(keywords);
             }
         }
     }

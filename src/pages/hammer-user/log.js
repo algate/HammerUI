@@ -49,5 +49,9 @@ module.exports = {
         version: "1.1.0",
         date: "May 24, 2020",
         log: ["🐭 canvas功能", "画七巧板", "时间倒计时", "例子旋转"]
+    }, {
+        version: "1.3.0",
+        date: "Oct 10, 2020",
+        log: ["🐢 canvas功能", "优化canvas"]
     }]
 }

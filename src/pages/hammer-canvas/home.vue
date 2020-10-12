@@ -24,6 +24,8 @@
         data() {
             return {
                 elements: [
+					// #ifdef H5
+					/* 此特效在小程序端效果不佳，仅在H5端展示 */
                     {
 						title: 'Vector.js',
                         name: 'canvas-vectorJs',
@@ -33,6 +35,7 @@
                         bgColor : 'bg-orange',
 						img: img.imgs[0].url
                     },
+					// #endif
                     {
 						title: 'Tangram.js',
                         name: 'canvas-tangram',
@@ -61,12 +64,12 @@
 						img: img.imgs[3].url
                     },
                     {
-						title: 'Mousemove-effect',
-                        name: 'canvas-move-effect',
+						title: 'Touchmove-snow',
+                        name: 'canvas-touchmove-snow',
                         from: 'iconfont',
-                        hammerIcon: 'ailpay',
+                        hammerIcon: 'shangchuan',
                         size: 30,
-                        bgColor : 'bg-purple',
+                        bgColor : 'bg-mauve',
 						img: img.imgs[4].url
                     },
                     {
@@ -96,6 +99,15 @@
                         bgColor : 'bg-blue',
 						img: img.imgs[7].url
                     },
+                    {
+						title: 'Touchmove-bubble',
+                        name: 'canvas-touchmove-bubble',
+                        from: 'tui',
+                        hammerIcon: 'circle',
+                        size: 30,
+                        bgColor : 'bg-pink',
+						img: img.imgs[8].url
+                    }
                 ],
             };
         },

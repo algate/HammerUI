@@ -49,9 +49,9 @@
 			}
 		},
 		{
-			"path":"pages/hammer-canvas/canvas-move-effect",
+			"path":"pages/hammer-canvas/canvas-touchmove-snow",
 			"style": {
-				"navigationBarTitleText":"move-effect",
+				"navigationBarTitleText":"touchmove-snow❄",
 				"navigationBarBackgroundColor":"#00AB98",
 				"navigationBarTextStyle":"black"
 			}
@@ -76,6 +76,14 @@
 			"path":"pages/hammer-canvas/canvas-grids",
 			"style": {
 				"navigationBarTitleText":"grids😷",
+				"navigationBarBackgroundColor":"#00AB98",
+				"navigationBarTextStyle":"black"
+			}
+		},
+		{
+			"path":"pages/hammer-canvas/canvas-touchmove-bubble",
+			"style": {
+				"navigationBarTitleText":"touchmove-bubble🏊",
 				"navigationBarBackgroundColor":"#00AB98",
 				"navigationBarTextStyle":"black"
 			}
