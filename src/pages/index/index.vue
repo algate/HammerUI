@@ -47,25 +47,7 @@ export default {
 			this.login(userInfo);
 		}
 		// #endif
-		// 查看是否授权
-		// #ifdef MP-WEIXIN
-		wx.getSetting({
-			success(res) {
-				if (res.authSetting['scope.userInfo']) {
-					wx.getUserInfo({
-						success(r) {
-							console.log('getUserInfo', r);
-							that.login(r.userInfo);
-							// 跳转到首页
-							uni.reLaunch({
-								url: '/pages/hammer-canvas/home'
-							});
-						}
-					});
-				}
-			}
-		});
-		// #endif
+		
 	},
 	methods: {
 		...mapMutations(['login']),

@@ -65,7 +65,14 @@
                         hammerIcon: 'app',
                         size: 50,
                         bgColor : 'bg-cyan'
-
+                    },
+                    {
+                        title: '签名画板',
+                        name: 'basic-signature',
+                        from: 'tui',
+                        hammerIcon: 'card',
+                        size: 50,
+                        bgColor : 'bg-blue'
                     },
                     {
                         title: '标签Tag+Badge',
@@ -73,7 +80,7 @@
                         hammerIcon: 'label',
 						from: 'tui',
                         size: 50,
-                        bgColor : 'bg-blue'
+                        bgColor : 'bg-purple'
                     },
                     {
                         title: '分割线',
@@ -81,7 +88,7 @@
                         hammerIcon: 'fengefu1',
 						from: 'iconfont',
                         size: 50,
-                        bgColor : 'bg-purple'
+                        bgColor : 'bg-mauve'
                     }
                 ],
             };

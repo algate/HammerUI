@@ -2,7 +2,7 @@
     "name" : "锤子UI",
     "appid" : "",
     "description" : "uni-app代码片段的分享，以及基础组件的封装",
-    "versionName" : "1.0.0",
+    "versionName" : "1.4.0",
     "versionCode" : "100",
     "transformPx" : false,
     "app-plus" : {

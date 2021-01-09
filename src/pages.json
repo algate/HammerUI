@@ -137,6 +137,14 @@
 			}
 		},
 		{
+			"path": "pages/hammer-basic/basic-signature",
+			"style": {
+				"navigationBarTitleText": "签名画板-✔",
+				"navigationBarBackgroundColor": "#00AB98",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
 			"path": "pages/hammer-basic/basic-tags",
 			"style": {
 				"navigationBarTitleText": "标签-😇",
@@ -152,14 +160,6 @@
 				"navigationBarTextStyle": "white"
 			}
 		},
-		/* {
-			"path": "pages/hammer-basic/basic-button",
-			"style": {
-				"navigationBarTitleText": "按钮-😠",
-				"navigationBarBackgroundColor": "#00AB98",
-				"navigationBarTextStyle": "white"
-			}
-		}, */
 		{
 			"path": "pages/hammer-function/home",
 			"style": {
