@@ -1,6 +1,6 @@
 let init = function(ak) {
     if (!ak) {
-        ak = ""
+        ak = "EE087c9854256c8e00fc07475e5dcd19"
 
     }
     const BMapURL = 'http://api.map.baidu.com/api?v=Lite&ak=' + ak + '&callback=onBMapCallback'

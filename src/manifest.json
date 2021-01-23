@@ -1,6 +1,6 @@
 {
     "name" : "锤子UI",
-    "appid" : "",
+    "appid" : "__UNI__409E321",
     "description" : "uni-app代码片段的分享，以及基础组件的封装",
     "versionName" : "1.4.0",
     "versionCode" : "100",
@@ -65,7 +65,7 @@
     /* 快应用特有相关 */
     "mp-weixin" : {
         /* 微信小程序特有相关 */
-        "appid" : "",
+        "appid" : "wx759d6010bee6bb77",
         "setting" : {
             "urlCheck" : false,
             "minified" : true,
