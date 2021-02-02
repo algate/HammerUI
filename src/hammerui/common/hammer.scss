@@ -296,11 +296,11 @@ image {
     background-size: cover;
     background-position: center;
     position: relative;
-    margin-bottom: 40rpx;
+    margin-bottom: 10rpx;
     // animation: bounceInDown 1s 1;
 }
 .nav-li:first-child {
-    margin-top: 20rpx;
+    // margin-top: 20rpx;
 }
 .nav-li:before,
 .nav-li:after {
@@ -510,16 +510,6 @@ radio.checked .uni-radio-input {
 .h-flex-3 {
     flex: 3;
 }
-.flex-item {
-    text-align: center;
-    padding: 20rpx;
-    margin-bottom: 20rpx;
-}
-.flex-item-mini {
-    text-align: center;
-    padding: 10rpx;
-    margin-bottom: 20rpx;
-}
 
 .flex-direction {
     flex-direction: column;
@@ -683,7 +673,6 @@ radio.checked .uni-radio-input {
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    padding: 0rpx 10rpx;
     height: 32rpx;
     font-family: Helvetica Neue, Helvetica, sans-serif;
     white-space: nowrap;

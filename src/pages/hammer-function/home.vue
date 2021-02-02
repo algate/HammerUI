@@ -73,6 +73,8 @@
                         size: 50,
                         bgColor : 'bg-blue'
                     },
+                    /*
+                     * 此图表展示有问题，暂时不再展示 
                     {
                         title: 'uCharts高性能跨全端图表',
                         name: 'function-charts',
@@ -80,7 +82,7 @@
                         hammerIcon: 'histogram',
                         size: 50,
                         bgColor : 'bg-purple'
-                    },
+                    }, */
                     {
                         title: 'tree结构树',
                         name: 'function-trees',

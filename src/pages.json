@@ -3,6 +3,7 @@
 		{
 			"path": "pages/index/index",
 			"style": {
+                "navigationStyle": "custom",
 				"navigationBarTitleText": "ChuiziUI🔨",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "black"
@@ -11,6 +12,7 @@
 		{
 			"path":"pages/hammer-canvas/home",
 			"style": {
+                "navigationStyle": "custom",
 				"navigationBarTitleText":"Canvas⭐",
 				"navigationBarBackgroundColor":"#00AB98",
 				"navigationBarTextStyle":"black"
@@ -91,6 +93,7 @@
 		{
 			"path": "pages/hammer-basic/home",
 			"style": {
+                "navigationStyle": "custom",
 				"navigationBarTitleText": "基础组件🦏",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
@@ -163,6 +166,7 @@
 		{
 			"path": "pages/hammer-function/home",
 			"style": {
+                "navigationStyle": "custom",
 				"navigationBarTitleText": "功能组件-📖",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
@@ -648,6 +652,7 @@
 		{
 			"path": "pages/hammer-user/mine",
 			"style": {
+                "navigationStyle": "custom",
 				"navigationBarTitleText": "用户-🔨",
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"

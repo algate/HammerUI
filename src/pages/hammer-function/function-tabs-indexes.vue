@@ -6,54 +6,30 @@
             </swiper-item>
         </swiper>
         <view class="VerticalBox">
-            <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation :scroll-top="verticalNavTop" style="height:calc(100vh - 375upx)">
+            <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation :scroll-top="verticalNavTop" style="height:calc(100vh - 375rpx)">
                 <view class="cu-item" :class="index==tabCur?'text-color cur':''" v-for="(item,index) in list" :key="index" @tap="TabSelect"
                  :data-id="index">
                     Tabs-{{item.name}}
                 </view>
             </scroll-view>
-            <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 375upx)"
+            <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 375rpx)"
              :scroll-into-view="'main-'+mainCur" @scroll="VerticalMain">
                 <view class="list-item bg-white" v-for="(item,index) in list" :key="index" :id="'main-'+index">
-                    <view class="hammer-box">
+                    <view class="hammer-box" style="border-bottom: 1px solid #ccc;">
                         <view class="title">
                             <text class="cuIcon-title text-color"></text> Tabs-{{item.name}}</view>
                     </view>
                     <view class="cu-list menu-avatar">
-                        <view class="cu-item">
-                            <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
-                            <view class="content">
-                                <view class="text-grey">凯尔</view>
-                                <view class="text-gray text-sm flex">
-                                    <text class="text-cut">
-                                        <text class="cuIcon-infofill text-red  margin-right-xs"></text>
-                                        我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。
-                                    </text> </view>
-                            </view>
-                            <view class="action">
-                                <view class="text-grey text-xs">22:20</view>
-                                <view class="cu-tag round bg-grey sm">5</view>
+                        <view class="grid grid-col-4">
+                            <view class="bg-green grid-item bg-img-eq">
+                                <view class="hammer-badge bg-mauve">99+</view>
                             </view>
                         </view>
-                        <view class="cu-item">
-                            <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Taric.png);">
-                                <view class="cu-tag badge">99+</view>
-                            </view>
-                            <view class="content">
-                                <view class="text-grey">
-                                    <text class="text-cut">瓦洛兰之盾-塔里克</text>
-                                    <view class="cu-tag round bg-orange sm">战士</view>
-                                </view>
-                                <view class="text-gray text-sm flex">
-                                    <text class="text-cut">
-                                        塔里克是保护者星灵，用超乎寻常的力量守护着符文之地的生命、仁爱以及万物之美。塔里克由于渎职而被放逐，离开了祖国德玛西亚，前去攀登巨神峰寻找救赎，但他找到的却是来自星界的更高层的召唤。现在的塔里克与古代巨神族的神力相融合，以瓦洛兰之盾的身份，永不疲倦地警惕着阴险狡诈的虚空腐化之力。
-                                    </text>
-                                </view>
-                            </view>
-                            <view class="action">
-                                <view class="text-grey text-xs">22:20</view>
-                                <view class="cuIcon-notice_forbid_fill text-gray"></view>
-                            </view>
+                        <view class="hammer-box bg-brown light">
+                            <view class="sub-title">5等分 - 拉伸 flex-grow</view>
+                        </view>
+                        <view class="grid grid-col-5 bg-white">
+                            <view class="bg-img grid-item grid-margin-right-none flex-grow" v-for="(item,index) in avatar" :key="index" :style="[{ backgroundImage:'url(' + avatar[index] + ')' }]"></view>
                         </view>
                     </view>
                 </view>
@@ -66,6 +42,13 @@
     export default {
         data() {
             return {
+                avatar:[
+                    'http://shp.qpic.cn/ishow/2735092409/1569290387_84828260_13119_sProdImgNo_2.jpg/0',
+                    'http://shp.qpic.cn/ishow/2735062811/1561692452_-695593207_23925_sProdImgNo_2.jpg/0',
+                    'http://shp.qpic.cn/ishow/2735070910/1562640168_1186005513_17698_sProdImgNo_2.jpg/0',
+                    'http://shp.qpic.cn/ishow/2735061310/1560394439_-695593207_21939_sProdImgNo_3.jpg/0',
+                    'http://shp.qpic.cn/ishow/2735011517/1547545098_-888937974_18837_sProdImgNo_3.jpg/0'
+                ],
                 swiperList: [
                 {
                     id: 1,
@@ -145,11 +128,11 @@
 
 <style lang="scss">
     .screen-swiper {
-        height: 375upx;
+        height: 375rpx;
     }
 
     .VerticalNav.nav {
-        width: 200upx;
+        width: 200rpx;
         white-space: initial;
         color: #444;
     }
@@ -160,8 +143,8 @@
         background-color: #fff;
         margin: 0;
         border: none;
-        height: 80upx;
-        line-height: 80upx;
+        height: 80rpx;
+        line-height: 80rpx;
         position: relative;
     }
 
@@ -171,13 +154,13 @@
 
     .VerticalNav.nav .cu-item.cur::after {
         content: "";
-        width: 8upx;
-        height: 30upx;
-        border-radius: 10upx 0 0 10upx;
+        width: 8rpx;
+        height: 30rpx;
+        border-radius: 10rpx 0 0 10rpx;
         position: absolute;
         background-color: currentColor;
         top: 0;
-        right: 0upx;
+        right: 0rpx;
         bottom: 0;
         margin: auto;
     }
@@ -188,10 +171,14 @@
 
     .VerticalMain {
         flex: 1;
-        margin-left: 20upx;
+        margin-left: 10rpx;
         .list-item {
             background: #fff;
-            margin: 20upx 0;
+            // margin: 10rpx 0;
+            margin-bottom: 10rpx;
+            .cu-list {
+                line-height: 50rpx;
+            }
         }
     }
 </style>

@@ -24,7 +24,7 @@
         </view>
         <view class="grid">
             <view style="margin:0 10px 10px 0;" v-for="(item,index) in ColorList" :key="index" v-if="item.name!='white'">
-                <view class='hammer-tag' :class="'line-' + item.name">{{item.title}}</view>
+                <view class='hammer-tag' style="width:40px;" :class="'line-' + item.name">{{item.title}}</view>
             </view>
         </view>
         <view class="hammer-box bg-white">
@@ -32,10 +32,10 @@
             </view>
         </view>
         <view style="margin:10px;">
-            <view class="hammer-tag bg-red">
+            <view class="hammer-tag bg-red" style="width: 40px;">
                 <hammer-icon from="iconfont" name="like" :size="20" color="#fff"></hammer-icon>
             </view>
-            <view class="hammer-tag line-red">
+            <view class="hammer-tag line-red" style="width: 40px;">
                 12
             </view>
         </view>
@@ -135,4 +135,14 @@
 </script>
 <style lang="scss">
 
+.flex-item {
+    text-align: center;
+    padding: 40rpx;
+    margin-bottom: 20rpx;
+}
+.flex-item-mini {
+    text-align: center;
+    padding: 10rpx;
+    margin-bottom: 20rpx;
+}
 </style>
