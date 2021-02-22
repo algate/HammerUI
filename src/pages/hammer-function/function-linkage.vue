@@ -15,6 +15,11 @@
                 <hammer-icon name="arrowright" from="tui" :size="30"></hammer-icon>
             </view>
         </view>
+        <!-- #ifdef MP-WEIXIN -->
+        <view class="adContainer">
+            <ad unit-id="adunit-57232f436c3fd212"></ad>
+        </view>
+        <!-- #endif -->
     </view>
 </template>
 <script>

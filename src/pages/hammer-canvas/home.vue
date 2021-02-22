@@ -1,5 +1,8 @@
 <template>
     <view>
+        <!-- #ifdef MP-WEIXIN -->
+        <view class="adContainer"><ad unit-id="adunit-2d10a7b6828d8fc6"></ad></view>
+        <!-- #endif -->
         <scroll-view scroll-y>
             <view class="nav-list">
                 <navigator hover-class="none" :url="'/pages/hammer-canvas/' + item.name" class="nav-li bg-img" open-type="navigate" :class="item.bgColor" :style="[{animation: 'bounceInDown ' + ((index+1)*0.2+1) + 's ' + ((index)*0.4) + 's 1 backwards', backgroundImage:'url('+item.img+')'}]" v-for="(item,index) in elements" :key="index">

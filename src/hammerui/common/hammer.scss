@@ -1,3 +1,17 @@
+/* 外层组件的宽度可设置成100%或具体数值 */
+.adContainer {
+    width: 100%;
+}
+.hammer-official-account{
+	position: fixed;
+	left: 5rpx;
+	right: 5rpx;
+	bottom:var(--window-bottom);
+	box-sizing: border-box;
+	official-account{
+		border-radius: 5rpx;
+	}
+}
 /* ==================
        基础配置
  ==================== */

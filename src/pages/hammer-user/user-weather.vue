@@ -25,6 +25,9 @@
             <text v-if="weather.winddirection">风速 : {{weather.winddirection.data}} {{weather.windpower.data}}</text>
             <text v-if="weather.humidity">{{weather.humidity.text}} : {{weather.humidity.data}}</text>
         </view>
+        <!-- #ifdef MP-WEIXIN -->
+        <!-- <view class="adContainer"><ad unit-id="adunit-a70e7b1bf691ba70"></ad></view> -->
+        <!-- #endif -->
     </view>
 </template>
 

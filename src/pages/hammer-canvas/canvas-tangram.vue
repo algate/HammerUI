@@ -1,5 +1,12 @@
 <template>
-	<view><canvas style="width: 100vw;height: 100vw;" type="2d" canvas-id="tangram" id="tangram"></canvas></view>
+	<view>
+		<canvas style="width: 100vw;height: 100vw;" type="2d" canvas-id="tangram" id="tangram"></canvas>
+		<!-- #ifdef MP-WEIXIN -->
+		<view class="hammer-official-account">
+			<ad-custom unit-id="adunit-4955e8ad7b01cc95"></ad-custom>
+		</view>
+		<!-- #endif -->
+	</view>
 </template>
 
 <script>
@@ -103,5 +110,3 @@ export default {
 	}
 };
 </script>
-
-<style></style>

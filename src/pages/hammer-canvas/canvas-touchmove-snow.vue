@@ -1,5 +1,12 @@
 <template>
-	<view class="bg-black" @touchmove.stop="tapEvent"><canvas style="width: 100vw;height: 100vh;" type="2d" canvas-id="move-effect" id="move-effect"></canvas></view>
+	<view>
+		<view class="bg-black" @touchmove.stop="tapEvent"><canvas style="width: 100vw;height: 100vh;" type="2d" canvas-id="move-effect" id="move-effect"></canvas></view>
+		<!-- #ifdef MP-WEIXIN -->
+		<view class="hammer-official-account">
+			<ad-custom unit-id="adunit-22979cc743faec19"></ad-custom>
+		</view>
+		<!-- #endif -->
+	</view>
 </template>
 <script>
 class Particle {

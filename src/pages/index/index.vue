@@ -8,27 +8,27 @@
 		<view class="wx-login">
 			<hammer-button v-if="canIUse" open-type="getUserInfo" lang="zh_CN" @getuserinfo="bindGetUserInfo" width="280upx" height="90upx">授权微信登录</hammer-button>
 			<view v-else>请升级微信版本</view>
-			<hammer-button style="margin-left:50upx;" type="green" @tap="experienceHammerUI" width="280upx" height="90upx">体验🔨UI!</hammer-button>
+			<hammer-button style="margin-left:50upx;" type="green" @tap="experienceHammerUI" width="280upx" height="90upx">{{loginFlag?'欢迎回来':'体验🔨UI!'}}</hammer-button>
 		</view>
 		<!-- #endif -->
 		<!-- #ifdef H5 -->
 		<view class="wx-login"><hammer-button class="bg-color" @tap="h5onGotUserInfo" type="green" width="280upx" height="90upx" :size="32">体验🔨UI!</hammer-button></view>
 		<!-- #endif -->
 		<!-- #ifdef MP-WEIXIN -->
-		<view class="hammer-official-account"><official-account></official-account></view>
+		<view class="hammer-official-account">
+			<view class="adContainer"><ad unit-id="adunit-2d10a7b6828d8fc6"></ad></view>
+			<official-account></official-account>
+		</view>
 		<!-- #endif -->
 	</view>
 </template>
 <script>
 import { mapState, mapMutations } from 'vuex';
 export default {
-	components: {},
-	computed: {
-		...mapState(['isLogin'])
-	},
 	data() {
 		return {
-			canIUse: wx.canIUse('button.open-type.getUserInfo')
+			canIUse: wx.canIUse('button.open-type.getUserInfo'),
+			loginFlag: false
 		};
 	},
 	onLoad() {
@@ -57,9 +57,10 @@ export default {
 							console.log('getUserInfo', r);
 							that.login(r.userInfo);
 							// 跳转到首页
-							uni.reLaunch({
+							/* uni.reLaunch({
 								url: '/pages/hammer-canvas/home'
-							});
+							}); */
+							that.loginFlag = true;
 						}
 					});
 				} else {
@@ -104,12 +105,20 @@ export default {
 	},
 	onShow() {
 		console.log('进入🔨门口');
+		// #ifdef MP-WEIXIN
+		// 在适合的场景显示插屏广告
+		if (this.interstitialAd) {
+			this.interstitialAd.show().catch((err) => {
+				console.error(err)
+			})
+		}
+		// #endif
 	}
 };
 </script>
 <style lang="scss">
 .hammer-tencent {
-	margin-bottom: 160upx;
+	margin-bottom: 100upx;
 
 	image {
 		width: 100%;
@@ -161,22 +170,11 @@ export default {
 }
 
 .wx-login {
-	margin-top: 180upx;
+	margin-top: 120upx;
 	width: 100%;
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
 	justify-content: center;
-}
-.hammer-official-account {
-	position: fixed;
-	left: 5rpx;
-	right: 5rpx;
-	// bottom: 0;
-	bottom: var(--window-bottom);
-	box-sizing: border-box;
-	official-account {
-		border-radius: 5rpx;
-	}
 }
 </style>

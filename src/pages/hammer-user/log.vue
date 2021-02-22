@@ -6,6 +6,9 @@
                 <view class="hammer-animation text-color">🔨欢迎使用Hammer UI！当前版本：V{{version}}</view>
             </view>
         </view>
+        <!-- #ifdef MP-WEIXIN -->
+		<view><ad unit-id="adunit-3997d16ed956fe9f" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"></ad></view>
+		<!-- #endif -->
         <view class="hammer-log">
             <tui-time-axis>
                 <tui-timeaxis-item v-for="(item,index) in logList" :key="index">

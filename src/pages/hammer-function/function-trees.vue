@@ -10,6 +10,11 @@
                 <button type="white">树结构</button>
             </navigator>
         </view>
+        <!-- #ifdef MP-WEIXIN -->
+        <view class="hammer-official-account">
+            <view class="adContainer"><ad unit-id="adunit-e3604d3f7d877739" ad-type="video" ad-theme="white"></ad></view>
+        </view>
+        <!-- #endif -->
     </view>
 </template>
 

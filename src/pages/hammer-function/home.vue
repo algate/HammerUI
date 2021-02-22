@@ -1,5 +1,8 @@
 <template>
     <view>
+        <!-- #ifdef MP-WEIXIN -->
+        <view class="adContainer"><ad unit-id="adunit-f89500eefdc9832d"></ad></view>
+        <!-- #endif -->
         <scroll-view scroll-y>
             <view class="nav-list">
                 <navigator hover-class="none" :url="'/pages/hammer-function/' + item.name" class="nav-li" open-type="navigate" :class="item.bgColor" v-for="(item,index) in elements" :key="index" :style="{animation: 'bounceInDown ' + ((index+1)*0.2+1) + 's ' + ((index)*0.4) + 's 1 both'}">

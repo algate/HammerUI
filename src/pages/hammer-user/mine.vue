@@ -52,6 +52,9 @@
 			</view>
 			<!-- #endif -->
 		</view>
+        <!-- #ifdef MP-WEIXIN -->
+		<view class="adContainer"><ad unit-id="adunit-4f0f65681e1b269a"></ad></view>
+        <!-- #endif -->
 		<view class="bottom-container">
 			<view class="ul-item">
 				<view @tap="tapEvent" data-index="2" data-key="加油站" class="item" hover-class="opcity" :hover-stay-time="150">
@@ -413,15 +416,5 @@ export default {
 }
 .btn-feedback:after {
 	border: 0;
-}
-.hammer-official-account{
-	position: fixed;
-	left: 5rpx;
-	right: 5rpx;
-	bottom:var(--window-bottom);
-	box-sizing: border-box;
-	official-account{
-		border-radius: 5rpx;
-	}
 }
 </style>

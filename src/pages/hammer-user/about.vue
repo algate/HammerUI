@@ -19,6 +19,9 @@
 			</view>
 		</view>
 		<hammer-toast ref="toast"></hammer-toast>
+		<!-- #ifdef MP-WEIXIN -->
+		<view><ad unit-id="adunit-3997d16ed956fe9f" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"></ad></view>
+		<!-- #endif -->
 	</view>
 </template>
 <script>
@@ -79,7 +82,7 @@ export default {
 </script>
 <style lang="scss">
 .hammer-tencent {
-	margin-bottom: 160upx;
+	margin-bottom: 60upx;
 	image {
 		width: 100%;
 		background: #2ba045;
@@ -130,7 +133,7 @@ export default {
 }
 .tui-content-box {
 	width: 100%;
-	margin-top: 50px;
+	margin-top: 30px;
 	padding: 30upx;
 	box-sizing: border-box;
 	background: #fff;

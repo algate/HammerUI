@@ -47,6 +47,11 @@
             <button type="primary" @click="onShowDatePicker('rangetime')">选择日期时间范围</button>
         </view>
         <mx-date-picker :show="showPicker" :type="calendartype" :value="value" :show-tips="true" :begin-text="'入住'" :end-text="'离店'" :show-seconds="true" @confirm="onSelected" @cancel="onSelected" />
+        <!-- #ifdef MP-WEIXIN -->
+        <view class="adContainer">
+            <ad unit-id="adunit-57232f436c3fd212"></ad>
+        </view>
+        <!-- #endif -->
     </view>
 </template>
 

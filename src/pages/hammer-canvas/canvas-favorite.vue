@@ -1,5 +1,12 @@
 <template>
-	<view @tap="wareaTap" @touchstart="touchstart" @touchmove="touchmove" @touchend="touchend" @touchcancel="touchend"><canvas style="width: 100vw;height: 100vh;" type="2d" canvas-id="favorite" id="favorite"></canvas></view>
+	<view>
+		<view @tap="wareaTap" @touchstart="touchstart" @touchmove="touchmove" @touchend="touchend" @touchcancel="touchend"><canvas style="width: 100vw;height: 100vh;" type="2d" canvas-id="favorite" id="favorite"></canvas></view>
+		<!-- #ifdef MP-WEIXIN -->
+		<view class="hammer-official-account">
+			<ad-custom unit-id="adunit-4955e8ad7b01cc95"></ad-custom>
+		</view>
+		<!-- #endif -->
+	</view>
 </template>
 
 <script>

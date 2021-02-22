@@ -662,7 +662,7 @@
 			"path": "pages/hammer-user/user-amap",
 			"style": {
 				"navigationBarTitleText": "地图-🌏",
-				"disableScroll": true,
+				// "disableScroll": true,
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -671,7 +671,6 @@
 			"path": "pages/hammer-user/about",
 			"style": {
 				"navigationBarTitleText": "关于-锤子UI",
-				"disableScroll": true,
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -680,7 +679,7 @@
 			"path": "pages/hammer-user/user-weather",
 			"style": {
 				"navigationBarTitleText": "天气-☀",
-				"disableScroll": true,
+				// "disableScroll": true,
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -689,7 +688,6 @@
 			"path": "pages/hammer-user/log",
 			"style": {
 				"navigationBarTitleText": "日志-🖌",
-				"disableScroll": true,
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}

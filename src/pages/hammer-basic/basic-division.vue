@@ -20,7 +20,11 @@
             <hammer-icon from="iconfont" name="likefill" :size="24"></hammer-icon>
             <text class="hammer-text">猜你喜欢</text>
         </hammer-divider>
-
+        <!-- #ifdef MP-WEIXIN -->
+        <view class="adContainer">
+            <ad-custom unit-id="adunit-46dd916bdb7ed987"></ad-custom>
+        </view>
+        <!-- #endif -->
     </view>
 </template>
 

@@ -1,24 +1,33 @@
 <template>
-    <view class="canvas-sign">
-        <!-- 签名组件 -->
-        <view>
-            <view class="signature">
-                <canvas
-                    style="width: 100vw;height: 50vw;"
-                    class="mycanvas"
-                    canvas-id="mycanvas"
-                    id="mycanvas"
-                    type="2d"
-                    @touchstart="touchstart"
-                    @touchmove="touchmove"
-                    @touchend="touchend"
-                ></canvas>
-                <view class="footer">
-                    <view class="right" @click="clear">清除</view>
-                    <view class="left" @click="finish">保存</view>
+    <view>
+        <view class="canvas-sign">
+            <!-- 签名组件 -->
+            <view>
+                <view class="signature">
+                    <canvas
+                        style="width: 100vw;height: 50vw;"
+                        class="mycanvas"
+                        canvas-id="mycanvas"
+                        id="mycanvas"
+                        type="2d"
+                        @touchstart="touchstart"
+                        @touchmove="touchmove"
+                        @touchend="touchend"
+                    ></canvas>
+                    <view class="footer">
+                        <view class="right" @click="clear">清除</view>
+                        <view class="left" @click="finish">保存</view>
+                    </view>
                 </view>
             </view>
         </view>
+        <!-- #ifdef MP-WEIXIN -->
+        <view class="hammer-official-account">
+            <view class="adContainer">
+                <ad-custom unit-id="adunit-46dd916bdb7ed987"></ad-custom>
+            </view>
+        </view>
+        <!-- #endif -->
     </view>
 </template>
 <script>
@@ -198,7 +207,7 @@ export default {
 </script>
 <style>
 .signature {
-    position: fixed;
+    position: relative;
     z-index: 999;
 }
 

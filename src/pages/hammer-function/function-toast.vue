@@ -26,6 +26,9 @@
         </view>
         <!--toast提示-->
         <hammer-toast ref="toast"></hammer-toast>
+        <!-- #ifdef MP-WEIXIN -->
+        <view class="adContainer"><ad unit-id="adunit-e3604d3f7d877739" ad-type="video" ad-theme="white"></ad></view>
+        <!-- #endif -->
     </view>
 </template>
 

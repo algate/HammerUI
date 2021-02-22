@@ -21,6 +21,9 @@
                 <button type="white">顶部选项卡+左右滑屏滚动</button>
             </navigator>
         </view>
+        <!-- #ifdef MP-WEIXIN -->
+        <view class="adContainer"><ad unit-id="adunit-e3604d3f7d877739" ad-type="video" ad-theme="white"></ad></view>
+        <!-- #endif -->
     </view>
 </template>
 

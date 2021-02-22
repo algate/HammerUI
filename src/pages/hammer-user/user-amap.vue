@@ -43,6 +43,9 @@
                 </view>
             </view>
         </scroll-view>
+        <!-- #ifdef MP-WEIXIN -->
+        <!-- <view class="adContainer"><ad unit-id="adunit-a70e7b1bf691ba70"></ad></view> -->
+        <!-- #endif -->
     </view>
 </template>
 
