@@ -662,7 +662,6 @@
 			"path": "pages/hammer-user/user-amap",
 			"style": {
 				"navigationBarTitleText": "地图-🌏",
-				// "disableScroll": true,
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -679,7 +678,6 @@
 			"path": "pages/hammer-user/user-weather",
 			"style": {
 				"navigationBarTitleText": "天气-☀",
-				// "disableScroll": true,
 				"navigationBarBackgroundColor": "#00AB98",
 				"navigationBarTextStyle": "white"
 			}
@@ -724,11 +722,5 @@
 		"navigationBarTitleText": "ChuiziUI",
 		"navigationBarBackgroundColor": "#5677FC",
 		"backgroundColor": "#F8F8F8"
-	},
-	"easycom": {
-		"autoscan": true,
-		"custom": {
-			"hammer-(.*)": "@/components/hammer-$1/hammer-$1.vue"
-		}
 	}
 }

@@ -12,13 +12,15 @@
         </view>
         <view>
             <tui-grid>
-                <block v-for="(item,index) in iconList" :key="index" v-if="item.isShow">
-                    <tui-grid-item :cell="cell">
-                        <view class="tui-grid-icon">
-                            <hammer-icon :name="item.name" :from="item.from" :size="item.size" :color="item.color"></hammer-icon>
-                        </view>
-                        <text class="tui-grid-label">{{item.name}}</text>
-                    </tui-grid-item>
+                <block v-for="(item,index) in iconList" :key="index">
+                    <view v-if="item.isShow">
+                        <tui-grid-item :cell="cell">
+                            <view class="tui-grid-icon">
+                                <hammer-icon :name="item.name" :from="item.from" :size="item.size" :color="item.color"></hammer-icon>
+                            </view>
+                            <text class="tui-grid-label">{{item.name}}</text>
+                        </tui-grid-item>
+                    </view>
                 </block>
             </tui-grid>
         </view>

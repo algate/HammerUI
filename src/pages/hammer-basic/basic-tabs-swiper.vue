@@ -1,10 +1,12 @@
 <template>
     <view>
         <scroll-view scroll-x scroll-with-animation class="tab-view" :scroll-left="scrollLeft">
-            <view v-for="(item,index) in tabbar" :key="index" class="tab-bar-item" :class="[currentTab==index ? 'active' : '']"
-             :data-current="index" @tap.stop="swichNav">
-                <text class="tab-bar-title">{{item}}</text>
-            </view>
+            <view style="display: flex;">
+				<view v-for="(item,index) in tabbar" :key="index" class="tab-bar-item" :class="[currentTab==index ? 'active' : '']"
+				 :data-current="index" @tap.stop="swichNav">
+					<text class="tab-bar-title">{{item}}</text>
+				</view>
+			</view>
         </scroll-view>
         <swiper class="tab-content" :current="currentTab" duration="300" @change="switchTab" :style="{height:winHeight+'px'}">
             <swiper-item v-for="(item,index) in tabbar" :key="index">
@@ -237,9 +239,9 @@
         min-width: 80upx;
         line-height: 100upx;
         margin: 0 28upx;
-        display: inline-block;
-        text-align: center;
-        box-sizing: border-box;
+        /* display: inline-block; */
+        /* text-align: center; */
+        /* box-sizing: border-box; */
     }
 
     .tab-bar-title {

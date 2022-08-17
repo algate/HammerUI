@@ -53,5 +53,9 @@ module.exports = {
         version: "1.3.0",
         date: "Oct 10, 2020",
         log: ["🐢 canvas功能", "优化canvas"]
+    }, {
+        version: "1.5.3",
+        date: "Aug 17, 2022",
+        log: ["升级node-sass", "删除插屏广告引起的小程序体验差问题"]
     }]
 }

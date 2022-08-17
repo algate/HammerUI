@@ -99,8 +99,9 @@
             };
         },
         onLoad() {
+            // 由于此广告位影响小程序的使用效果 - 插屏广告（广告管理端已经关闭）
             // #ifdef MP-WEIXIN
-            if (wx.createInterstitialAd) {
+            /* if (wx.createInterstitialAd) {
                 this.interstitialAd = wx.createInterstitialAd({
                     adUnitId: 'adunit-2dc8bcb32be7494b'
                 })
@@ -113,17 +114,17 @@
                 this.interstitialAd.onClose((res) => {
                     console.log('插屏 广告关闭');
                 })
-            }
+            } */
             // #endif
         },
         onShow() {
-            console.log("进入首页🔨");
+            // console.log("进入首页🔨");
             // #ifdef MP-WEIXIN
-            if (this.interstitialAd) {
+            /* if (this.interstitialAd) {
                 this.interstitialAd.show().catch((err) => {
                     console.error(err)
                 })
-            }
+            } */
             // #endif
         }
     }
