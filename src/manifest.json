@@ -78,6 +78,9 @@
                 "desc" : "获取定位地址的天气还有周边等信息"
             }
         },
+        "requiredPrivateInfos" : [
+            "getLocation"
+        ],
 		/* 微信小程序分包优化 */
 		"optimization": {
 			"subPackages": true
