@@ -1,6 +1,6 @@
 let init = function(ak) {
     if (!ak) {
-        ak = "6716fd3a383c57b3cf407f454dc97e27"
+        ak = ""
 
     }
     const AMapURL = 'https://webapi.amap.com/maps?v=1.4.15&key=' + ak + '&callback=onAMapCallback'
