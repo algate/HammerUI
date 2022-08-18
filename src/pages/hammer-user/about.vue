@@ -20,7 +20,7 @@
 		</view>
 		<hammer-toast ref="toast"></hammer-toast>
 		<!-- #ifdef MP-WEIXIN -->
-		<view><ad unit-id="adunit-3997d16ed956fe9f" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"></ad></view>
+		<view><ad unit-id="adunit-0fc72cc383473418" ad-type="grid" grid-opacity="0.8" grid-count="5" ad-theme="white"></ad></view>
 		<!-- #endif -->
 	</view>
 </template>
