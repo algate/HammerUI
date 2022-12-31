@@ -60,14 +60,14 @@
     "@dcloudio/vue-cli-plugin-uni-optimize": "^2.0.0-31920210709003",
     "@dcloudio/webpack-uni-mp-loader": "^2.0.0-31920210709003",
     "@dcloudio/webpack-uni-pages-loader": "^2.0.0-31920210709003",
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
+    "@vue/cli-plugin-babel": "~5.0.8",
+    "@vue/cli-service": "~5.0.8",
     "babel-plugin-import": "^1.11.0",
     "mini-types": "*",
     "miniprogram-api-typings": "^2.9.2",
     "postcss-comment": "^2.0.0",
     "sass": "^1.54.4",
-    "sass-loader": "^8.0.0",
+    "sass-loader": "^13.2.0",
     "vue-template-compiler": "^2.6.10"
   },
   "browserslist": [
